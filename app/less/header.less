@@ -1,0 +1,120 @@
+//=======================================================================
+//Header
+//=======================================================================
+.header {
+  height: 270px;
+  background-color: #31485b;
+  background-image: radial-gradient(circle 203px at center, #3c5569 0%, #31485b 100%);
+
+  //Top pattern
+  &:before {
+    content: '';
+    display: block;
+    height: 4px;
+    @colors: #ef8742, #e05543, #bf4f79, #8869ca, #2799c9, #1bb869, #9cbf3e, #f6b63a;
+    .repeating-gradient(@colors, 15, -50, 90deg);
+  }
+}
+
+//=======================================================================
+//Main title
+//=======================================================================
+.header-title {
+  margin: 58px 0 0;
+  padding: 0;
+  text-align: center;
+  font-size: inherit;
+
+  //Title link
+  .title-link {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+
+    //Main text
+    strong {
+      font-weight: 400;
+      display: block;
+      margin: 13px 0 7px;
+      border-bottom: 1px solid rgba(255, 255, 255, .3);
+      height: 46px + 8px;
+      line-height: 38px;
+      white-space: nowrap;
+      font-size: 45px;
+    }
+  }
+
+  //Secondary text
+  .title-secondary {
+    display: block;
+    font-size: 16px;
+    white-space: nowrap;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+  }
+
+  //Clover
+  .title-clover {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin: 0 auto;
+    .clover-color(#fff, #31485b, #9cbf3e, true);
+  }
+
+  //Flag
+  .title-flag {
+    @media (max-width: 400px) {
+      display: none;
+    }
+    position: absolute;
+    top: 94px - 58px - 3px;
+    left: 100%;
+    text-transform: uppercase;
+    background-color: #9cbf3e;
+    width: 63px - 9;
+    height: 30px;
+    line-height: 30px;
+    border-left: 1px solid #728290;
+
+    //Flag angles
+    &:before {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 0;
+      border: 15px solid #9cbf3e;
+      border-left-width: 0;
+      border-right-width: 8px;
+      border-right-color: transparent;
+    }
+
+    //Flag handle
+    .flag-handle {
+      height: 9px;
+      position: absolute;
+      left: -1px;
+      width: 1px;
+      top: 100%;
+      background-color: #728290;
+
+      //Handle circle
+      &:before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        top: 100%;
+        left: -2px;
+        border-radius: 50%;
+        background-color: #728290;
+      }
+    }
+  }
+}
+
+
+
+

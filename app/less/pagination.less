@@ -1,0 +1,106 @@
+//=======================================================================
+//Pagination
+//=======================================================================
+.pagination {
+  background-color: #fff;
+  .box-shadow-base();
+  border-radius: @border-radius-base;
+  overflow: hidden;
+  margin-bottom: @grid-gutter-width / 2;
+  @media @tablet-min {
+    margin-bottom: 50px;
+  }
+
+  //=======================================================================
+  //Previous & next links
+  //=======================================================================
+  & > a {
+    text-transform: uppercase;
+    color: #aaa;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 50px;
+    height: 50px;
+    &:hover {
+      text-decoration: none;
+      color: #888;
+    }
+
+    //Arrows
+    .icon {
+      font-size: 16px;
+      vertical-align: -2px;
+    }
+
+    //Prev link
+    &.pagination-prev {
+      float: left;
+      margin-left: 20px;
+      .icon {
+        margin-right: 10px;
+      }
+    }
+
+    //Next link
+    &.pagination-next {
+      float: right;
+      margin-right: 20px;
+      .icon {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  //=======================================================================
+  //Page links
+  //=======================================================================
+  ol {
+    text-align: center;
+    margin: 50px 0 0;
+    padding: 0;
+    @media @tablet-min {
+      margin-top: 0;
+    }
+
+    //Page element
+    li {
+      display: inline-block;
+      vertical-align: top;
+      &:hover,
+      &.active {
+        a {
+          border-bottom-color: #ef8742;
+          color: #ef8742;
+          font-size: 18px;
+          font-weight: 700;
+        }
+      }
+      &.dots {
+        a {
+          color: grey;
+          border-bottom-color: transparent;
+          cursor: default;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+
+    }
+
+    //Link
+    a {
+      display: block;
+      line-height: 50px;
+      color: grey;
+      font-size: 16px;
+      height: 50px;
+      width: 33px;
+      text-align: center;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

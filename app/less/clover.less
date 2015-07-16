@@ -1,0 +1,137 @@
+//=======================================================================
+//Clover
+//=======================================================================
+.clover {
+  position: relative;
+  transition: all .7s;
+}
+
+//Clover single petal
+.clover-petal {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform-origin: 50% 100%;
+
+  &.clover-petal-right {
+    transform: rotate(90deg);
+  }
+
+  &.clover-petal-bottom {
+    transform: rotate(180deg);
+  }
+
+  &.clover-petal-left {
+    transform: rotate(-90deg);
+  }
+
+  //Petal inner elements
+  .petal-inner {
+    position: absolute;
+    height: 89.50%;
+    width: 89.50%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: 50% 50%;
+    transform: translateY(-21.00%) rotate(-45deg);
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 66.666%;
+      height: 100%;
+      border-top-left-radius: 50% 33.333%;
+      border-top-right-radius: 50% 33.333%;
+      background-color: #fff;
+      transition: all .7s;
+    }
+
+    &:after {
+      transform-origin: 50% 66.666%;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+//Clover cogwheel
+.clover-cogwheel {
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #31485b;
+  border-radius: 50%;
+
+  //Cogs
+  .cog {
+    width: 75%;
+    height: 15%;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    transition: all .7s;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform-origin: 50% 50%;
+      transform: rotate(45deg);
+      background-color: #fff;
+      transition: all .7s;
+    }
+
+    &.cog-2 {
+      width: 15%;
+      height: 75%;
+    }
+  }
+
+  //Wheel
+  .wheel {
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 55%;
+    height: 55%;
+    transition: all .7s;
+    border-radius: 50%;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      width: 55%;
+      height: 55%;
+      background-color: #31485b;
+      border-radius: 50%;
+    }
+  }
+}

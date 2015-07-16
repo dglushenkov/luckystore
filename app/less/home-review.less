@@ -1,0 +1,140 @@
+//=======================================================================
+//Review block on home page
+//=======================================================================
+.home-review {
+  //=======================================================================
+  //Quote
+  //=======================================================================
+  .review-quote {
+    display: block;
+    background-color: #ffffff;
+    padding: 25px;
+    font-size: 15px;
+    line-height: 25px;
+    color: #aaa;
+    .box-shadow-base();
+    border-radius: @border-radius-base;
+    position: relative;
+
+    .quote-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    //Quote icons
+    .icons-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .icon {
+      position: absolute;
+      font-size: 75px;
+      color: #f3f3f3;
+      height: 75px;
+      display: block;
+      &:before {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        height: 75px;
+        vertical-align: middle;
+      }
+    }
+
+    //Open quote image
+    .icon-quote-open {
+      left: 21px;
+      top: -9px;
+      display: block;
+    }
+
+    //Close quote image
+    .icon-quote-close {
+      right: 21px;
+      bottom: -9px;
+    }
+
+    //Quote tail
+    .quote-tail {
+      position: absolute;
+      height: 19px;
+      width: 27px;
+      background-color: #fff;
+      top: 100%;
+      left: 120px;
+      border-bottom-right-radius: 100% 100%;
+      box-shadow: 2px 1px 2px rgba(0, 0, 0, .22);
+
+      //Inner shadow
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: #f3f3f3;
+        height: 100%;
+        width: 50%;
+        border-bottom-right-radius: 100% 100%;
+        box-shadow: inset -2px 1px 3px 0 rgba(0, 0, 0, .22);
+      }
+    }
+  }
+
+  //See all link
+  .review-show-all {
+    float: right;
+    color: #2799c9;
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  //=======================================================================
+  //Author info
+  //=======================================================================
+  .review-author {
+    overflow: hidden;
+    padding-left: 150px;
+    margin: 0;
+
+    //Avatar
+    img {
+      float: left;
+      border-radius: 50%;
+      background-color: #cccccc;
+      margin-left: -150 + 35px;
+      margin-top: 13px;
+      height: 100px;
+      width: 100px;
+    }
+
+    //Name
+    .author-name {
+      display: block;
+      color: #303030;
+      margin-top: 40px;
+      font-size: 20px;
+    }
+
+    //Location
+    .author-location {
+      color: grey;
+      font-size: 13px;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+}
+
+.home-review,
+.home-sign-up-block {
+  margin-bottom: @grid-gutter-width;
+  @media @tablet-min  {
+    margin-bottom: 50px;
+  }
+}
