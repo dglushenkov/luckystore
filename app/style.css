@@ -4104,6 +4104,9 @@ button.close {
   *
   * @return Return background-image property with repeating linear gradient
 **/
+.fade-long {
+  transition: all 1.5s;
+}
 .header {
   height: 270px;
   background-color: #31485b;
