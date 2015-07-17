@@ -27,7 +27,8 @@
       var text = this.title;
       text = text.replace(/\s/g, '+');
       
-      return 'http://placehold.it/200x200/' + getColor() + '/' + getColor() + '/?text=' + text;
-    }
+      return 'https://placeholdit.imgix.net/~text?txtsize=40&bg=' + getColor() + '&txtclr=ffffff&txt=' + text + '&w=200&h=200&txttrack=0';
+   
+    }    
   }
 ]

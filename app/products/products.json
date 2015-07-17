@@ -1,802 +1,218 @@
 [
   {
-    "title": "fugiat eu consequat",
-    "category": "men-tops",
-    "tag": "sale",
-    "price": 79,
-    "oldPrice": 129,
-    "img": "http://placehold.it/200x200/27194a/9e51e7/?text=fugiat+eu+consequat"
-  },
-  {
-    "title": "sint excepteur tempor",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 131,
-    "oldPrice": 180,
-    "img": "http://placehold.it/200x200/0d7eff/73b137/?text=sint+excepteur+tempor"
-  },
-  {
-    "title": "aliquip non occaecat",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 61,
-    "oldPrice": 107,
-    "img": "http://placehold.it/200x200/176443/205bb7/?text=aliquip+non+occaecat"
-  },
-  {
-    "title": "mollit proident cupidatat",
-    "category": "men-shoes",
-    "tag": "sale",
-    "price": 129,
-    "oldPrice": 157,
-    "img": "http://placehold.it/200x200/17bb28/091881/?text=mollit+proident+cupidatat"
-  },
-  {
-    "title": "reprehenderit est fugiat",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 145,
-    "oldPrice": 169,
-    "img": "http://placehold.it/200x200/cb362f/b41665/?text=reprehenderit+est+fugiat"
-  },
-  {
-    "title": "est cillum dolor",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 90,
-    "oldPrice": 136,
-    "img": "http://placehold.it/200x200/cc9ad2/bac546/?text=est+cillum+dolor"
-  },
-  {
-    "title": "incididunt esse anim",
-    "category": "women-tops",
-    "tag": "hot",
-    "price": 102,
-    "oldPrice": 123,
-    "img": "http://placehold.it/200x200/1504fe/6a0447/?text=incididunt+esse+anim"
-  },
-  {
-    "title": "nisi velit nostrud",
-    "category": "men-shoes",
-    "tag": "sale",
-    "price": 135,
-    "oldPrice": 165,
-    "img": "http://placehold.it/200x200/2c28d6/5c96a2/?text=nisi+velit+nostrud"
-  },
-  {
-    "title": "magna enim duis",
-    "category": "women-shirts",
-    "tag": "hot",
-    "price": 84,
-    "oldPrice": 126,
-    "img": "http://placehold.it/200x200/31f7fc/a3c9ea/?text=magna+enim+duis"
-  },
-  {
-    "title": "velit eu esse",
+    "index": 0,
+    "title": "men-shoes-1",
     "category": "men-shoes",
     "tag": "new",
-    "price": 107,
-    "oldPrice": 143,
-    "img": "http://placehold.it/200x200/e7c468/f433b8/?text=velit+eu+esse"
+    "price": 50,
+    "oldPrice": 96,
+    "img": "products/img/men-shoes-1.jpg"
   },
   {
-    "title": "ex ea laboris",
-    "category": "men-tops",
-    "tag": "sale",
-    "price": 125,
-    "oldPrice": 172,
-    "img": "http://placehold.it/200x200/c96693/ad61a3/?text=ex+ea+laboris"
-  },
-  {
-    "title": "excepteur sunt exercitation",
-    "category": "women-shirts",
-    "tag": "new",
-    "price": 114,
-    "oldPrice": 156,
-    "img": "http://placehold.it/200x200/c51d20/33572a/?text=excepteur+sunt+exercitation"
-  },
-  {
-    "title": "incididunt in irure",
-    "category": "women-tops",
-    "tag": "hot",
-    "price": 120,
-    "oldPrice": 154,
-    "img": "http://placehold.it/200x200/0be54e/02ec63/?text=incididunt+in+irure"
-  },
-  {
-    "title": "ipsum nostrud consequat",
-    "category": "men-tops",
-    "tag": "new",
-    "price": 134,
-    "oldPrice": 181,
-    "img": "http://placehold.it/200x200/0fcf34/7e9fd5/?text=ipsum+nostrud+consequat"
-  },
-  {
-    "title": "fugiat velit velit",
-    "category": "women-shirts",
-    "tag": "new",
-    "price": 73,
-    "oldPrice": 121,
-    "img": "http://placehold.it/200x200/1e210d/46df32/?text=fugiat+velit+velit"
-  },
-  {
-    "title": "laboris excepteur mollit",
-    "category": "women-shoes",
-    "tag": "hot",
-    "price": 145,
-    "oldPrice": 173,
-    "img": "http://placehold.it/200x200/2193d7/5e410c/?text=laboris+excepteur+mollit"
-  },
-  {
-    "title": "ullamco cillum consequat",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 124,
-    "oldPrice": 148,
-    "img": "http://placehold.it/200x200/b5d768/0fdd21/?text=ullamco+cillum+consequat"
-  },
-  {
-    "title": "culpa laboris sit",
-    "category": "women-shirts",
-    "tag": "new",
-    "price": 134,
-    "oldPrice": 178,
-    "img": "http://placehold.it/200x200/22cc1e/251ef3/?text=culpa+laboris+sit"
-  },
-  {
-    "title": "ea nulla sit",
-    "category": "men-shirts",
-    "tag": "hot",
-    "price": 140,
-    "oldPrice": 185,
-    "img": "http://placehold.it/200x200/60137a/0c0f88/?text=ea+nulla+sit"
-  },
-  {
-    "title": "aute nisi proident",
-    "category": "women-tops",
-    "tag": "hot",
-    "price": 139,
-    "oldPrice": 184,
-    "img": "http://placehold.it/200x200/7a7133/697858/?text=aute+nisi+proident"
-  },
-  {
-    "title": "cupidatat Lorem consequat",
+    "index": 1,
+    "title": "men-shoes-2",
     "category": "men-shoes",
-    "tag": "new",
-    "price": 120,
-    "oldPrice": 152,
-    "img": "http://placehold.it/200x200/93b47a/85f672/?text=cupidatat+Lorem+consequat"
-  },
-  {
-    "title": "ullamco labore voluptate",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 146,
-    "oldPrice": 191,
-    "img": "http://placehold.it/200x200/e3b716/c3b594/?text=ullamco+labore+voluptate"
-  },
-  {
-    "title": "excepteur dolore esse",
-    "category": "women-shirts",
-    "tag": "sale",
-    "price": 127,
-    "oldPrice": 169,
-    "img": "http://placehold.it/200x200/ae6f48/6fed2f/?text=excepteur+dolore+esse"
-  },
-  {
-    "title": "quis ut eu",
-    "category": "men-tops",
-    "tag": "sale",
-    "price": 72,
-    "oldPrice": 103,
-    "img": "http://placehold.it/200x200/035923/9d7849/?text=quis+ut+eu"
-  },
-  {
-    "title": "officia dolore minim",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 54,
-    "oldPrice": 97,
-    "img": "http://placehold.it/200x200/1ac1e8/0ccb21/?text=officia+dolore+minim"
-  },
-  {
-    "title": "et labore esse",
-    "category": "men-tops",
-    "tag": "new",
-    "price": 100,
-    "oldPrice": 144,
-    "img": "http://placehold.it/200x200/41a2a6/f7c648/?text=et+labore+esse"
-  },
-  {
-    "title": "qui tempor aliqua",
-    "category": "men-shoes",
-    "tag": "new",
-    "price": 139,
-    "oldPrice": 166,
-    "img": "http://placehold.it/200x200/8fb240/6b32cd/?text=qui+tempor+aliqua"
-  },
-  {
-    "title": "labore aute ex",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 110,
-    "oldPrice": 131,
-    "img": "http://placehold.it/200x200/47a5f4/92ce59/?text=labore+aute+ex"
-  },
-  {
-    "title": "veniam deserunt incididunt",
-    "category": "women-tops",
-    "tag": "hot",
-    "price": 77,
-    "oldPrice": 108,
-    "img": "http://placehold.it/200x200/a1b0f0/a09c04/?text=veniam+deserunt+incididunt"
-  },
-  {
-    "title": "nostrud velit eu",
-    "category": "women-shirts",
-    "tag": "sale",
-    "price": 114,
-    "oldPrice": 158,
-    "img": "http://placehold.it/200x200/fb7511/14be40/?text=nostrud+velit+eu"
-  },
-  {
-    "title": "in duis cupidatat",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 139,
-    "oldPrice": 174,
-    "img": "http://placehold.it/200x200/19a1cc/a365f3/?text=in+duis+cupidatat"
-  },
-  {
-    "title": "cillum consequat minim",
-    "category": "women-shirts",
-    "tag": "sale",
-    "price": 63,
-    "oldPrice": 101,
-    "img": "http://placehold.it/200x200/5167ad/6fa9aa/?text=cillum+consequat+minim"
-  },
-  {
-    "title": "pariatur elit sit",
-    "category": "women-tops",
     "tag": "new",
     "price": 55,
-    "oldPrice": 103,
-    "img": "http://placehold.it/200x200/d4b5ec/5fa666/?text=pariatur+elit+sit"
+    "oldPrice": 78,
+    "img": "products/img/men-shoes-2.jpg"
   },
   {
-    "title": "labore duis minim",
-    "category": "men-shirts",
-    "tag": "sale",
-    "price": 107,
-    "oldPrice": 138,
-    "img": "http://placehold.it/200x200/5a59ef/d31e0e/?text=labore+duis+minim"
-  },
-  {
-    "title": "minim ea voluptate",
-    "category": "men-shirts",
-    "tag": "sale",
-    "price": 118,
-    "oldPrice": 156,
-    "img": "http://placehold.it/200x200/cde942/6e8f8f/?text=minim+ea+voluptate"
-  },
-  {
-    "title": "labore qui id",
-    "category": "women-tops",
-    "tag": "sale",
-    "price": 98,
-    "oldPrice": 142,
-    "img": "http://placehold.it/200x200/d98d53/2f36cd/?text=labore+qui+id"
-  },
-  {
-    "title": "dolore fugiat eiusmod",
-    "category": "men-shirts",
-    "tag": "sale",
-    "price": 135,
-    "oldPrice": 168,
-    "img": "http://placehold.it/200x200/bf85a4/8f645c/?text=dolore+fugiat+eiusmod"
-  },
-  {
-    "title": "aliqua aliquip fugiat",
-    "category": "men-shirts",
-    "tag": "hot",
-    "price": 142,
-    "oldPrice": 192,
-    "img": "http://placehold.it/200x200/cebfc5/7495b2/?text=aliqua+aliquip+fugiat"
-  },
-  {
-    "title": "occaecat cupidatat labore",
-    "category": "women-shoes",
-    "tag": "hot",
-    "price": 98,
-    "oldPrice": 120,
-    "img": "http://placehold.it/200x200/557a11/944936/?text=occaecat+cupidatat+labore"
-  },
-  {
-    "title": "occaecat aliquip cillum",
-    "category": "women-shirts",
-    "tag": "sale",
-    "price": 132,
-    "oldPrice": 179,
-    "img": "http://placehold.it/200x200/bab863/f783b3/?text=occaecat+aliquip+cillum"
-  },
-  {
-    "title": "in cillum deserunt",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 118,
-    "oldPrice": 146,
-    "img": "http://placehold.it/200x200/609399/3f237a/?text=in+cillum+deserunt"
-  },
-  {
-    "title": "tempor adipisicing aliquip",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 105,
-    "oldPrice": 140,
-    "img": "http://placehold.it/200x200/2a22b5/0aa9a6/?text=tempor+adipisicing+aliquip"
-  },
-  {
-    "title": "velit deserunt incididunt",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 106,
-    "oldPrice": 146,
-    "img": "http://placehold.it/200x200/012cfd/34088d/?text=velit+deserunt+incididunt"
-  },
-  {
-    "title": "cupidatat enim Lorem",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 94,
-    "oldPrice": 115,
-    "img": "http://placehold.it/200x200/f77d93/9eea05/?text=cupidatat+enim+Lorem"
-  },
-  {
-    "title": "incididunt ipsum fugiat",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 101,
-    "oldPrice": 151,
-    "img": "http://placehold.it/200x200/0a57fa/3c462d/?text=incididunt+ipsum+fugiat"
-  },
-  {
-    "title": "ad qui eiusmod",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 137,
-    "oldPrice": 161,
-    "img": "http://placehold.it/200x200/24c04a/93de99/?text=ad+qui+eiusmod"
-  },
-  {
-    "title": "culpa cupidatat cupidatat",
-    "category": "women-tops",
-    "tag": "new",
-    "price": 72,
-    "oldPrice": 113,
-    "img": "http://placehold.it/200x200/5e3f7b/162484/?text=culpa+cupidatat+cupidatat"
-  },
-  {
-    "title": "qui est quis",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 95,
-    "oldPrice": 144,
-    "img": "http://placehold.it/200x200/856b46/86ade9/?text=qui+est+quis"
-  },
-  {
-    "title": "est pariatur amet",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 93,
-    "oldPrice": 131,
-    "img": "http://placehold.it/200x200/0fa161/d0987d/?text=est+pariatur+amet"
-  },
-  {
-    "title": "cupidatat mollit anim",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 73,
-    "oldPrice": 122,
-    "img": "http://placehold.it/200x200/f6d341/a618be/?text=cupidatat+mollit+anim"
-  },
-  {
-    "title": "id dolore quis",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 95,
-    "oldPrice": 138,
-    "img": "http://placehold.it/200x200/736cf8/8da099/?text=id+dolore+quis"
-  },
-  {
-    "title": "sint ex reprehenderit",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 71,
-    "oldPrice": 103,
-    "img": "http://placehold.it/200x200/ecd8e8/386232/?text=sint+ex+reprehenderit"
-  },
-  {
-    "title": "non magna ipsum",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 106,
-    "oldPrice": 155,
-    "img": "http://placehold.it/200x200/b6b1f4/dee3e0/?text=non+magna+ipsum"
-  },
-  {
-    "title": "cupidatat consectetur officia",
-    "category": "women-shirts",
-    "tag": "hot",
-    "price": 111,
-    "oldPrice": 160,
-    "img": "http://placehold.it/200x200/44ba38/857f00/?text=cupidatat+consectetur+officia"
-  },
-  {
-    "title": "cupidatat aliqua occaecat",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 112,
-    "oldPrice": 159,
-    "img": "http://placehold.it/200x200/495b61/79f997/?text=cupidatat+aliqua+occaecat"
-  },
-  {
-    "title": "exercitation ipsum duis",
+    "index": 2,
+    "title": "men-shoes-3",
     "category": "men-shoes",
     "tag": "hot",
-    "price": 146,
-    "oldPrice": 177,
-    "img": "http://placehold.it/200x200/111e67/34fc90/?text=exercitation+ipsum+duis"
+    "price": 129,
+    "oldPrice": 160,
+    "img": "products/img/men-shoes-3.jpg"
   },
   {
-    "title": "excepteur adipisicing ad",
-    "category": "women-shirts",
-    "tag": "sale",
-    "price": 60,
-    "oldPrice": 109,
-    "img": "http://placehold.it/200x200/031e6e/449697/?text=excepteur+adipisicing+ad"
-  },
-  {
-    "title": "excepteur reprehenderit adipisicing",
-    "category": "men-shirts",
+    "index": 3,
+    "title": "men-shoes-4",
+    "category": "men-shoes",
     "tag": "hot",
-    "price": 77,
-    "oldPrice": 124,
-    "img": "http://placehold.it/200x200/2ac494/f21863/?text=excepteur+reprehenderit+adipisicing"
+    "price": 104,
+    "oldPrice": 125,
+    "img": "products/img/men-shoes-4.jpg"
   },
   {
-    "title": "mollit elit anim",
-    "category": "men-shirts",
+    "index": 4,
+    "title": "men-tops-1",
+    "category": "men-tops",
     "tag": "sale",
-    "price": 108,
-    "oldPrice": 136,
-    "img": "http://placehold.it/200x200/9da231/cc8b3b/?text=mollit+elit+anim"
+    "price": 95,
+    "oldPrice": 129,
+    "img": "products/img/men-tops-1.jpg"
   },
   {
-    "title": "laborum ipsum ipsum",
+    "index": 5,
+    "title": "men-tops-2",
+    "category": "men-tops",
+    "tag": "sale",
+    "price": 97,
+    "oldPrice": 140,
+    "img": "products/img/men-tops-2.jpg"
+  },
+  {
+    "index": 6,
+    "title": "men-tops-3",
+    "category": "men-tops",
+    "tag": "sale",
+    "price": 142,
+    "oldPrice": 165,
+    "img": "products/img/men-tops-3.jpg"
+  },
+  {
+    "index": 7,
+    "title": "men-tops-4",
     "category": "men-tops",
     "tag": "hot",
-    "price": 137,
-    "oldPrice": 158,
-    "img": "http://placehold.it/200x200/11c8f0/0131a2/?text=laborum+ipsum+ipsum"
+    "price": 103,
+    "oldPrice": 145,
+    "img": "products/img/men-tops-4.jpg"
   },
   {
-    "title": "id anim aute",
+    "index": 8,
+    "title": "men-shirts-1",
+    "category": "men-shirts",
+    "tag": "hot",
+    "price": 53,
+    "oldPrice": 88,
+    "img": "products/img/men-shirts-1.jpg"
+  },
+  {
+    "index": 9,
+    "title": "men-shirts-2",
+    "category": "men-shirts",
+    "tag": "sale",
+    "price": 51,
+    "oldPrice": 85,
+    "img": "products/img/men-shirts-2.jpg"
+  },
+  {
+    "index": 10,
+    "title": "men-shirts-3",
+    "category": "men-shirts",
+    "tag": "sale",
+    "price": 123,
+    "oldPrice": 164,
+    "img": "products/img/men-shirts-3.jpg"
+  },
+  {
+    "index": 11,
+    "title": "men-shirts-4",
+    "category": "men-shirts",
+    "tag": "hot",
+    "price": 80,
+    "oldPrice": 111,
+    "img": "products/img/men-shirts-4.jpg"
+  },
+  {
+    "index": 12,
+    "title": "women-shoes-1",
+    "category": "women-shoes",
+    "tag": "hot",
+    "price": 84,
+    "oldPrice": 112,
+    "img": "products/img/women-shoes-1.jpg"
+  },
+  {
+    "index": 13,
+    "title": "women-shoes-2",
+    "category": "women-shoes",
+    "tag": "hot",
+    "price": 81,
+    "oldPrice": 105,
+    "img": "products/img/women-shoes-2.jpg"
+  },
+  {
+    "index": 14,
+    "title": "women-shoes-3",
+    "category": "women-shoes",
+    "tag": "hot",
+    "price": 112,
+    "oldPrice": 148,
+    "img": "products/img/women-shoes-3.jpg"
+  },
+  {
+    "index": 15,
+    "title": "women-shoes-4",
+    "category": "women-shoes",
+    "tag": "sale",
+    "price": 130,
+    "oldPrice": 172,
+    "img": "products/img/women-shoes-4.jpg"
+  },
+  {
+    "index": 16,
+    "title": "women-tops-1",
     "category": "women-tops",
+    "tag": "sale",
+    "price": 78,
+    "oldPrice": 98,
+    "img": "products/img/women-tops-1.jpg"
+  },
+  {
+    "index": 17,
+    "title": "women-tops-2",
+    "category": "women-tops",
+    "tag": "hot",
+    "price": 83,
+    "oldPrice": 118,
+    "img": "products/img/women-tops-2.jpg"
+  },
+  {
+    "index": 18,
+    "title": "women-tops-3",
+    "category": "women-tops",
+    "tag": "hot",
+    "price": 89,
+    "oldPrice": 122,
+    "img": "products/img/women-tops-3.jpg"
+  },
+  {
+    "index": 19,
+    "title": "women-tops-4",
+    "category": "women-tops",
+    "tag": "new",
+    "price": 122,
+    "oldPrice": 145,
+    "img": "products/img/women-tops-4.jpg"
+  },
+  {
+    "index": 20,
+    "title": "women-shirts-1",
+    "category": "women-shirts",
+    "tag": "sale",
+    "price": 70,
+    "oldPrice": 108,
+    "img": "products/img/women-shirts-1.jpg"
+  },
+  {
+    "index": 21,
+    "title": "women-shirts-2",
+    "category": "women-shirts",
     "tag": "new",
     "price": 87,
     "oldPrice": 129,
-    "img": "http://placehold.it/200x200/f0b342/d1a658/?text=id+anim+aute"
+    "img": "products/img/women-shirts-2.jpg"
   },
   {
-    "title": "nostrud in aute",
+    "index": 22,
+    "title": "women-shirts-3",
     "category": "women-shirts",
     "tag": "sale",
-    "price": 74,
-    "oldPrice": 98,
-    "img": "http://placehold.it/200x200/e9a7ae/ca4a40/?text=nostrud+in+aute"
-  },
-  {
-    "title": "eu aliquip commodo",
-    "category": "men-shoes",
-    "tag": "new",
-    "price": 105,
-    "oldPrice": 145,
-    "img": "http://placehold.it/200x200/567658/7c113f/?text=eu+aliquip+commodo"
-  },
-  {
-    "title": "cillum ad quis",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 59,
-    "oldPrice": 82,
-    "img": "http://placehold.it/200x200/110ee5/65bc63/?text=cillum+ad+quis"
-  },
-  {
-    "title": "reprehenderit nisi cillum",
-    "category": "men-shoes",
-    "tag": "hot",
-    "price": 52,
-    "oldPrice": 76,
-    "img": "http://placehold.it/200x200/2afda7/cebe28/?text=reprehenderit+nisi+cillum"
-  },
-  {
-    "title": "sunt culpa sint",
-    "category": "women-tops",
-    "tag": "sale",
-    "price": 135,
-    "oldPrice": 159,
-    "img": "http://placehold.it/200x200/2f9bdf/84dca6/?text=sunt+culpa+sint"
-  },
-  {
-    "title": "deserunt fugiat tempor",
-    "category": "men-tops",
-    "tag": "sale",
-    "price": 76,
-    "oldPrice": 100,
-    "img": "http://placehold.it/200x200/7bff84/91f83e/?text=deserunt+fugiat+tempor"
-  },
-  {
-    "title": "cillum officia irure",
-    "category": "men-tops",
-    "tag": "sale",
-    "price": 54,
-    "oldPrice": 87,
-    "img": "http://placehold.it/200x200/06587f/488f2e/?text=cillum+officia+irure"
-  },
-  {
-    "title": "consequat deserunt aliquip",
-    "category": "men-shoes",
-    "tag": "hot",
-    "price": 149,
-    "oldPrice": 173,
-    "img": "http://placehold.it/200x200/10486a/66515c/?text=consequat+deserunt+aliquip"
-  },
-  {
-    "title": "et aliquip consequat",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 60,
-    "oldPrice": 108,
-    "img": "http://placehold.it/200x200/dd5e85/efcf95/?text=et+aliquip+consequat"
-  },
-  {
-    "title": "pariatur consectetur enim",
-    "category": "women-shirts",
-    "tag": "new",
-    "price": 108,
-    "oldPrice": 151,
-    "img": "http://placehold.it/200x200/d62421/37dfb4/?text=pariatur+consectetur+enim"
-  },
-  {
-    "title": "minim voluptate fugiat",
-    "category": "men-shirts",
-    "tag": "sale",
-    "price": 64,
-    "oldPrice": 113,
-    "img": "http://placehold.it/200x200/d6088c/64b8a1/?text=minim+voluptate+fugiat"
-  },
-  {
-    "title": "dolore aute eiusmod",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 136,
-    "oldPrice": 181,
-    "img": "http://placehold.it/200x200/ff5bc3/04c1f7/?text=dolore+aute+eiusmod"
-  },
-  {
-    "title": "excepteur exercitation nulla",
-    "category": "women-shoes",
-    "tag": "sale",
-    "price": 51,
-    "oldPrice": 83,
-    "img": "http://placehold.it/200x200/5d4abb/b153c7/?text=excepteur+exercitation+nulla"
-  },
-  {
-    "title": "ea incididunt velit",
-    "category": "men-shoes",
-    "tag": "sale",
-    "price": 54,
-    "oldPrice": 88,
-    "img": "http://placehold.it/200x200/7b29ed/efc757/?text=ea+incididunt+velit"
-  },
-  {
-    "title": "Lorem irure et",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 64,
-    "oldPrice": 94,
-    "img": "http://placehold.it/200x200/d95b8c/533942/?text=Lorem+irure+et"
-  },
-  {
-    "title": "ipsum incididunt aliquip",
-    "category": "women-shirts",
-    "tag": "hot",
-    "price": 123,
-    "oldPrice": 161,
-    "img": "http://placehold.it/200x200/37df53/86dc57/?text=ipsum+incididunt+aliquip"
-  },
-  {
-    "title": "nostrud fugiat non",
-    "category": "women-shirts",
-    "tag": "new",
-    "price": 73,
-    "oldPrice": 102,
-    "img": "http://placehold.it/200x200/d80d06/6d7910/?text=nostrud+fugiat+non"
-  },
-  {
-    "title": "aliqua sunt deserunt",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 130,
-    "oldPrice": 162,
-    "img": "http://placehold.it/200x200/a5376c/d8a5e4/?text=aliqua+sunt+deserunt"
-  },
-  {
-    "title": "adipisicing nisi aute",
-    "category": "men-tops",
-    "tag": "sale",
-    "price": 144,
-    "oldPrice": 186,
-    "img": "http://placehold.it/200x200/8e7a54/3e9745/?text=adipisicing+nisi+aute"
-  },
-  {
-    "title": "deserunt minim aliquip",
-    "category": "women-shoes",
-    "tag": "hot",
-    "price": 101,
-    "oldPrice": 129,
-    "img": "http://placehold.it/200x200/b33592/6bdcc0/?text=deserunt+minim+aliquip"
-  },
-  {
-    "title": "ad duis voluptate",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 59,
-    "oldPrice": 85,
-    "img": "http://placehold.it/200x200/b61667/9f39e4/?text=ad+duis+voluptate"
-  },
-  {
-    "title": "consectetur laborum culpa",
-    "category": "men-shirts",
-    "tag": "new",
-    "price": 135,
-    "oldPrice": 173,
-    "img": "http://placehold.it/200x200/80bdd1/919733/?text=consectetur+laborum+culpa"
-  },
-  {
-    "title": "laboris consequat reprehenderit",
-    "category": "women-shirts",
-    "tag": "sale",
-    "price": 134,
-    "oldPrice": 170,
-    "img": "http://placehold.it/200x200/27bcfe/57bc4e/?text=laboris+consequat+reprehenderit"
-  },
-  {
-    "title": "anim non id",
-    "category": "men-shirts",
-    "tag": "hot",
-    "price": 91,
-    "oldPrice": 127,
-    "img": "http://placehold.it/200x200/2239cf/e9d23c/?text=anim+non+id"
-  },
-  {
-    "title": "minim voluptate irure",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 139,
-    "oldPrice": 162,
-    "img": "http://placehold.it/200x200/860a9c/9150ce/?text=minim+voluptate+irure"
-  },
-  {
-    "title": "in id excepteur",
-    "category": "women-shoes",
-    "tag": "hot",
-    "price": 75,
-    "oldPrice": 99,
-    "img": "http://placehold.it/200x200/ec3211/c4908d/?text=in+id+excepteur"
-  },
-  {
-    "title": "Lorem laborum ex",
-    "category": "women-tops",
-    "tag": "sale",
-    "price": 59,
-    "oldPrice": 99,
-    "img": "http://placehold.it/200x200/484645/fa4d35/?text=Lorem+laborum+ex"
-  },
-  {
-    "title": "reprehenderit aliqua fugiat",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 114,
-    "oldPrice": 147,
-    "img": "http://placehold.it/200x200/c3bd3f/fc4bcd/?text=reprehenderit+aliqua+fugiat"
-  },
-  {
-    "title": "commodo ad laboris",
-    "category": "women-shirts",
-    "tag": "new",
-    "price": 57,
-    "oldPrice": 102,
-    "img": "http://placehold.it/200x200/1c0781/36736b/?text=commodo+ad+laboris"
-  },
-  {
-    "title": "quis aute sit",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 92,
-    "oldPrice": 138,
-    "img": "http://placehold.it/200x200/c2a9d7/a419e6/?text=quis+aute+sit"
-  },
-  {
-    "title": "exercitation adipisicing et",
-    "category": "men-shoes",
-    "tag": "new",
-    "price": 52,
-    "oldPrice": 72,
-    "img": "http://placehold.it/200x200/1a1854/26fccb/?text=exercitation+adipisicing+et"
-  },
-  {
-    "title": "adipisicing cillum cupidatat",
-    "category": "women-shoes",
-    "tag": "hot",
-    "price": 106,
-    "oldPrice": 152,
-    "img": "http://placehold.it/200x200/d7fe11/7d1b38/?text=adipisicing+cillum+cupidatat"
-  },
-  {
-    "title": "dolore reprehenderit fugiat",
-    "category": "men-tops",
-    "tag": "sale",
-    "price": 68,
+    "price": 77,
     "oldPrice": 107,
-    "img": "http://placehold.it/200x200/4e63ca/e424a1/?text=dolore+reprehenderit+fugiat"
+    "img": "products/img/women-shirts-3.jpg"
   },
   {
-    "title": "voluptate officia irure",
-    "category": "women-tops",
+    "index": 23,
+    "title": "women-shirts-4",
+    "category": "women-shirts",
     "tag": "sale",
-    "price": 110,
-    "oldPrice": 136,
-    "img": "http://placehold.it/200x200/ac9180/0289f9/?text=voluptate+officia+irure"
-  },
-  {
-    "title": "laboris commodo laboris",
-    "category": "men-tops",
-    "tag": "hot",
-    "price": 123,
-    "oldPrice": 165,
-    "img": "http://placehold.it/200x200/4019c2/e2de9c/?text=laboris+commodo+laboris"
-  },
-  {
-    "title": "sit nulla adipisicing",
-    "category": "women-shoes",
-    "tag": "new",
-    "price": 61,
-    "oldPrice": 110,
-    "img": "http://placehold.it/200x200/e276c5/0a2949/?text=sit+nulla+adipisicing"
-  },
-  {
-    "title": "qui reprehenderit incididunt",
-    "category": "women-tops",
-    "tag": "hot",
-    "price": 81,
-    "oldPrice": 108,
-    "img": "http://placehold.it/200x200/7f70dd/3ab10e/?text=qui+reprehenderit+incididunt"
-  },
-  {
-    "title": "labore exercitation esse",
-    "category": "men-shoes",
-    "tag": "sale",
-    "price": 135,
-    "oldPrice": 164,
-    "img": "http://placehold.it/200x200/9f198c/764b40/?text=labore+exercitation+esse"
-  },
-  {
-    "title": "irure consectetur reprehenderit",
-    "category": "women-shoes",
-    "tag": "hot",
-    "price": 97,
-    "oldPrice": 137,
-    "img": "http://placehold.it/200x200/14b3e3/1ea3ca/?text=irure+consectetur+reprehenderit"
+    "price": 127,
+    "oldPrice": 161,
+    "img": "products/img/women-shirts-4.jpg"
   }
 ]

@@ -1,8 +1,29 @@
 //=======================================================================
 //Main navigation
 //=======================================================================
+.main-nav-container.fix-nav {
+  position: fixed;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 0;
+  z-index: 100;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  opacity: .9;
+  transition: width .2s;
+  transition-property: width, opacity;
+  .main-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .clover {
+    transform: rotate(-180deg);
+  }
+}
+
 .main-nav {
-  //Base shadow
   .box-shadow-base();
   border: none;
   margin-top: @grid-gutter-width;

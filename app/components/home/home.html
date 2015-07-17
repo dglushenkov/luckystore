@@ -1,0 +1,197 @@
+    <!--Carousel-->
+    <div class="top-carousel carousel slide js-top-carousel" data-ride="carousel">
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target=".js-top-carousel" data-slide-to="0" class="active"></li>
+            <li data-target=".js-top-carousel" data-slide-to="1"></li>
+            <li data-target=".js-top-carousel" data-slide-to="2"></li>
+        </ol>
+        <!--/Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+            <!--Slide-->
+            <div class="item active item-1">
+                <div class="item-bg"></div>
+                <div class="item-inner">
+                    <div class="inner-ribbon">
+                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
+                    </div>
+                    <div class="inner-caption">Bamboo cases</div>
+                    <div class="inner-for">for</div>
+                    <div class="inner-small-caption">Iphone & Ipad</div>
+                </div>
+            </div>
+            <!--/Slide-->
+            <!--Slide-->
+            <div class="item item-2">
+                <div class="item-bg"></div>
+                <div class="item-inner">
+                    <div class="inner-ribbon">
+                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
+                    </div>
+                    <div class="inner-caption">Bamboo cases</div>
+                    <div class="inner-for">for</div>
+                    <div class="inner-small-caption">Iphone & Ipad</div>
+                </div>
+            </div>
+            <!--/Slide-->
+            <!--Slide-->
+            <div class="item item-3">
+                <div class="item-bg"></div>
+                <div class="item-inner">
+                    <div class="inner-ribbon">
+                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
+                    </div>
+                    <div class="inner-caption">Bamboo cases</div>
+                    <div class="inner-for">for</div>
+                    <div class="inner-small-caption">Iphone & Ipad</div>
+                </div>
+            </div>
+            <!--/Slide-->
+        </div>
+        <!--/Slides-->
+
+        <!--Controls-->
+        <a class="left carousel-control" href=".js-top-carousel" role="button" data-slide="prev">
+            <span class="icon icon-arrow-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href=".js-top-carousel" role="button" data-slide="next">
+            <span class="icon icon-arrow-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+        <!--/Controls-->
+    </div>
+    <!--/Carousel-->
+
+    <!--Best sellers carousel-->
+    <div class="home-products">
+        <!--Header-->
+        <div class="products-header">
+            <div class="control-wrap control-left">
+                <button class="btn-control js-home-products-carousel-prev"><span
+                        class="icon icon-arrow-left-small"></span></button>
+            </div>
+            <div class="control-wrap control-right">
+                <button class="btn-control js-home-products-carousel-next"><span
+                        class="icon icon-arrow-right-small"></span></button>
+            </div>
+            <h2 class="caption"><span class="text-wrap">Best Sellers</span></h2>
+        </div>
+        <!--/Header-->
+
+        <!--Carousel-->
+        <div class="products-carousel">
+            <div class="owl-carousel-wrapper js-home-products-carousel">
+
+                <div class="col-xs-12" ng-repeat="product in products" ng-init-carousel>
+                    <!--Product thumbnail-->
+                    <div class="product-thumbnail product-tag-{{product.tag}}">
+                        <a href="#/home" class="img-link">
+                            <span class="overlay-wrapper">
+                                <span class="overlay">
+                                    <span class="icon icon-eye"></span>
+                                </span>
+                            </span>
+                            <span class="ribbon">{{product.tag}}!</span>
+                            <span class="img-wrapper">
+                                    <img ng-src="{{product.img}}" alt=""/>
+                            </span>
+                        </a>
+
+                        <h3 class="title">{{product.title.charAt(0).toUpperCase() + product.title.slice(1)}}</h3>
+
+                        <p class="price-row">
+                            <span class="price"><span class="currency">$</span>{{product.price}}</span>
+                            <span class="old-price">${{product.oldPrice}}</span>
+                            <a href="#/home" class="btn-cart">Add to cart</a>
+                        </p>
+                    </div>
+                    <!--/Product thumbnail-->
+                </div>
+            </div>
+        </div>
+        <!--/Carousel-->
+    </div>
+    <!--/Best sellers carousel-->
+
+    <div class="row">
+        <!--Review-->
+        <div class="home-review col-xs-12 col-sm-8">
+            <blogquote class="review-quote">
+                <span class="quote-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorum incidunt itaque magni optio possimus. Assumenda consequatur distinctio itaque iure laboriosam laborum</span>
+                <span class="icons-wrapper">
+                    <span class="icon icon-quote-open"></span>
+                    <span class="icon icon-quote-close"></span>
+                </span>
+                <span class="quote-tail"></span>
+            </blogquote>
+
+
+            <p class="review-author">
+                <a href="#/home" class="review-show-all">See all reviews</a>
+                <img src="img/avatar.jpg" alt=""/>
+                <a href="#/home" class="author-name">Jack Sparrow</a>
+                <span class="author-location">New York, USA</span>
+            </p>
+        </div>
+        <!--/Review-->
+
+        <!--Sign up-->
+        <div class="col-xs-12 col-sm-4" ng-controller="LoginCtrl">
+            <div class="sign-up-block home-sign-up-block">
+                <form class="sign-up-form" ng-submit="login()">
+                    <label for="sign-up-email" class="sign-up-label">
+                        <span class="top-text">
+                            <em class="signup">Sign up</em> & <em class="save">Save 10%</em>
+                        </span>
+                        <span class="bottom-text">for our newsletter</span>
+                    </label>
+                    <input type="email" name="sign-up-email" id="sign-up-email" class="sign-up-email"
+                           placeholder="Enter your email address"/>
+                    <input type="submit" value="Sign Up" class="sign-up-submit"/>
+                </form>
+                <div class="icon icon-sign-up-email"></div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade js-response-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title">{{res.title}}</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="alert alert-{{res.msgType}}">
+                                {{res.msg}}
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Modal-->
+        </div>
+        <!--/Sign up-->
+    </div>
+
+    <!--Pagination-->
+    <div class="pagination">
+        <a href="#/home" class="pagination-prev"><span class="icon icon-arrow-left-small"></span>Previous</a>
+        <a href="#/home" class="pagination-next">next <span class="icon icon-arrow-right-small"></span></a>
+        <ol>
+            <li><a href="#/home">1</a></li>
+            <li class="dots"><a href="#">…</a></li>
+            <li><a href="#/home">13</a></li>
+            <li><a href="#/home">14</a></li>
+            <li class="active"><a href="#/home">15</a></li>
+            <li><a href="#/home">16</a></li>
+            <li><a href="#/home">17</a></li>
+            <li class="dots"><a href="#/home">…</a></li>
+            <li><a href="#/home">35</a></li>
+        </ol>
+    </div>
+    <!--/Pagination-->

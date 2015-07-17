@@ -13,7 +13,7 @@
 <header class="header">
     <div class="container">
         <h1 class="header-title">
-            <a href="" class="title-link">
+            <a href="#/" class="title-link">
                 <span class="clover title-clover">
                     <span class="clover-petal clover-petal-top">
                         <span class="petal-inner"></span>
@@ -42,7 +42,7 @@
 </header>
 <!--/Header-->
 
-<div class="container">
+<div class="container main-nav-container">
     <!--Main navigation-->
     <nav class="navbar navbar-default main-nav" role="navigation">
         <!--Navigation header-->
@@ -55,7 +55,7 @@
             </button>
 
             <!--Navigation logo-->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#/">
                 <span class="clover main-nav-clover">
                     <span class="clover-petal clover-petal-top">
                         <span class="petal-inner"></span>
@@ -83,34 +83,38 @@
         <div class="collapse navbar-collapse main-navbar-collapse">
             <!--Right buttons-->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" class="icon icon-search"><span class="visible-xs-inline">Search</span></a></li>
-                <li><a href="#" class="icon icon-shopping-cart"><span class="visible-xs-inline">Shopping cart</span></a>
+                <li><a href="#/home" class="icon icon-search"><span class="visible-xs-inline">Search</span></a></li>
+                <li><a href="#/home" class="icon icon-shopping-cart"><span class="visible-xs-inline">Shopping cart</span></a>
                 </li>
-                <li><a href="#" class="icon icon-profile"><span class="visible-xs-inline">Profile</span></a></li>
+                <li><a href="#/home" class="icon icon-profile"><span class="visible-xs-inline">Profile</span></a></li>
             </ul>
             <!--/Right buttons-->
 
             <!--Links -->
             <ul class="nav navbar-nav navbar-text-items">
-                <li class="dropdown navbar-text-item-men">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
+                <li class="dropdown navbar-text-item-men" ng-class="{active:isActiveTab('men')}">
+                    <a href="#" class="dropdown-toggle js-click-prevent-defaults" data-toggle="dropdown">Men <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Category 1</a></li>
-                        <li><a href="#">Category 2</a></li>
-                        <li><a href="#">Category 3</a></li>
-                        <li><a href="#">Category 4</a></li>
+                        <li><a href="#/sales/category/men/tag/all">All men</a></li>
+                        <li><a href="#/sales/category/men-shoes/tag/all">Shoes</a></li>
+                        <li><a href="#/sales/category/men-tops/tag/all">Tops</a></li>
+                        <li><a href="#/sales/category/men-shirts/tag/all">Shirts</a></li>
+                        <li><a href="#/sales/category/men/tag/new">New</a></li>
+                        <li><a href="#/sales/category/men/tag/hot">Hot</a></li>
                     </ul>
                 </li>
                 <li class="dropdown navbar-text-item-women">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle js-click-prevent-defaults" data-toggle="dropdown">Women <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Category 1</a></li>
-                        <li><a href="#">Category 2</a></li>
-                        <li><a href="#">Category 3</a></li>
-                        <li><a href="#">Category 4</a></li>
+                        <li><a href="#/sales/category/women/tag/all">All women</a></li>
+                        <li><a href="#/sales/category/women-shoes/tag/all">Shoes</a></li>
+                        <li><a href="#/sales/category/women-tops/tag/all">Tops</a></li>
+                        <li><a href="#/sales/category/women-shirts/tag/all">Shirts</a></li>
+                        <li><a href="#/sales/category/women/tag/new">New</a></li>
+                        <li><a href="#/sales/category/women/tag/hot">Hot</a></li>
                     </ul>
                 </li>
-                <li class="navbar-text-item-sale"><a href="#">Sale!</a></li>
+                <li class="navbar-text-item-sale"><a href="#/sales/category/all/tag/all">Sale!</a></li>
                 <li class="navbar-text-item-login"><a href="#">Login</a></li>
                 <li class="navbar-text-item-contacts"><a href="#">Contacts</a></li>
             </ul>
@@ -118,581 +122,17 @@
         </div>
     </nav>
     <!--/Main navigation-->
+</div>
 
-    <!--Carousel-->
-    <div class="top-carousel carousel slide js-top-carousel" data-ride="carousel">
-        <!--Indicators-->
-        <ol class="carousel-indicators">
-            <li data-target=".js-top-carousel" data-slide-to="0" class="active"></li>
-            <li data-target=".js-top-carousel" data-slide-to="1"></li>
-            <li data-target=".js-top-carousel" data-slide-to="2"></li>
-        </ol>
-        <!--/Indicators-->
-
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
-            <!--Slide-->
-            <div class="item active item-1">
-                <div class="item-bg"></div>
-                <div class="item-inner">
-                    <div class="inner-ribbon">
-                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
-                    </div>
-                    <div class="inner-caption">Bamboo cases</div>
-                    <div class="inner-for">for</div>
-                    <div class="inner-small-caption">Iphone & Ipad</div>
-                </div>
-            </div>
-            <!--/Slide-->
-            <!--Slide-->
-            <div class="item item-2">
-                <div class="item-bg"></div>
-                <div class="item-inner">
-                    <div class="inner-ribbon">
-                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
-                    </div>
-                    <div class="inner-caption">Bamboo cases</div>
-                    <div class="inner-for">for</div>
-                    <div class="inner-small-caption">Iphone & Ipad</div>
-                </div>
-            </div>
-            <!--/Slide-->
-            <!--Slide-->
-            <div class="item item-3">
-                <div class="item-bg"></div>
-                <div class="item-inner">
-                    <div class="inner-ribbon">
-                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
-                    </div>
-                    <div class="inner-caption">Bamboo cases</div>
-                    <div class="inner-for">for</div>
-                    <div class="inner-small-caption">Iphone & Ipad</div>
-                </div>
-            </div>
-            <!--/Slide-->
-        </div>
-        <!--/Slides-->
-
-        <!--Controls-->
-        <a class="left carousel-control" href=".js-top-carousel" role="button" data-slide="prev">
-            <span class="icon icon-arrow-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href=".js-top-carousel" role="button" data-slide="next">
-            <span class="icon icon-arrow-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <!--/Controls-->
-    </div>
-    <!--/Carousel-->
-
-    <!--Best sellers carousel-->
-    <div class="home-products">
-        <!--Header-->
-        <div class="products-header">
-            <div class="control-wrap control-left">
-                <button class="btn-control js-home-products-carousel-prev"><span
-                        class="icon icon-arrow-left-small"></span></button>
-            </div>
-            <div class="control-wrap control-right">
-                <button class="btn-control js-home-products-carousel-next"><span
-                        class="icon icon-arrow-right-small"></span></button>
-            </div>
-            <h2 class="caption"><span class="text-wrap">Best Sellers</span></h2>
-        </div>
-        <!--/Header-->
-
-        <!--Carousel-->
-        <div class="products-carousel">
-            <div class="owl-carousel-wrapper js-home-products-carousel">
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Sale!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers Lorem ipsum dolor sit amet.</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-new">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">New!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/converse.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Sale!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-new">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">New!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/converse.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Sale!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-new">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">New!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/converse.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Sale!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-new">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">New!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/shoes.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-
-                <div class="col-xs-12">
-                    <!--Product thumbnail-->
-                    <div class="product-thumbnail product-category-hot">
-                        <a href="#" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">Hot!</span>
-                            <span class="img-wrapper">
-                                    <img src="img/converse.jpg" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">3 Pics Ballet Dancers</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>57</span>
-                            <span class="old-price">$70</span>
-                            <a href="#" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
-                    <!--/Product thumbnail-->
-                </div>
-            </div>
-        </div>
-        <!--/Carousel-->
-    </div>
-    <!--/Best sellers carousel-->
-
-    <div class="row">
-        <!--Review-->
-        <div class="home-review col-xs-12 col-sm-8">
-            <blogquote class="review-quote">
-                <span class="quote-inner">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium dolorum incidunt itaque magni optio possimus. Assumenda consequatur distinctio itaque iure laboriosam laborum</span>
-                <span class="icons-wrapper">
-                    <span class="icon icon-quote-open"></span>
-                    <span class="icon icon-quote-close"></span>
-                </span>
-                <span class="quote-tail"></span>
-            </blogquote>
-
-
-            <p class="review-author">
-                <a href="#" class="review-show-all">See all reviews</a>
-                <img src="img/avatar.jpg" alt=""/>
-                <a href="#" class="author-name">Jack Sparrow</a>
-                <span class="author-location">New York, USA</span>
-            </p>
-        </div>
-        <!--/Review-->
-
-        <!--Sign up-->
-        <div class="col-xs-12 col-sm-4">
-            <div class="sign-up-block home-sign-up-block">
-                <form action="" class="sign-up-form">
-                    <label for="sign-up-email" class="sign-up-label">
-                        <span class="top-text">
-                            <em class="signup">Sign up</em> & <em class="save">Save 10%</em>
-                        </span>
-                        <span class="bottom-text">for our newsletter</span>
-                    </label>
-                    <input type="email" name="sign-up-email" id="sign-up-email" class="sign-up-email"
-                           placeholder="Enter your email address"/>
-                    <input type="submit" value="Sign Up" class="sign-up-submit"/>
-                </form>
-                <div class="icon icon-sign-up-email"></div>
-            </div>
-        </div>
-        <!--/Sign up-->
-    </div>
-
-    <!--Pagination-->
-    <div class="pagination">
-        <a href="#" class="pagination-prev"><span class="icon icon-arrow-left-small"></span>Previous</a>
-        <a href="#" class="pagination-next">next <span class="icon icon-arrow-right-small"></span></a>
-        <ol>
-            <li><a href="#">1</a></li>
-            <li class="dots"><a href="#">…</a></li>
-            <li><a href="#">13</a></li>
-            <li><a href="#">14</a></li>
-            <li class="active"><a href="#">15</a></li>
-            <li><a href="#">16</a></li>
-            <li><a href="#">17</a></li>
-            <li class="dots"><a href="#">…</a></li>
-            <li><a href="#">35</a></li>
-        </ol>
-    </div>
-    <!--/Pagination-->
+<div class="container">
+    <div ng-view></div>
 </div>
 
 <!--Footer-->
 <footer class="footer">
     <div class="footer-links">
         <div class="container">
-            <a href="#" class="home-link">
+            <a href="#/" class="home-link">
                 <span class="clover footer-clover">
                     <span class="clover-petal clover-petal-top">
                         <span class="petal-inner"></span>
@@ -716,11 +156,11 @@
 
             <p>You can buy full version here:</p>
 
-            <p><a href="#">UIChest.com/lucky-store</a></p></div>
+            <p><a href="#/home">UIChest.com/lucky-store</a></p></div>
     </div>
     <address>
         <div class="container">
-            Created by <a href="#">Sergey Azovskiy</a>
+            Created by <a href="#/home">Sergey Azovskiy</a>
         </div>
     </address>
 </footer>
@@ -730,7 +170,7 @@
 <script src="lib/bootstrap/bootstrap.min.js"></script>
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/angular/angular.js"></script>
-<!-- <script src="lib/angular/angular-route.min.js"></script> -->
+<script src="lib/angular/angular-route.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
