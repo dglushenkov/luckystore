@@ -4492,11 +4492,24 @@ button.close {
 .main-nav .navbar-brand:hover .clover {
   transform: rotate(180deg);
 }
-.main-nav .navbar-nav .open .dropdown-menu > li > a {
+.main-nav .navbar-nav .dropdown-menu > li > a {
   line-height: 2;
 }
 .main-nav .dropdown-menu {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+@media screen and (max-width: 769px) {
+  .main-nav .dropdown-menu {
+    box-shadow: none;
+    border: none;
+  }
+  .main-nav .dropdown-menu.slidingUp {
+    position: static;
+    float: none;
+  }
+  .main-nav .dropdown-menu.slidingUp > li > a {
+    padding: 5px 15px 5px 25px;
+  }
 }
 .main-nav .dropdown-menu li {
   font-size: 16px;

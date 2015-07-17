@@ -143,12 +143,23 @@
   //=======================================================================
   //Dropdowns
   //=======================================================================
-  .navbar-nav .open .dropdown-menu > li > a {
+  .navbar-nav .dropdown-menu > li > a {
     line-height: 2;
   }
 
   .dropdown-menu {
     .box-shadow-base();
+    @media screen and (max-width: (@screen-sm + 1)) {
+      box-shadow: none;
+      border: none;
+      &.slidingUp {
+        position: static;
+        float: none;
+        > li > a {
+          padding: 5px 15px 5px 25px;
+        }
+      }
+    }
     li {
       font-size: 16px;
     }

@@ -30,16 +30,30 @@ function owlCarouselInit(selector) {
 }
 
 $(function() {
+    // Prevent default on dropdown menu items
     $('.js-click-prevent-defaults').on('click', function(e) {
         e.preventDefault();
     });
 
+    // Fix navigation on scroll
     $(window).on('scroll', function(e) {
         if ($(window).scrollTop() > 300) {
             $('.main-nav-container').addClass('fix-nav');
         } else {
             $('.main-nav-container').removeClass('fix-nav');
         }
+    });
+
+    $('.dropdown').on('show.bs.dropdown', function(e) {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
+    });
+
+    $('.dropdown').on('hide.bs.dropdown', function(e) {
+        var menu = $(this).find('.dropdown-menu').first().stop(true, true);
+        menu.addClass('slidingUp')
+            .slideUp(150, function() {
+                $(this).removeClass('slidingUp');
+            })
     });
 });
 
