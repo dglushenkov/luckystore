@@ -420,7 +420,7 @@ h6,
   font-family: inherit;
   font-weight: 700;
   line-height: 1.1;
-  color: inherit;
+  color: #303030;
 }
 h1 small,
 h2 small,
@@ -4349,6 +4349,18 @@ button.close {
   background-color: #31485b;
   border-radius: 50%;
 }
+.main-nav-container {
+  transition: width .2s;
+  transition-property: width, opacity;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .main-nav-container {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}
 .main-nav-container.fix-nav {
   position: fixed;
   margin-top: 0;
@@ -4360,8 +4372,6 @@ button.close {
   transform: translateX(-50%);
   top: 0;
   opacity: .9;
-  transition: width .2s;
-  transition-property: width, opacity;
 }
 .main-nav-container.fix-nav .main-nav {
   margin-top: 0;
@@ -4370,18 +4380,15 @@ button.close {
 .main-nav-container.fix-nav .clover {
   transform: rotate(-180deg);
 }
+.main-nav-placeholder {
+  display: none;
+}
 .main-nav {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+  margin-top: 0;
+  margin-bottom: 0;
   border: none;
-  margin-top: 20px;
-  margin-bottom: 20px;
   border-radius: 4px;
-}
-@media screen and (min-width: 768px) {
-  .main-nav {
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
 }
 .main-nav .navbar-nav > li > a {
   text-transform: uppercase;
@@ -4781,7 +4788,6 @@ button.close {
 }
 .home-products .products-header .text-wrap {
   font-size: 30px;
-  color: #303030;
   font-weight: 400;
   position: relative;
   background-color: #f3f3f3;
@@ -4895,7 +4901,6 @@ button.close {
   width: 100%;
 }
 .product-thumbnail .title {
-  color: #303030;
   font-size: 16px;
   font-weight: normal;
   margin: 15px 15px 0;
@@ -5335,4 +5340,19 @@ button.close {
   .sales-product {
     width: 50%;
   }
+}
+.contacts .contacts-title {
+  font-weight: 400;
+  margin-top: 0;
+}
+.contacts .map-wrapper {
+  padding-top: 50%;
+  position: relative;
+}
+.contacts .google-maps {
+  position: absolute !important;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
 }

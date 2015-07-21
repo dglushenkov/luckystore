@@ -92,7 +92,7 @@
 
             <!--Links -->
             <ul class="nav navbar-nav navbar-text-items">
-                <li class="dropdown navbar-text-item-men" ng-class="{active:isActiveTab('men')}">
+                <li class="dropdown navbar-text-item-men">
                     <a href="#" class="dropdown-toggle js-click-prevent-defaults" data-toggle="dropdown">Men <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li><a href="#/sales/category/men/tag/all">All men</a></li>
@@ -116,13 +116,14 @@
                 </li>
                 <li class="navbar-text-item-sale"><a href="#/sales/category/all/tag/all">Sale!</a></li>
                 <li class="navbar-text-item-login"><a href="#">Login</a></li>
-                <li class="navbar-text-item-contacts"><a href="#">Contacts</a></li>
+                <li class="navbar-text-item-contacts"><a href="#/contacts">Contacts</a></li>
             </ul>
             <!--/Links-->
         </div>
     </nav>
     <!--/Main navigation-->
 </div>
+<div class="main-nav-placeholder"></div>
 
 <div class="container">
     <div ng-view></div>
@@ -171,6 +172,7 @@
 <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 <script src="lib/angular/angular.js"></script>
 <script src="lib/angular/angular-route.min.js"></script>
+<script src="//maps.googleapis.com/maps/api/js"></script>
 <script src="app.js"></script>
 </body>
 </html>

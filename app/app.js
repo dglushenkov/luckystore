@@ -6,11 +6,11 @@ $(function() {
         e.preventDefault();
     });
 
-    $(window).on('scroll', function(e) {
-        if ($(window).scrollTop() > 300) {
-            $('.main-nav-container').addClass('fix-nav');
+    $(window).on('scroll.stickyNav', function(e) {
+        if ($(window).scrollTop() > stickyNav.getNavBottom()) {
+            stickyNav.makeSticky();
         } else {
-            $('.main-nav-container').removeClass('fix-nav');
+            stickyNav.removeSticky();
         }
     });
 
@@ -25,6 +25,56 @@ $(function() {
                 $(this).removeClass('slidingUp');
             })
     });
+
+
+    var stickyNav = {
+        isSticky: false,
+        nav: $('.main-nav-container'),
+        placeholder: $('.main-nav-placeholder'),
+
+        getNavBottom: function() {
+            var container = (this.isSticky) ? this.placeholder : this.nav;
+            var bottom = container.height() + container.offset().top;
+            return bottom;
+        },
+
+        makeSticky: function() {
+            if (this.isSticky) return;
+
+            this.placeholder.height(this.nav.height());
+            this.placeholder.css({
+                marginTop: this.nav.css('margin-top'),
+                marginBottom: this.nav.css('margin-bottom')
+            })
+            this.placeholder.show();
+            this.nav.addClass('fix-nav');
+            this.closeDropdowns();
+
+            this.isSticky = true;
+        },
+
+        closeDropdowns: function() {
+            this.nav.find('.dropdown-toggle').each(function() {
+                var $this = $(this);
+                if ($this.closest('.dropdown').hasClass('open')) {
+                    console.log('isVisible');
+                    $this.dropdown('toggle');
+                }
+            });
+        },
+
+        removeSticky: function() {
+            if (!this.isSticky) return;
+
+            this.placeholder.hide();
+            this.nav.removeClass('fix-nav');
+            this.closeDropdowns();2
+
+            this.isSticky = false;
+        }
+    }
+
+    $(window).trigger('scroll.stickyNav');
 });
 
 //=======================================================================
@@ -43,12 +93,26 @@ app.config(['$routeProvider',
                 templateUrl: 'components/sales/sales.html',
                 controller: 'SalesCtrl'
             })
+            .when('/contacts', {
+                templateUrl: 'components/contacts/contacts.html',
+                controller: 'ContactsCtrl'
+            })
             .otherwise({
                 redirectTo: '/home'
             });
 }]);
 
 
+app.controller('ContactsCtrl', ['$scope', function($scope) {
+    var mapCanvas = document.querySelector('.js-google-maps');
+    var mapOptions = {
+        center: new google.maps.LatLng(44.5403, -78.5463),
+        zoom: 8,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false
+    };
+    var map = new google.maps.Map(mapCanvas, mapOptions);
+}]);
 app.controller('HomeCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
         $http.get('products/products.json').success(function(data) {

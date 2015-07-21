@@ -1,6 +1,17 @@
 //=======================================================================
 //Main navigation
 //=======================================================================
+.main-nav-container {
+  transition: width .2s;
+  transition-property: width, opacity;
+  margin-top: @grid-gutter-width;
+  margin-bottom: @grid-gutter-width;
+  @media @tablet-min {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}
+
 .main-nav-container.fix-nav {
   position: fixed;
   margin-top: 0;
@@ -12,8 +23,6 @@
   transform: translateX(-50%);
   top: 0;
   opacity: .9;
-  transition: width .2s;
-  transition-property: width, opacity;
   .main-nav {
     margin-top: 0;
     margin-bottom: 0;
@@ -23,16 +32,16 @@
   }
 }
 
+.main-nav-placeholder {
+  display: none;
+}
+
 .main-nav {
   .box-shadow-base();
+  margin-top: 0;
+  margin-bottom: 0;
   border: none;
-  margin-top: @grid-gutter-width;
-  margin-bottom: @grid-gutter-width;
   border-radius: @border-radius-base;
-  @media @tablet-min {
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
 
   //=======================================================================
   //Links
