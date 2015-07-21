@@ -1,3 +1,76 @@
+//=======================================================================
+// DOM
+//=======================================================================
+$(function() {
+    $('.js-click-prevent-defaults').on('click', function(e) {
+        e.preventDefault();
+    });
+
+    $(window).on('scroll', function(e) {
+        if ($(window).scrollTop() > 300) {
+            $('.main-nav-container').addClass('fix-nav');
+        } else {
+            $('.main-nav-container').removeClass('fix-nav');
+        }
+    });
+
+    $('.dropdown').on('show.bs.dropdown', function(e) {
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
+    });
+
+    $('.dropdown').on('hide.bs.dropdown', function(e) {
+        var menu = $(this).find('.dropdown-menu').first().stop(true, true);
+        menu.addClass('slidingUp')
+            .slideUp(150, function() {
+                $(this).removeClass('slidingUp');
+            })
+    });
+});
+
+//=======================================================================
+// Angular
+//=======================================================================
+var app = angular.module('luckystore', ['ngRoute']);
+
+app.config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider
+            .when('/home', {
+                templateUrl: 'components/home/home.html',
+                controller: 'HomeCtrl'
+            })
+            .when('/sales/category/:category/tag/:tag', {
+                templateUrl: 'components/sales/sales.html',
+                controller: 'SalesCtrl'
+            })
+            .otherwise({
+                redirectTo: '/home'
+            });
+}]);
+
+
+app.controller('HomeCtrl', ['$scope', '$http', '$routeParams',
+    function($scope, $http, $routeParams) {
+        $http.get('products/products.json').success(function(data) {
+            $scope.products = data;
+        });
+
+        $scope.newsletter = function() {
+            $http.get('components/dummy_response/login.json').success(function(data) {
+                $scope.res = data;
+                $('.js-response-modal').modal('show');
+            });
+        }
+}]);
+
+app.directive('ngInitCarousel', function() {
+    return function(scope, element, attr) {
+        if (scope.$last) {
+            owlCarouselInit('.js-home-products-carousel');
+        }
+    }
+});
+
 function owlCarouselInit(selector) {
     var owl = $(selector);
     $('.js-home-products-carousel-prev').on('click', function() {
@@ -29,70 +102,6 @@ function owlCarouselInit(selector) {
     });
 }
 
-$(function() {
-    // Prevent default on dropdown menu items
-    $('.js-click-prevent-defaults').on('click', function(e) {
-        e.preventDefault();
-    });
-
-    // Fix navigation on scroll
-    $(window).on('scroll', function(e) {
-        if ($(window).scrollTop() > 300) {
-            $('.main-nav-container').addClass('fix-nav');
-        } else {
-            $('.main-nav-container').removeClass('fix-nav');
-        }
-    });
-
-    $('.dropdown').on('show.bs.dropdown', function(e) {
-        $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
-    });
-
-    $('.dropdown').on('hide.bs.dropdown', function(e) {
-        var menu = $(this).find('.dropdown-menu').first().stop(true, true);
-        menu.addClass('slidingUp')
-            .slideUp(150, function() {
-                $(this).removeClass('slidingUp');
-            })
-    });
-});
-
-// Angular
-var app = angular.module('luckystore', ['ngRoute']);
-
-app.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider
-            .when('/home', {
-                templateUrl: 'components/home/home.html',
-                controller: 'HomeCtrl'
-            })
-            .when('/sales/category/:category/tag/:tag', {
-                templateUrl: 'components/sales/sales.html',
-                controller: 'SalesCtrl'
-            })
-            .otherwise({
-                redirectTo: '/home'
-            });
-}]);
-
-app.controller('HomeCtrl', ['$scope', '$http', '$routeParams',
-    function($scope, $http, $routeParams) {
-        $http.get('products/products.json').success(function(data) {
-            $scope.products = data;
-        })
-}]);
-
-app.controller('LoginCtrl', ['$scope', '$http',
-    function($scope, $http) {
-        $scope.login = function() {
-            $http.get('components/login.json').success(function(data) {
-                $scope.res = data;
-                $('.js-response-modal').modal('show');
-            });
-        }
-}]);
-
 app.controller('SalesCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
         $http.get('products/products.json').success(function(data) {
@@ -101,7 +110,6 @@ app.controller('SalesCtrl', ['$scope', '$http', '$routeParams',
 
         $scope.category = $routeParams.category;
         $scope.tag = $routeParams.tag;
-        console.log($scope.category);
 
         $scope.isMatchParams = function(product) {
             if ($scope.category != 'all') {
@@ -122,11 +130,3 @@ app.controller('SalesCtrl', ['$scope', '$http', '$routeParams',
             return true;
         }
 }]);
-
-app.directive('ngInitCarousel', function() {
-    return function(scope, element, attr) {
-        if (scope.$last) {
-            owlCarouselInit('.js-home-products-carousel');
-        }
-    }
-})

@@ -3,14 +3,7 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     iconfont = require('gulp-iconfont'),
     iconfontCss = require('gulp-iconfont-css'),
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload;
-
-//Get bootstrap js
-gulp.task('bootstrap-js', function () {
-    gulp.src('bower_components/bootstrap/dist/js/bootstrap.min.js')
-        .pipe(gulp.dest('app/lib/bootstrap/'));
-});
+    concat = require('gulp-concat');
 
 //Less
 gulp.task('less', function () {
@@ -21,6 +14,13 @@ gulp.task('less', function () {
         })
         .pipe(gulp.dest('app/'));
 });
+
+// Javascript
+gulp.task('js', function() {
+    gulp.src(['app/js/main.js', 'app/components/**/*.js'])
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('app/'));
+    })
 
 //Iconfont
 gulp.task('iconfont', function(){
@@ -41,27 +41,30 @@ gulp.task('iconfont', function(){
 gulp.task('watch', function () {
     livereload.listen();
 
-    //svg
+    //Build svg
     gulp.watch('app/svg/**/*.svg', ['iconfont']);
 
-    //less
-    gulp.watch(['app/less/**/*.less', 'bower_components/bootstrap/less/**/*.less'], ['less']);
+    //Build less
+    gulp.watch('app/less/**/*.less', ['less']);
 
-    //html
+    //Build js
+    gulp.watch(['app/js/**/*.js', 'app/components/**/*.js'], ['js']);
+
+    //Watch html
     gulp.watch('app/**/*.html')
         .on('change', livereload.changed);
 
-    //css
+    //Watch css
     gulp.watch('app/style.css')
         .on('change', livereload.changed);
 
-    //js
-    gulp.watch('app/js/app.js')
+    //Watch js
+    gulp.watch('app/app.js')
         .on('change', livereload.changed);
 });
 
 //Build
-gulp.task('build', ['bootstrap-js', 'less', 'iconfont']);
+gulp.task('build', ['less', 'iconfont', 'js']);
 
 //Default
 gulp.task('default', ['watch']);
