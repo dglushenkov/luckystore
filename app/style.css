@@ -4436,6 +4436,9 @@ button.close {
     width: 24.14%;
   }
 }
+.main-nav .navbar-collapse {
+  overflow: hidden;
+}
 .main-nav .navbar-right .icon:before {
   font-size: 24px;
   display: inline;
