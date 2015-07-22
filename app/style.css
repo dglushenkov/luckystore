@@ -4361,6 +4361,9 @@ button.close {
     margin-top: 50px;
   }
 }
+.dropdown-menu {
+  transition: height .3s;
+}
 .main-nav-container.fix-nav {
   position: fixed;
   margin-top: 0;
