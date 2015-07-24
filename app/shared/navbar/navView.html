@@ -1,0 +1,82 @@
+<!--Main navigation-->
+<div class="container main-nav-container" ng-controller="NavbarCtrl">
+    <nav class="navbar navbar-default main-nav">
+        <!--Navigation header-->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-click="toggleNav()">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!--Navigation logo-->
+            <a class="navbar-brand" href="#/">
+                <span class="clover main-nav-clover">
+                    <span class="clover-petal clover-petal-top">
+                        <span class="petal-inner"></span>
+                    </span>
+                    <span class="clover-petal clover-petal-right">
+                        <span class="petal-inner"></span>
+                    </span>
+                    <span class="clover-petal clover-petal-bottom">
+                        <span class="petal-inner"></span>
+                    </span>
+                    <span class="clover-petal clover-petal-left">
+                        <span class="petal-inner"></span>
+                    </span>
+                    <span class="clover-cogwheel">
+                        <span class="cog cog-1"></span>
+                        <span class="cog cog-2"></span>
+                        <span class="wheel"></span>
+                    </span>
+                </span>
+            </a>
+            <!--/Navigation logo-->
+        </div>
+        <!--/Navigation header-->
+
+        <div class="collapse navbar-collapse main-navbar-collapse" collapse="isCollapsed">
+            <!--Right buttons-->
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/home" class="icon icon-search"><span class="visible-xs-inline">Search</span></a></li>
+                <li><a href="#/home" class="icon icon-shopping-cart"><span class="visible-xs-inline">Shopping cart</span></a>
+                </li>
+                <li><a href="#/home" class="icon icon-profile"><span class="visible-xs-inline">Profile</span></a></li>
+            </ul>
+            <!--/Right buttons-->
+
+            <!--Links -->
+            <ul class="nav navbar-nav navbar-text-items">
+                <li class="dropdown navbar-text-item-men" dropdown is-open="dropdowns.dropdown1IsOpen">
+                    <a href="#" class="dropdown-toggle js-click-prevent-defaults" dropdown-toggle>Men <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/sales/category/men/tag/all">All men</a></li>
+                        <li><a href="#/sales/category/men-shoes/tag/all">Shoes</a></li>
+                        <li><a href="#/sales/category/men-tops/tag/all">Tops</a></li>
+                        <li><a href="#/sales/category/men-shirts/tag/all">Shirts</a></li>
+                        <li><a href="#/sales/category/men/tag/new">New</a></li>
+                        <li><a href="#/sales/category/men/tag/hot">Hot</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown navbar-text-item-women" dropdown is-open="dropdowns.dropdown2IsOpen">
+                    <a href="#" class="dropdown-toggle js-click-prevent-defaults" dropdown-toggle>Women <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/sales/category/women/tag/all">All women</a></li>
+                        <li><a href="#/sales/category/women-shoes/tag/all">Shoes</a></li>
+                        <li><a href="#/sales/category/women-tops/tag/all">Tops</a></li>
+                        <li><a href="#/sales/category/women-shirts/tag/all">Shirts</a></li>
+                        <li><a href="#/sales/category/women/tag/new">New</a></li>
+                        <li><a href="#/sales/category/women/tag/hot">Hot</a></li>
+                    </ul>
+                </li>
+                <li class="navbar-text-item-sale"><a href="#/sales/category/all/tag/all">Sale!</a></li>
+                <li class="navbar-text-item-login"><a href="#">Login</a></li>
+                <li class="navbar-text-item-contacts"><a href="#/contacts">Contacts</a></li>
+            </ul>
+            <!--/Links-->
+        </div>
+    </nav>
+</div>
+<div class="main-nav-placeholder"></div>
+<!--/Main navigation-->
