@@ -1,4 +1,4 @@
-app.controller('NavbarCtrl', ['$scope', function($scope) {
+app.controller('navbarCtrl', ['$scope', function($scope) {
     $scope.isCollapsed = true;
     // $scope.menIsOpen = false;
     // $scope.womenIsOpen = false;

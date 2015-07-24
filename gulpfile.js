@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat');
 
 // Iconfont
+// ====================================================================
 gulp.task('iconfont', function(){
     gulp.src(['assets/svg/*.svg'])
         .pipe(iconfontCss({
@@ -25,18 +26,21 @@ gulp.task('iconfont', function(){
 });
 
 // LESS
+// ====================================================================
 gulp.task('less', function () {
-    gulp.src('assets/less/style.less')
+    gulp.src(['assets/lib/**/*.css', 'assets/less/style.less'])
         .pipe(sourcemaps.init())
         .pipe(less())
         .on('error', function(error) {
             console.log(error.message);
         })
+        .pipe(concat('style.css'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('assets/css/'));
 });
 
 // Dist CSS
+// ====================================================================
 gulp.task('dist-css', ['less'], function () {
     gulp.src(['assets/lib/**/*.css', 'assets/css/style.css'])
         .pipe(concat('style.css'))
@@ -47,6 +51,7 @@ gulp.task('dist-css', ['less'], function () {
 });
 
 // JS
+// ====================================================================
 gulp.task('js', function() {
     gulp.src('app/**/*.js')
         .pipe(sourcemaps.init())
@@ -56,8 +61,12 @@ gulp.task('js', function() {
 });
 
 // Libs JS
+// ====================================================================
 gulp.task('libs-js', function() {
-    gulp.src(['assets/lib/jquery/*.js', 'assets/lib/**/*.js'])
+    gulp.src([
+        'assets/lib/jquery/*.js',
+        'assets/lib/angular/angular.js',
+        'assets/lib/**/*.js'])
         .pipe(sourcemaps.init())
         .pipe(concat('libs.js'))
         .pipe(sourcemaps.write('./'))
@@ -65,6 +74,7 @@ gulp.task('libs-js', function() {
 });
 
 // Dist JS
+// ====================================================================
 gulp.task('dist-js', ['js', 'libs-js'], function() {
     gulp.src('assets/js/*.js')
         .pipe(uglify())
@@ -72,12 +82,14 @@ gulp.task('dist-js', ['js', 'libs-js'], function() {
 });
 
 // Clean dist direcotry
+// ====================================================================
 gulp.task('dist-clean', function() {
     return gulp.src('dist/*')
         .pipe(clean());
 });
 
 // Dist
+// ====================================================================
 gulp.task('dist', ['dist-clean'], function() {
     gulp.src('assets/img/**/*')
         .pipe(gulp.dest('dist/assets/img/'));
@@ -97,13 +109,18 @@ gulp.task('dist', ['dist-clean'], function() {
     gulp.start('dist-js', 'dist-css');
 });
 
-//Watch
+// Build
+// ====================================================================
+gulp.task('build', ['less', 'js', 'libs-js']);
+
+// Watch
+// ====================================================================
 gulp.task('watch', function () {
     livereload.listen();
 
     gulp.watch('assets/svg/**/*.svg', ['iconfont']);
 
-    gulp.watch('assets/less/**/*.less', ['less']);
+    gulp.watch(['assets/lib/**/*.css', 'assets/less/**/*.less'], ['less']);
 
     gulp.watch('app/**/*.js', ['js']);
 
@@ -116,8 +133,8 @@ gulp.task('watch', function () {
             'assets/js/*.js',
             'assets/img/*'])
         .on('change', livereload.changed);
-
 });
 
 //Default
+// ====================================================================
 gulp.task('default', ['watch']);

@@ -6,7 +6,7 @@
     "tag": "new",
     "price": 50,
     "oldPrice": 96,
-    "img": "products/img/men-shoes-1.jpg"
+    "img": "app/data/products/img/men-shoes-1.jpg"
   },
   {
     "index": 1,
@@ -15,7 +15,7 @@
     "tag": "new",
     "price": 55,
     "oldPrice": 78,
-    "img": "products/img/men-shoes-2.jpg"
+    "img": "app/data/products/img/men-shoes-2.jpg"
   },
   {
     "index": 2,
@@ -24,7 +24,7 @@
     "tag": "hot",
     "price": 129,
     "oldPrice": 160,
-    "img": "products/img/men-shoes-3.jpg"
+    "img": "app/data/products/img/men-shoes-3.jpg"
   },
   {
     "index": 3,
@@ -33,7 +33,7 @@
     "tag": "hot",
     "price": 104,
     "oldPrice": 125,
-    "img": "products/img/men-shoes-4.jpg"
+    "img": "app/data/products/img/men-shoes-4.jpg"
   },
   {
     "index": 4,
@@ -42,7 +42,7 @@
     "tag": "sale",
     "price": 95,
     "oldPrice": 129,
-    "img": "products/img/men-tops-1.jpg"
+    "img": "app/data/products/img/men-tops-1.jpg"
   },
   {
     "index": 5,
@@ -51,7 +51,7 @@
     "tag": "sale",
     "price": 97,
     "oldPrice": 140,
-    "img": "products/img/men-tops-2.jpg"
+    "img": "app/data/products/img/men-tops-2.jpg"
   },
   {
     "index": 6,
@@ -60,7 +60,7 @@
     "tag": "sale",
     "price": 142,
     "oldPrice": 165,
-    "img": "products/img/men-tops-3.jpg"
+    "img": "app/data/products/img/men-tops-3.jpg"
   },
   {
     "index": 7,
@@ -69,7 +69,7 @@
     "tag": "hot",
     "price": 103,
     "oldPrice": 145,
-    "img": "products/img/men-tops-4.jpg"
+    "img": "app/data/products/img/men-tops-4.jpg"
   },
   {
     "index": 8,
@@ -78,7 +78,7 @@
     "tag": "hot",
     "price": 53,
     "oldPrice": 88,
-    "img": "products/img/men-shirts-1.jpg"
+    "img": "app/data/products/img/men-shirts-1.jpg"
   },
   {
     "index": 9,
@@ -87,7 +87,7 @@
     "tag": "sale",
     "price": 51,
     "oldPrice": 85,
-    "img": "products/img/men-shirts-2.jpg"
+    "img": "app/data/products/img/men-shirts-2.jpg"
   },
   {
     "index": 10,
@@ -96,7 +96,7 @@
     "tag": "sale",
     "price": 123,
     "oldPrice": 164,
-    "img": "products/img/men-shirts-3.jpg"
+    "img": "app/data/products/img/men-shirts-3.jpg"
   },
   {
     "index": 11,
@@ -105,7 +105,7 @@
     "tag": "hot",
     "price": 80,
     "oldPrice": 111,
-    "img": "products/img/men-shirts-4.jpg"
+    "img": "app/data/products/img/men-shirts-4.jpg"
   },
   {
     "index": 12,
@@ -114,7 +114,7 @@
     "tag": "hot",
     "price": 84,
     "oldPrice": 112,
-    "img": "products/img/women-shoes-1.jpg"
+    "img": "app/data/products/img/women-shoes-1.jpg"
   },
   {
     "index": 13,
@@ -123,7 +123,7 @@
     "tag": "hot",
     "price": 81,
     "oldPrice": 105,
-    "img": "products/img/women-shoes-2.jpg"
+    "img": "app/data/products/img/women-shoes-2.jpg"
   },
   {
     "index": 14,
@@ -132,7 +132,7 @@
     "tag": "hot",
     "price": 112,
     "oldPrice": 148,
-    "img": "products/img/women-shoes-3.jpg"
+    "img": "app/data/products/img/women-shoes-3.jpg"
   },
   {
     "index": 15,
@@ -141,7 +141,7 @@
     "tag": "sale",
     "price": 130,
     "oldPrice": 172,
-    "img": "products/img/women-shoes-4.jpg"
+    "img": "app/data/products/img/women-shoes-4.jpg"
   },
   {
     "index": 16,
@@ -150,7 +150,7 @@
     "tag": "sale",
     "price": 78,
     "oldPrice": 98,
-    "img": "products/img/women-tops-1.jpg"
+    "img": "app/data/products/img/women-tops-1.jpg"
   },
   {
     "index": 17,
@@ -159,7 +159,7 @@
     "tag": "hot",
     "price": 83,
     "oldPrice": 118,
-    "img": "products/img/women-tops-2.jpg"
+    "img": "app/data/products/img/women-tops-2.jpg"
   },
   {
     "index": 18,
@@ -168,7 +168,7 @@
     "tag": "hot",
     "price": 89,
     "oldPrice": 122,
-    "img": "products/img/women-tops-3.jpg"
+    "img": "app/data/products/img/women-tops-3.jpg"
   },
   {
     "index": 19,
@@ -177,7 +177,7 @@
     "tag": "new",
     "price": 122,
     "oldPrice": 145,
-    "img": "products/img/women-tops-4.jpg"
+    "img": "app/data/products/img/women-tops-4.jpg"
   },
   {
     "index": 20,
@@ -186,7 +186,7 @@
     "tag": "sale",
     "price": 70,
     "oldPrice": 108,
-    "img": "products/img/women-shirts-1.jpg"
+    "img": "app/data/products/img/women-shirts-1.jpg"
   },
   {
     "index": 21,
@@ -195,7 +195,7 @@
     "tag": "new",
     "price": 87,
     "oldPrice": 129,
-    "img": "products/img/women-shirts-2.jpg"
+    "img": "app/data/products/img/women-shirts-2.jpg"
   },
   {
     "index": 22,
@@ -204,7 +204,7 @@
     "tag": "sale",
     "price": 77,
     "oldPrice": 107,
-    "img": "products/img/women-shirts-3.jpg"
+    "img": "app/data/products/img/women-shirts-3.jpg"
   },
   {
     "index": 23,
@@ -213,6 +213,6 @@
     "tag": "sale",
     "price": 127,
     "oldPrice": 161,
-    "img": "products/img/women-shirts-4.jpg"
+    "img": "app/data/products/img/women-shirts-4.jpg"
   }
 ]

@@ -1,6 +1,6 @@
-app.controller('SalesCtrl', ['$scope', '$http', '$routeParams',
+app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
-        $http.get('products/products.json').success(function(data) {
+        $http.get('app/data/products/products.json').success(function(data) {
             $scope.products = data;
         });
 
