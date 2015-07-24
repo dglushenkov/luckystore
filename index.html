@@ -5,32 +5,25 @@
     <title>Lucky Store Free</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,700,600'
           rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="lib/owlcarousel/owl.carousel.css"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
 
 <!-- Header -->
-<ng-include src="'components/header/header.html'"></ng-include>
+<ng-include src="'app/shared/header/headerView.html'"></ng-include>
 
 <!-- Navigation -->
-<ng-include src="'components/navbar/navbar.html'"></ng-include>
+<ng-include src="'app/shared/nav/navView.html'"></ng-include>
 
 <!-- View -->
 <div class="container" ng-view>
 </div>
 
 <!-- Footer -->
-<ng-include src="'components/footer/footer.html'"></ng-include>
+<ng-include src="'app/shared/footer/footerView.html'"></ng-include>
 
 <!-- Scripts -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/angular/angular.js"></script>
-<script src="lib/angular/angular-route.min.js"></script>
-<script src="lib/angular/angular-animate.min.js"></script>
-<script src="lib/angular-ui-bootstrap/ui-bootstrap-tpls.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="//maps.googleapis.com/maps/api/js"></script>
-<script src="app.js"></script>
+<script src="assets/js/libs.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server app/ -p1234 -c-1",
+    "start": "http-server -p8000 -c-1",
+    "prestart": "npm install",
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
