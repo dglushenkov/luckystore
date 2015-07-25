@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     concat = require('gulp-concat');
 
-// Iconfont
+// Iconfont (only ubuntu/mac)
 // ====================================================================
 gulp.task('iconfont', function(){
     gulp.src(['assets/svg/*.svg'])
