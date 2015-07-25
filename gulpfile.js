@@ -3,28 +3,16 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     iconfont = require('gulp-iconfont'),
     iconfontCss = require('gulp-iconfont-css'),
+    sourcemaps = require('gulp-sourcemaps'),
+    minifyCss = require('gulp-minify-css'),
+    uglify = require('gulp-uglify'),
+    clean = require('gulp-clean'),
     concat = require('gulp-concat');
 
-//Less
-gulp.task('less', function () {
-    gulp.src('app/less/style.less')
-        .pipe(less())
-        .on('error', function(error) {
-            console.log(error.message);
-        })
-        .pipe(gulp.dest('app/'));
-});
-
-// Javascript
-gulp.task('js', function() {
-    gulp.src(['app/js/main.js', 'app/components/**/*.js'])
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest('app/'));
-    })
-
-//Iconfont
+// Iconfont
+// ====================================================================
 gulp.task('iconfont', function(){
-    gulp.src(['app/svg/*.svg'])
+    gulp.src(['assets/svg/*.svg'])
         .pipe(iconfontCss({
             fontName: 'iconfont',
             targetPath: '../less/iconfont.less',
@@ -34,37 +22,119 @@ gulp.task('iconfont', function(){
             fontName: 'iconfont',
             normalize: true
         }))
-        .pipe(gulp.dest('app/iconfont/'));
+        .pipe(gulp.dest('assets/iconfont/'));
 });
 
-//Watch
+// LESS
+// ====================================================================
+gulp.task('less', function () {
+    gulp.src(['assets/lib/**/*.css', 'assets/less/style.less'])
+        .pipe(sourcemaps.init())
+        .pipe(less())
+        .on('error', function(error) {
+            console.log(error.message);
+        })
+        .pipe(concat('style.css'))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('assets/css/'));
+});
+
+// Dist CSS
+// ====================================================================
+gulp.task('dist-css', ['less'], function () {
+    gulp.src(['assets/lib/**/*.css', 'assets/css/style.css'])
+        .pipe(concat('style.css'))
+        .pipe(minifyCss({
+            keepSpecialComments: 0
+        }))
+        .pipe(gulp.dest('dist/assets/css/'));
+});
+
+// JS
+// ====================================================================
+gulp.task('js', function() {
+    gulp.src('app/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('app.js'))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('assets/js/'));
+});
+
+// Libs JS
+// ====================================================================
+gulp.task('libs-js', function() {
+    gulp.src([
+        'assets/lib/jquery/*.js',
+        'assets/lib/angular/angular.js',
+        'assets/lib/**/*.js'])
+        .pipe(sourcemaps.init())
+        .pipe(concat('libs.js'))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('assets/js/'));
+});
+
+// Dist JS
+// ====================================================================
+gulp.task('dist-js', ['js', 'libs-js'], function() {
+    gulp.src('assets/js/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/assets/js/'));
+});
+
+// Clean dist direcotry
+// ====================================================================
+gulp.task('dist-clean', function() {
+    return gulp.src('dist/*')
+        .pipe(clean());
+});
+
+// Dist
+// ====================================================================
+gulp.task('dist', ['dist-clean'], function() {
+    gulp.src('assets/img/**/*')
+        .pipe(gulp.dest('dist/assets/img/'));
+
+    gulp.src('assets/icnofont/**/*')
+        .pipe(gulp.dest('dist/assets/iconfont/'));
+
+    gulp.src('app/**/*.html')
+        .pipe(gulp.dest('dist/app/'));
+
+    gulp.src('app/data/**/*')
+        .pipe(gulp.dest('dist/app/data/'));
+
+    gulp.src('index.html')
+        .pipe(gulp.dest('dist/'));
+
+    gulp.start('dist-js', 'dist-css');
+});
+
+// Build
+// ====================================================================
+gulp.task('build', ['less', 'js', 'libs-js']);
+
+// Watch
+// ====================================================================
 gulp.task('watch', function () {
     livereload.listen();
 
-    //Build svg
-    gulp.watch('app/svg/**/*.svg', ['iconfont']);
+    gulp.watch('assets/svg/**/*.svg', ['iconfont']);
 
-    //Build less
-    gulp.watch('app/less/**/*.less', ['less']);
+    gulp.watch(['assets/lib/**/*.css', 'assets/less/**/*.less'], ['less']);
 
-    //Build js
-    gulp.watch(['app/js/**/*.js', 'app/components/**/*.js'], ['js']);
+    gulp.watch('app/**/*.js', ['js']);
 
-    //Watch html
-    gulp.watch('app/**/*.html')
-        .on('change', livereload.changed);
+    gulp.watch('assets/lib/**/*.js', ['libs-js']);
 
-    //Watch css
-    gulp.watch('app/style.css')
-        .on('change', livereload.changed);
-
-    //Watch js
-    gulp.watch('app/app.js')
+    gulp.watch([
+            'app/**/*.html',
+            'index.html',
+            'assets/css/style.css',
+            'assets/js/*.js',
+            'assets/img/*'])
         .on('change', livereload.changed);
 });
 
-//Build
-gulp.task('build', ['less', 'iconfont', 'js']);
-
 //Default
+// ====================================================================
 gulp.task('default', ['watch']);
