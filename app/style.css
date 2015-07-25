@@ -4361,9 +4361,6 @@ button.close {
     margin-top: 50px;
   }
 }
-.dropdown-menu {
-  transition: height .3s;
-}
 .main-nav-container.fix-nav {
   position: fixed;
   margin-top: 0;
@@ -4382,9 +4379,6 @@ button.close {
 }
 .main-nav-container.fix-nav .clover {
   transform: rotate(-180deg);
-}
-.main-nav-placeholder {
-  display: none;
 }
 .main-nav {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);

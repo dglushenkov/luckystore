@@ -1,5 +1,7 @@
 app.controller('NavbarCtrl', ['$scope', function($scope) {
     $scope.isCollapsed = true;
+    $scope.isMenOpen = false;
+    $scope.isWomenOpen = false;
 
     $scope.toggleNav = function() {
         $scope.isCollapsed = !$scope.isCollapsed;
@@ -53,13 +55,9 @@ app.controller('NavbarCtrl', ['$scope', function($scope) {
         },
 
         closeDropdowns: function() {
-            this.nav.find('.dropdown-toggle').each(function() {
-                var $this = $(this);
-                if ($this.closest('.dropdown').hasClass('open')) {
-                    console.log('isVisible');
-                    $this.dropdown('toggle');
-                }
-            });
+            $scope.isMenOpen = false;
+            $scope.isWomenOpen = false;
+            $scope.$apply();
         },
 
         removeSticky: function() {
