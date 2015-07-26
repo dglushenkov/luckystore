@@ -39182,7 +39182,6 @@ angular.module('ui.bootstrap.carousel', [])
 
     //Prevent this user-triggered transition from occurring if there is already one in progress
     if (!$scope.$currentTransition) {
-      console.log('in if');
       return self.select(getSlideByIndex(newIndex), 'prev');
     }
   };

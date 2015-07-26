@@ -57,7 +57,6 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
 // Modal controller
 app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'signUpRes', function($scope, $modalInstance, signUpRes) {
     $scope.signUpRes = signUpRes;
-    console.log(signUpRes);
 
     $scope.ok = function() {
         $modalInstance.close();

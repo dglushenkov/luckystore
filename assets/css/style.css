@@ -4584,7 +4584,10 @@ button.close {
   margin-bottom: 0;
 }
 .main-nav-container.fix-nav .clover {
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
+}
+.main-nav-container.fix-nav .navbar-brand:hover .clover {
+  transform: rotate(360deg);
 }
 .main-nav {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);

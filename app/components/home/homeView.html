@@ -41,27 +41,7 @@
             <div class="owl-carousel-wrapper js-owl-carousel">
                 <div class="col-xs-12" ng-repeat="product in products" init-owl-carousel>
                     <!--Product thumbnail-->
-                    <div class="product-thumbnail product-tag-{{product.tag}}">
-                        <a href="#/home" class="img-link">
-                            <span class="overlay-wrapper">
-                                <span class="overlay">
-                                    <span class="icon icon-eye"></span>
-                                </span>
-                            </span>
-                            <span class="ribbon">{{product.tag}}!</span>
-                            <span class="img-wrapper">
-                                    <img ng-src="{{product.img}}" alt=""/>
-                            </span>
-                        </a>
-
-                        <h3 class="title">{{product.title.charAt(0).toUpperCase() + product.title.slice(1)}}</h3>
-
-                        <p class="price-row">
-                            <span class="price"><span class="currency">$</span>{{product.price}}</span>
-                            <span class="old-price">${{product.oldPrice}}</span>
-                            <a href="#/home" class="btn-cart">Add to cart</a>
-                        </p>
-                    </div>
+                    <product-thumbnail></product-thumbnail>
                     <!--/Product thumbnail-->
                 </div>
             </div>

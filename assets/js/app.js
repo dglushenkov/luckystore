@@ -90,7 +90,6 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
 // Modal controller
 app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'signUpRes', function($scope, $modalInstance, signUpRes) {
     $scope.signUpRes = signUpRes;
-    console.log(signUpRes);
 
     $scope.ok = function() {
         $modalInstance.close();
@@ -128,14 +127,6 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         }
 }]);
 
-app.controller('navbarCtrl', ['$scope', function($scope) {
-    $scope.isCollapsed = true;
-
-    $scope.toggleNav = function() {
-        $scope.isCollapsed = !$scope.isCollapsed;
-    }
-}]);
-
 // Initialize owl carousel with owlCarousel service and options in parent scope
 app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
     return function(scope, element, attr) {
@@ -161,16 +152,29 @@ app.service('owlCarousel', ['owlCarouselConfig', function(owlCarouselConfig) {
 
         $(selector + '-prev').on('click', function() {
             owl.trigger('prev.owl.carousel');
-            console.log('prev');
         });
 
         $(selector + '-next').on('click', function() {
             owl.trigger('next.owl.carousel');
-            console.log('next');
         });
     }
 }]);
 
+app.controller('navbarCtrl', ['$scope', function($scope) {
+    $scope.isCollapsed = true;
+
+    $scope.toggleNav = function() {
+        $scope.isCollapsed = !$scope.isCollapsed;
+    }
+}]);
+
+app.directive('productThumbnail', function() {
+    return {
+        restrict: 'EA',
+        templateUrl: 'app/shared/product-thumbnail/productThumbnailTemplate.html',
+        replace: true
+    }
+});
 app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('app/data/slides/slides.json').success(function(data) {
         $scope.slides = data;

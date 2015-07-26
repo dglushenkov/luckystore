@@ -13,12 +13,10 @@ app.service('owlCarousel', ['owlCarouselConfig', function(owlCarouselConfig) {
 
         $(selector + '-prev').on('click', function() {
             owl.trigger('prev.owl.carousel');
-            console.log('prev');
         });
 
         $(selector + '-next').on('click', function() {
             owl.trigger('next.owl.carousel');
-            console.log('next');
         });
     }
 }]);
