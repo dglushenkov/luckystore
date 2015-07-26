@@ -134,63 +134,8 @@ app.controller('navbarCtrl', ['$scope', function($scope) {
     $scope.toggleNav = function() {
         $scope.isCollapsed = !$scope.isCollapsed;
     }
-
-    $(window).on('scroll.stickyNav', function(e) {
-        if ($(window).scrollTop() > stickyNav.getNavBottom()) {
-            stickyNav.makeSticky();
-        } else {
-            stickyNav.removeSticky();
-        }
-    });
-
-    var stickyNav = {
-        isSticky: false,
-        nav: $('.main-nav-container'),
-        placeholder: $('.main-nav-placeholder'),
-
-        getNavBottom: function() {
-            var container = (this.isSticky) ? this.placeholder : this.nav;
-            var bottom = container.height() + container.offset().top;
-            return bottom;
-        },
-
-        makeSticky: function() {
-            if (this.isSticky) return;
-
-            this.placeholder.height(this.nav.height());
-            this.placeholder.css({
-                marginTop: this.nav.css('margin-top'),
-                marginBottom: this.nav.css('margin-bottom')
-            })
-            this.placeholder.show();
-            this.nav.addClass('fix-nav');
-            this.closeDropdowns();
-
-            this.isSticky = true;
-        },
-
-        closeDropdowns: function() {
-            for (var cs = $scope.$$childHead; cs; cs = cs.$$nextSibling) {
-                if (cs.isOpen !== undefined) {
-                    cs.isOpen = false;
-                }
-            }
-            $scope.$apply();
-        },
-
-        removeSticky: function() {
-            if (!this.isSticky) return;
-
-            this.placeholder.hide();
-            this.nav.removeClass('fix-nav');
-            this.closeDropdowns();2
-
-            this.isSticky = false;
-        }
-    }
-
-    $(window).trigger('scroll.stickyNav');
 }]);
+
 // Initialize owl carousel with owlCarousel service and options in parent scope
 app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
     return function(scope, element, attr) {
@@ -231,4 +176,79 @@ app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.slides = data;
     });
 }]);
+// Fix navigation default selectors & classname
+app.constant('fixNavConfig', {
+    navContainerSelector: '.main-nav-container',
+    navPlaceholderSelector: '.main-nav-placeholder',
+    fixNavClass: 'fix-nav'
+});
+
+// Fix navigation directive controller
+app.controller('fixNavCtrl', ['$scope', 'fixNavConfig',
+    function($scope, fixNavConfig) {
+        var self = this;
+
+        $scope.isFixNav = null;
+
+        this.init = function() {
+            self.nav = $(fixNavConfig.navContainerSelector);
+            self.placeholder = $(fixNavConfig.navPlaceholderSelector);
+
+            $(window).on('scroll', function() {
+                $scope.isFixNav = $(window).scrollTop() > getNavBottom();
+                $scope.$apply();
+            });
+        };
+
+        function getNavBottom() {
+            var container = ($scope.isFixNav) ? self.placeholder : self.nav;
+            var bottom = container.height() + container.offset().top;
+            return bottom;
+        };
+
+        $scope.$watch('isFixNav', function(isFixNav) {
+            if ($scope.isFixNav) {
+                enableFix();
+            } else {
+                disableFix();
+            }
+        });
+
+        function enableFix() {
+            self.placeholder.height(self.nav.height());
+            self.placeholder.css({
+                marginTop: self.nav.css('margin-top'),
+                marginBottom: self.nav.css('margin-bottom')
+            })
+            self.placeholder.show();
+            self.nav.addClass(fixNavConfig.fixNavClass);
+            closeDropdowns();
+        }
+
+        function disableFix() {
+            if ($scope.isFixNav === null) return;
+            self.placeholder.hide();
+            self.nav.removeClass(fixNavConfig.fixNavClass);
+            closeDropdowns();
+        }
+
+        function closeDropdowns() {
+            for (var cs = $scope.$$childHead; cs; cs = cs.$$nextSibling) {
+                if (cs.isOpen !== undefined) {
+                    cs.isOpen = false;
+                }
+            }
+        }
+}]);
+
+// Fix navigation directive
+app.directive('fixNav', function() {
+    return {
+        restrict: 'A',
+        controller: 'fixNavCtrl',
+        link: function(scope, element, attr, fixNavCtrl) {
+            fixNavCtrl.init();
+        }
+    }
+});
 //# sourceMappingURL=app.js.map
