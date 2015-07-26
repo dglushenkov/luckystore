@@ -39,14 +39,14 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
         $scope.signUp = function() {
             $http.get('app/data/newsletter/newsletter.json')
                 .success(function(data) {
-                    $scope.signUpRes = data;
+                    $scope.response = data;
 
                     var modal = $modal.open({
-                        templateUrl: 'homeSignUpResponse',
+                        templateUrl: 'app/shared/templates/sampleResponse.html',
                         controller: 'homeSignUpResponseCtrl',
                         resolve: {
-                            signUpRes: function() {
-                                return $scope.signUpRes;
+                            response: function() {
+                                return $scope.response;
                             }
                         }
                     });
@@ -55,8 +55,8 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
 }]);
 
 // Modal controller
-app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'signUpRes', function($scope, $modalInstance, signUpRes) {
-    $scope.signUpRes = signUpRes;
+app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
+    $scope.response = response;
 
     $scope.ok = function() {
         $modalInstance.close();

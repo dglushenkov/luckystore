@@ -15,6 +15,10 @@ app.config(['$routeProvider',
                 templateUrl: 'app/components/contacts/contactsView.html',
                 controller: 'contactsCtrl'
             })
+            .when('/login', {
+                templateUrl: 'app/components/login/loginView.html',
+                controller: 'loginCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -30,6 +34,36 @@ app.controller('contactsCtrl', ['$scope', function($scope) {
         scrollwheel: false
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
+}]);
+app.controller('loginCtrl', ['$scope', '$http', '$modal', 
+    function($scope, $http, $modal) {
+        // Login action
+        $scope.login = function() {
+            $http.get('app/data/login/login.json')
+                .success(function(data) {
+                    $scope.response = data;
+
+                    var modal = $modal.open({
+                        templateUrl: 'app/shared/templates/sampleResponse.html',
+                        controller: 'loginResponseCtrl',
+                        resolve: {
+                            response: function() {
+                                return $scope.response;
+                            }
+                        }
+                    });
+            })
+        }
+}]);
+
+// Modal controller
+app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
+    console.log(response);
+    $scope.response = response;
+
+    $scope.ok = function() {
+        $modalInstance.close();
+    }
 }]);
 // Home view controller
 app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
@@ -72,14 +106,14 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
         $scope.signUp = function() {
             $http.get('app/data/newsletter/newsletter.json')
                 .success(function(data) {
-                    $scope.signUpRes = data;
+                    $scope.response = data;
 
                     var modal = $modal.open({
-                        templateUrl: 'homeSignUpResponse',
+                        templateUrl: 'app/shared/templates/sampleResponse.html',
                         controller: 'homeSignUpResponseCtrl',
                         resolve: {
-                            signUpRes: function() {
-                                return $scope.signUpRes;
+                            response: function() {
+                                return $scope.response;
                             }
                         }
                     });
@@ -88,8 +122,8 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
 }]);
 
 // Modal controller
-app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'signUpRes', function($scope, $modalInstance, signUpRes) {
-    $scope.signUpRes = signUpRes;
+app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
+    $scope.response = response;
 
     $scope.ok = function() {
         $modalInstance.close();
@@ -127,6 +161,14 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         }
 }]);
 
+app.controller('navbarCtrl', ['$scope', function($scope) {
+    $scope.isCollapsed = true;
+
+    $scope.toggleNav = function() {
+        $scope.isCollapsed = !$scope.isCollapsed;
+    }
+}]);
+
 // Initialize owl carousel with owlCarousel service and options in parent scope
 app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
     return function(scope, element, attr) {
@@ -160,14 +202,6 @@ app.service('owlCarousel', ['owlCarouselConfig', function(owlCarouselConfig) {
     }
 }]);
 
-app.controller('navbarCtrl', ['$scope', function($scope) {
-    $scope.isCollapsed = true;
-
-    $scope.toggleNav = function() {
-        $scope.isCollapsed = !$scope.isCollapsed;
-    }
-}]);
-
 app.directive('productThumbnail', function() {
     return {
         restrict: 'EA',
@@ -176,17 +210,10 @@ app.directive('productThumbnail', function() {
     }
 });
 app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get('app/data/slides/slides.json').success(function(data) {
+    $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
         $scope.slides = data;
     });
 }]);
-app.directive('clover', function() {
-    return {
-        restrict: 'EA',
-        replace: true,
-        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
-    }
-})
 // Fix navigation default selectors & classname
 app.constant('fixNavConfig', {
     navContainerSelector: '.main-nav-container',
@@ -262,4 +289,11 @@ app.directive('fixNav', function() {
         }
     }
 });
+app.directive('clover', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
+    }
+})
 //# sourceMappingURL=app.js.map

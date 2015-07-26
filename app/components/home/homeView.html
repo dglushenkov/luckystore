@@ -74,36 +74,19 @@
 
         <!--Sign up-->
         <div class="col-xs-12 col-sm-4">
-            <div class="sign-up-block home-sign-up-block">
-                <form class="sign-up-form" ng-submit="signUp()">
+            <div class="simple-form-block home-sign-up-form">
+                <form class="simple-form" ng-submit="signUp()">
                     <label for="sign-up-email" class="sign-up-label">
                         <span class="top-text">
                             <em class="signup">Sign up</em> & <em class="save">Save 10%</em>
                         </span>
                         <span class="bottom-text">for our newsletter</span>
                     </label>
-                    <input type="email" name="sign-up-email" id="sign-up-email" class="sign-up-email"
-                           placeholder="Enter your email address"/>
-                    <input type="submit" value="Sign Up" class="sign-up-submit"/>
+                    <input type="email" name="sign-up-email" id="sign-up-email" class="input-text" placeholder="Enter your email address"/>
+                    <input type="submit" value="Sign Up" class="control-submit"/>
                 </form>
                 <div class="icon icon-sign-up-email"></div>
             </div>
-            <!-- Modal -->
-            <script type="text/ng-template" id="homeSignUpResponse">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">{{signUpRes.title}}</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="alert alert-{{signUpRes.msgType}}">
-                        {{signUpRes.msg}}
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" ng-click="ok()" class="btn btn-primary" data-dismiss="modal">Close</button>
-                </div>
-            </script>
-            <!--/Modal-->
         </div>
         <!--/Sign up-->
     </div>

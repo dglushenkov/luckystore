@@ -15,6 +15,10 @@ app.config(['$routeProvider',
                 templateUrl: 'app/components/contacts/contactsView.html',
                 controller: 'contactsCtrl'
             })
+            .when('/login', {
+                templateUrl: 'app/components/login/loginView.html',
+                controller: 'loginCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

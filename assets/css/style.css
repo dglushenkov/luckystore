@@ -5187,6 +5187,14 @@ button.close {
 .product-thumbnail.product-tag-hot .ribbon:after {
   border-color: transparent transparent #ef8742 #ef8742;
 }
+.sales-product {
+  margin-bottom: 20px;
+}
+@media only screen and (min-width: 450px) and (max-width: 767px) {
+  .sales-product {
+    width: 50%;
+  }
+}
 .home-review .review-quote {
   display: block;
   background-color: #ffffff;
@@ -5297,77 +5305,25 @@ button.close {
     margin-bottom: 50px;
   }
 }
-.sign-up-block {
+.simple-form-block {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
   background-color: #ffffff;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
 }
-.sign-up-block:before {
+.simple-form-block:before {
   content: '';
   display: block;
   height: 5px;
   background-image: repeating-linear-gradient(-45deg, #2799c9 0%, #2799c9 6.666666666666667%, #ffffff 6.666666666666667%, #ffffff 13.333333333333334%, #e05543 13.333333333333334%, #e05543 20%, #ffffff 20%, #ffffff 26.666666666666668%, #2799c9 26.666666666666668%, #2799c9 33.333333333333336%, #ffffff 33.333333333333336%, #ffffff 40%, #e05543 40%, #e05543 46.66666666666667%, #ffffff 46.66666666666667%, #ffffff 53.333333333333336%, #2799c9 53.333333333333336%, #2799c9 60%, #ffffff 60%, #ffffff 66.66666666666667%, #e05543 66.66666666666667%, #e05543 73.33333333333334%, #ffffff 73.33333333333334%, #ffffff 80%, #2799c9 80%, #2799c9 86.66666666666667%, #ffffff 86.66666666666667%, #ffffff 93.33333333333334%, #e05543 93.33333333333334%, #e05543 100%);
 }
-.sign-up-block .icon-sign-up-email {
-  font-size: 72px;
-  color: #f3f3f3;
-  position: absolute;
-  top: 0;
-  text-align: center;
-  left: 0;
-  height: 112px;
-  overflow: hidden;
-  width: 100%;
-}
-.sign-up-block .icon-sign-up-email:after {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
-  width: 1px;
-}
-.sign-up-block .icon-sign-up-email:before {
-  vertical-align: middle;
-}
-.sign-up-block .sign-up-form {
+.simple-form-block .simple-form {
   position: relative;
   z-index: 1;
   padding: 25px 15px 30px;
 }
-.sign-up-block .sign-up-label {
-  color: #aaa;
-  display: block;
-  font-size: 20px;
-  text-align: center;
-  font-weight: 400;
-}
-.sign-up-block .sign-up-label .top-text {
-  text-transform: uppercase;
-  font-style: normal;
-  display: inline-block;
-  border-bottom: 1px solid #cccccc;
-}
-.sign-up-block .sign-up-label .signup {
-  color: #3c5569;
-  font-style: normal;
-  font-weight: 700;
-}
-.sign-up-block .sign-up-label .save {
-  color: #9cbf3e;
-  font-style: normal;
-  font-weight: 700;
-}
-.sign-up-block .sign-up-label .bottom-text {
-  color: #aaa;
-  font-size: 16px;
-  font-style: italic;
-  display: block;
-  margin-top: 3px;
-  margin-bottom: 24px;
-}
-.sign-up-block .sign-up-email {
+.simple-form-block .input-text {
   width: 100%;
   border-radius: 4px;
   height: 45px;
@@ -5378,7 +5334,7 @@ button.close {
   display: block;
   margin-bottom: 15px;
 }
-.sign-up-block .sign-up-submit {
+.simple-form-block .control-submit {
   width: 100%;
   border-radius: 4px;
   background-color: #ef8742;
@@ -5391,11 +5347,60 @@ button.close {
   font-weight: 700;
   transition: all .3s;
 }
-.sign-up-block .sign-up-submit:hover {
+.simple-form-block .control-submit:hover {
   background-color: #ea6e1c;
 }
-.sign-up-block ~ .modal .modal-title {
+.home-sign-up-form .icon-sign-up-email {
+  font-size: 72px;
+  color: #f3f3f3;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  left: 0;
+  height: 112px;
+  overflow: hidden;
+  width: 100%;
+}
+.home-sign-up-form .icon-sign-up-email:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  width: 1px;
+}
+.home-sign-up-form .icon-sign-up-email:before {
+  vertical-align: middle;
+}
+.home-sign-up-form .sign-up-label {
+  color: #aaa;
+  display: block;
+  font-size: 20px;
+  text-align: center;
   font-weight: 400;
+}
+.home-sign-up-form .sign-up-label .top-text {
+  text-transform: uppercase;
+  font-style: normal;
+  display: inline-block;
+  border-bottom: 1px solid #cccccc;
+}
+.home-sign-up-form .sign-up-label .signup {
+  color: #3c5569;
+  font-style: normal;
+  font-weight: 700;
+}
+.home-sign-up-form .sign-up-label .save {
+  color: #9cbf3e;
+  font-style: normal;
+  font-weight: 700;
+}
+.home-sign-up-form .sign-up-label .bottom-text {
+  color: #aaa;
+  font-size: 16px;
+  font-style: italic;
+  display: block;
+  margin-top: 3px;
+  margin-bottom: 24px;
 }
 .pagination {
   background-color: #fff;
@@ -5543,14 +5548,6 @@ button.close {
 .footer address a {
   color: #fff;
   font-weight: 700;
-}
-.sales-product {
-  margin-bottom: 20px;
-}
-@media only screen and (min-width: 450px) and (max-width: 767px) {
-  .sales-product {
-    width: 50%;
-  }
 }
 .contacts .contacts-title {
   font-weight: 400;

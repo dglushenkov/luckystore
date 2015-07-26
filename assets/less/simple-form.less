@@ -1,0 +1,59 @@
+//=======================================================================
+//Simple form
+//=======================================================================
+.simple-form-block {
+    .box-shadow-base();
+    background-color: #ffffff;
+    border-radius: @border-radius-base;
+    position: relative;
+    overflow: hidden;
+    //Top pattern
+    &:before {
+        content: '';
+        display: block;
+        height: 5px;
+        @colors: #2799c9,
+        #fff,
+        #e05543,
+        #fff;
+        .repeating-gradient(@colors, 15, 0, -45deg);
+    }
+    //Form
+    .simple-form {
+        position: relative;
+        z-index: 1;
+        padding: 25px 15px 30px;
+    }
+    //=======================================================================
+    //Inputs
+    //=======================================================================
+    //Text input
+    .input-text {
+        width: 100%;
+        border-radius: @border-radius-base;
+        height: 45px;
+        border: 1px solid #d7d7d7;
+        color: #aaa;
+        font-size: 15px;
+        text-align: center;
+        display: block;
+        margin-bottom: 15px;
+    }
+    //Submit
+    .control-submit {
+        width: 100%;
+        border-radius: @border-radius-base;
+        background-color: #ef8742;
+        color: #fff;
+        text-align: center;
+        display: block;
+        font-size: 15px;
+        height: 45px;
+        border: none;
+        font-weight: 700;
+        transition: all .3s;
+        &:hover {
+            background-color: #ea6e1c;
+        }
+    }
+}

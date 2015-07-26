@@ -1,136 +1,62 @@
-//=======================================================================
-//Sign up block
-//=======================================================================
-.sign-up-block {
-  .box-shadow-base();
-  background-color: #ffffff;
-  border-radius: @border-radius-base;
-  position: relative;
-  overflow: hidden;
-
-  //Top pattern
-  &:before {
-    content: '';
-    display: block;
-    height: 5px;
-    @colors: #2799c9, #fff, #e05543, #fff;
-    .repeating-gradient(@colors, 15, 0, -45deg);
-  }
-
-  //Email icon
-  .icon-sign-up-email {
-    font-size: 72px;
-    color: #f3f3f3;
-    position: absolute;
-    top: 0;
-    text-align: center;
-    left: 0;
-    height: 112px;
-    overflow: hidden;
-    width: 100%;
-
-    &:after {
-      content: '';
-      display: inline-block;
-      vertical-align: middle;
-      height: 100%;
-      width: 1px;
+.home-sign-up-form {
+    //=======================================================================
+    //Email icon
+    //=======================================================================
+    .icon-sign-up-email {
+        font-size: 72px;
+        color: #f3f3f3;
+        position: absolute;
+        top: 0;
+        text-align: center;
+        left: 0;
+        height: 112px;
+        overflow: hidden;
+        width: 100%;
+        &:after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            width: 1px;
+        }
+        &:before {
+            vertical-align: middle;
+        }
     }
-
-    &:before {
-      vertical-align: middle;
+    //=======================================================================
+    //Label
+    //=======================================================================
+    .sign-up-label {
+        color: #aaa;
+        display: block;
+        font-size: 20px;
+        text-align: center;
+        font-weight: 400;
+        //Top text
+        .top-text {
+            text-transform: uppercase;
+            font-style: normal;
+            display: inline-block;
+            border-bottom: 1px solid #cccccc;
+        }
+        .signup {
+            color: #3c5569;
+            font-style: normal;
+            font-weight: 700;
+        }
+        .save {
+            color: #9cbf3e;
+            font-style: normal;
+            font-weight: 700;
+        }
+        //Bottom text
+        .bottom-text {
+            color: #aaa;
+            font-size: 16px;
+            font-style: italic;
+            display: block;
+            margin-top: 3px;
+            margin-bottom: 24px;
+        }
     }
-  }
-
-  //Form
-  .sign-up-form {
-    position: relative;
-    z-index: 1;
-    padding: 25px 15px 30px;
-  }
-
-  //=======================================================================
-  //Label
-  //=======================================================================
-  .sign-up-label {
-    color: #aaa;
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    font-weight: 400;
-
-    //Top text
-    .top-text {
-      text-transform: uppercase;
-      font-style: normal;
-      display: inline-block;
-      border-bottom: 1px solid #cccccc;
-    }
-
-    .signup {
-      color: #3c5569;
-      font-style: normal;
-      font-weight: 700;
-    }
-
-    .save {
-      color: #9cbf3e;
-      font-style: normal;
-      font-weight: 700;
-    }
-
-    //Bottom text
-    .bottom-text {
-      color: #aaa;
-      font-size: 16px;
-      font-style: italic;
-      display: block;
-      margin-top: 3px;
-      margin-bottom: 24px;
-    }
-  }
-
-  //=======================================================================
-  //Inputs
-  //=======================================================================
-
-  //Email
-  .sign-up-email {
-    width: 100%;
-    border-radius: @border-radius-base;
-    height: 45px;
-    border: 1px solid #d7d7d7;
-    color: #aaa;
-    font-size: 15px;
-    text-align: center;
-    display: block;
-    margin-bottom: 15px;
-  }
-
-  //Submit
-  .sign-up-submit {
-    width: 100%;
-    border-radius: @border-radius-base;
-    background-color: #ef8742;
-    color: #fff;
-    text-align: center;
-    display: block;
-    font-size: 15px;
-    height: 45px;
-    border: none;
-    font-weight: 700;
-    transition: all .3s;
-    &:hover {
-      background-color: #ea6e1c;
-    }
-  }
-
-  //=======================================================================
-  // Modal 
-  //=======================================================================
-  & ~ .modal {
-    .modal-title {
-      font-weight: 400;
-    }
-  }
 }

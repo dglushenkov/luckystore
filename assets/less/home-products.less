@@ -2,86 +2,80 @@
 //Product carousel on home page
 //=======================================================================
 .home-products {
-  .products-header {
-    margin-bottom: 30px;
+    .products-header {
+        margin-bottom: 30px;
+        //=======================================================================
+        //Controls
+        //=======================================================================
+        .control-wrap {
+            position: relative;
+            z-index: 2;
+            width: 54px;
+            height: 40px;
+            background-color: @body-bg;
+            &.control-left {
+                float: left;
+                padding-right: 10px;
+            }
+            &.control-right {
+                float: right;
+                padding-left: 10px;
+            }
+        }
+        .btn-control {
+            .box-shadow-base();
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            border-radius: @border-radius-base;
+            border: none;
+            color: #aaa;
+            font-size: 16px;
+            &:hover {
+                color: #888;
+            }
+        }
+        //=======================================================================
+        //Caption
+        //=======================================================================
+        .caption {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            //Line
+            &:before {
+                content: '';
+                width: 100%;
+                position: absolute;
+                z-index: 0;
+                height: 1px;
+                background-color: #d7d7d7;
+                box-shadow: 0 1px 0 white;
+                left: 0;
+                top: 50%;
+            }
+        }
+        .text-wrap {
+            font-size: 30px;
+            font-weight: 400;
+            position: relative;
+            background-color: @body-bg;
+            padding: 0 15px;
+            z-index: 2;
+        }
+    }
     //=======================================================================
-    //Controls
+    //Carousel
     //=======================================================================
-    .control-wrap {
-      position: relative;
-      z-index: 2;
-      width: 54px;
-      height: 40px;
-      background-color: @body-bg;
-      &.control-left {
-        float: left;
-        padding-right: 10px;
-      }
-      &.control-right {
-        float: right;
-        padding-left: 10px;
-      }
+    .products-carousel {
+        margin-bottom: @grid-gutter-width - 4px;
+        margin-left: -@grid-gutter-width / 2;
+        margin-right: -@grid-gutter-width / 2;
+        @media @tablet-min {
+            margin-bottom: 50px - 4px;
+        }
+        .product-thumbnail {
+            margin-bottom: 4px;
+        }
     }
-
-    .btn-control {
-      .box-shadow-base();
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      border-radius: @border-radius-base;
-      border: none;
-      color: #aaa;
-      font-size: 16px;
-      &:hover {
-        color: #888;
-      }
-    }
-
-    //=======================================================================
-    //Caption
-    //=======================================================================
-    .caption {
-      text-align: center;
-      position: relative;
-      z-index: 1;
-
-      //Line
-      &:before {
-        content: '';
-        width: 100%;
-        position: absolute;
-        z-index: 0;
-        height: 1px;
-        background-color: #d7d7d7;
-        box-shadow: 0 1px 0 white;
-        left: 0;
-        top: 50%;
-      }
-    }
-
-    .text-wrap {
-      font-size: 30px;
-      font-weight: 400;
-      position: relative;
-      background-color: @body-bg;
-      padding: 0 15px;
-      z-index: 2;
-    }
-  }
-
-  //=======================================================================
-  //Carousel
-  //=======================================================================
-  .products-carousel {
-    margin-bottom: @grid-gutter-width - 4px;
-    margin-left: -@grid-gutter-width / 2;
-    margin-right: -@grid-gutter-width / 2;
-    @media @tablet-min {
-      margin-bottom: 50px - 4px;
-    }
-
-    .product-thumbnail {
-      margin-bottom: 4px;
-    }
-  }
 }

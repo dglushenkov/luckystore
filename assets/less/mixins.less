@@ -1,4 +1,5 @@
 //=======================================================================
+
 /** Mixin for repeating background pattern
   *
   * @param {colors} List of colors in pattern
@@ -8,109 +9,101 @@
   *
   * @return Return background-image property with repeating linear gradient
 **/
+
 //=======================================================================
 .repeating-gradient(@colors, @parts, @shift, @angle) {
-  //Interval
-  @interval: 100 / @parts;
-
-  //Return resulting string
-  .loop(@index, 100, @str) {
-    @result: ~'@{str}';
-  }
-
-  //Get colors and positions
-  //Until current color position is less than 100 percents
-  //Store result string in @str
-  .loop(@index, @pos, @str) when (@pos < 100) {
-    //Get current color
-    @color: extract(@colors, mod(@index, length(@colors)) + 1);
-    //Start position
-    @pos1: @index * @interval + @shift / 100 * @interval;
-    //End position
-    @pos2: (@index + 1) * @interval + @shift / 100 * @interval;
-    //Check range
-    @p1: max(@pos1, 0);
-    @p2: min(@pos2, 100);
-
-    //Concatenate string
-    .strNew() {
-      @strNew: ~'@{str}, @{color} @{p1}%, @{color} @{p2}%';
+    //Interval
+    @interval: 100 / @parts;
+    //Return resulting string
+    .loop(@index, 100, @str) {
+        @result: ~'@{str}';
     }
-    //Don't include leading comma in first iteration
-    .strNew() when (@index = 0) {
-      @strNew: ~'@{color} @{p1}%, @{color} @{p2}%';
+    //Get colors and positions
+    //Until current color position is less than 100 percents
+    //Store result string in @str
+    .loop(@index, @pos, @str) when (@pos < 100) {
+        //Get current color
+        @color: extract(@colors, mod(@index, length(@colors)) + 1);
+        //Start position
+        @pos1: @index * @interval + @shift / 100 * @interval;
+        //End position
+        @pos2: (@index + 1) * @interval + @shift / 100 * @interval;
+        //Check range
+        @p1: max(@pos1, 0);
+        @p2: min(@pos2, 100);
+        //Concatenate string
+        .strNew() {
+            @strNew: ~'@{str}, @{color} @{p1}%, @{color} @{p2}%';
+        }
+        //Don't include leading comma in first iteration
+        .strNew() when (@index =0) {
+            @strNew: ~'@{color} @{p1}%, @{color} @{p2}%';
+        }
+        .strNew();
+        //Next iteration
+        .loop(@index + 1, @p2, @strNew);
     }
-
-    .strNew();
-
-    //Next iteration
-    .loop(@index + 1, @p2, @strNew);
-  }
-
-  .loop(0, 0, '');
-
-  background-image: repeating-linear-gradient(@angle, @result);
+    .loop(0, 0, '');
+    background-image: repeating-linear-gradient(@angle, @result);
 }
 
 //=======================================================================
 //Clover colors
 //=======================================================================
 .clover-color(@foreground, @background) {
-
-  //Petal foreground color
-  .clover-petal {
-    .petal-inner {
-      &:before,
-      &:after {
-        background-color: @foreground;
-      }
+    //Petal foreground color
+    .clover-petal {
+        .petal-inner {
+            &:before,
+            &:after {
+                background-color: @foreground;
+            }
+        }
     }
-  }
-
-  //Cogwheel color
-  .clover-cogwheel {
-    background-color: @background;
-    .cog {
-      background-color: @foreground;
-      &:before {
-        background-color: @foreground;
-      }
-    }
-    .wheel {
-      background-color: @foreground;
-      &:before {
+    //Cogwheel color
+    .clover-cogwheel {
         background-color: @background;
-      }
+        .cog {
+            background-color: @foreground;
+            &:before {
+                background-color: @foreground;
+            }
+        }
+        .wheel {
+            background-color: @foreground;
+            &:before {
+                background-color: @background;
+            }
+        }
     }
-  }
 }
 
 // Color on hover
 .clover-hover(@hover) {
-  .clover-petal {
-    .petal-inner {
-      &:before,
-      &:after {
-        background-color: @hover;
-      }
+    .clover-petal {
+        .petal-inner {
+            &:before,
+            &:after {
+                background-color: @hover;
+            }
+        }
     }
-  }
-  .clover-cogwheel {
-    .cog {
-      background-color: @hover;
-      &:before {
-        background-color: @hover;
-      }
+    .clover-cogwheel {
+        .cog {
+            background-color: @hover;
+            &:before {
+                background-color: @hover;
+            }
+        }
+        .wheel {
+            background-color: @hover;
+        }
     }
-    .wheel {
-      background-color: @hover;
-    }
-  }
 }
 
 //=======================================================================
 //Shared box shadow
 //=======================================================================
 .box-shadow-base() {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
 }
