@@ -1,17 +1,8 @@
     <!--Carousel-->
-    <div class="top-carousel carousel slide js-top-carousel" data-ride="carousel">
-        <!--Indicators-->
-        <ol class="carousel-indicators">
-            <li data-target=".js-top-carousel" data-slide-to="0" class="active"></li>
-            <li data-target=".js-top-carousel" data-slide-to="1"></li>
-            <li data-target=".js-top-carousel" data-slide-to="2"></li>
-        </ol>
-        <!--/Indicators-->
-
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox">
+    <div ng-controller="carouselCtrl">
+        <carousel class="home-carousel">
             <!--Slide-->
-            <div class="item active item-1">
+            <slide ng-repeat="slide in slides" active="slide.active">
                 <div class="item-bg"></div>
                 <div class="item-inner">
                     <div class="inner-ribbon">
@@ -21,61 +12,25 @@
                     <div class="inner-for">for</div>
                     <div class="inner-small-caption">Iphone & Ipad</div>
                 </div>
-            </div>
+            </slide>
             <!--/Slide-->
-            <!--Slide-->
-            <div class="item item-2">
-                <div class="item-bg"></div>
-                <div class="item-inner">
-                    <div class="inner-ribbon">
-                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
-                    </div>
-                    <div class="inner-caption">Bamboo cases</div>
-                    <div class="inner-for">for</div>
-                    <div class="inner-small-caption">Iphone & Ipad</div>
-                </div>
-            </div>
-            <!--/Slide-->
-            <!--Slide-->
-            <div class="item item-3">
-                <div class="item-bg"></div>
-                <div class="item-inner">
-                    <div class="inner-ribbon">
-                        new!<span class="ribbon-left-corner"></span><span class="ribbon-right-corner"></span>
-                    </div>
-                    <div class="inner-caption">Bamboo cases</div>
-                    <div class="inner-for">for</div>
-                    <div class="inner-small-caption">Iphone & Ipad</div>
-                </div>
-            </div>
-            <!--/Slide-->
-        </div>
-        <!--/Slides-->
-
-        <!--Controls-->
-        <a class="left carousel-control" href=".js-top-carousel" role="button" data-slide="prev">
-            <span class="icon icon-arrow-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href=".js-top-carousel" role="button" data-slide="next">
-            <span class="icon icon-arrow-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <!--/Controls-->
+        </carousel>
     </div>
     <!--/Carousel-->
 
-    <!--Best sellers carousel-->
+    <!--Sellers carousel-->
     <div class="home-products">
         <!--Header-->
         <div class="products-header">
             <div class="control-wrap control-left">
-                <button class="btn-control js-home-products-carousel-prev"><span
-                        class="icon icon-arrow-left-small"></span></button>
+                <button class="btn-control js-owl-carousel-prev">
+                    <span class="icon icon-arrow-left-small"></span>
+                </button>
             </div>
             <div class="control-wrap control-right">
-                <button class="btn-control js-home-products-carousel-next"><span
-                        class="icon icon-arrow-right-small"></span></button>
+                <button class="btn-control js-owl-carousel-next">
+                    <span class="icon icon-arrow-right-small"></span>
+                </button>
             </div>
             <h2 class="caption"><span class="text-wrap">Best Sellers</span></h2>
         </div>
@@ -83,9 +38,8 @@
 
         <!--Carousel-->
         <div class="products-carousel">
-            <div class="owl-carousel-wrapper js-home-products-carousel">
-
-                <div class="col-xs-12" ng-repeat="product in products" ng-init-carousel>
+            <div class="owl-carousel-wrapper js-owl-carousel">
+                <div class="col-xs-12" ng-repeat="product in products" init-owl-carousel>
                     <!--Product thumbnail-->
                     <div class="product-thumbnail product-tag-{{product.tag}}">
                         <a href="#/home" class="img-link">
@@ -141,7 +95,7 @@
         <!--Sign up-->
         <div class="col-xs-12 col-sm-4">
             <div class="sign-up-block home-sign-up-block">
-                <form class="sign-up-form" ng-submit="newsletter()">
+                <form class="sign-up-form" ng-submit="signUp()">
                     <label for="sign-up-email" class="sign-up-label">
                         <span class="top-text">
                             <em class="signup">Sign up</em> & <em class="save">Save 10%</em>
@@ -155,24 +109,20 @@
                 <div class="icon icon-sign-up-email"></div>
             </div>
             <!-- Modal -->
-            <div class="modal fade js-response-modal">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title">{{res.title}}</h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="alert alert-{{res.msgType}}">
-                                {{res.msg}}
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                        </div>
+            <script type="text/ng-template" id="homeSignUpResponse">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">{{signUpRes.title}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-{{signUpRes.msgType}}">
+                        {{signUpRes.msg}}
                     </div>
                 </div>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" ng-click="ok()" class="btn btn-primary" data-dismiss="modal">Close</button>
+                </div>
+            </script>
             <!--/Modal-->
         </div>
         <!--/Sign up-->

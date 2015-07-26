@@ -4726,26 +4726,26 @@ button.close {
 .main-nav .dropdown-toggle .caret {
   opacity: .5;
 }
-.top-carousel {
+.home-carousel {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
   margin-bottom: 40px;
   border-radius: 4px;
 }
-.top-carousel .item-bg {
+.home-carousel .item-bg {
   padding-top: 46.49%;
   width: 100%;
   border-radius: 4px;
 }
-.top-carousel .item-1 .item-bg {
+.home-carousel .item:nth-child(1) .item-bg {
   background-image: repeating-linear-gradient(90deg, #637787 0%, #637787 4%, #497787 4%, #497787 8%, #637787 8%, #637787 12%, #497787 12%, #497787 16%, #637787 16%, #637787 20%, #497787 20%, #497787 24%, #637787 24%, #637787 28%, #497787 28%, #497787 32%, #637787 32%, #637787 36%, #497787 36%, #497787 40%, #637787 40%, #637787 44%, #497787 44%, #497787 48%, #637787 48%, #637787 52%, #497787 52%, #497787 56%, #637787 56%, #637787 60%, #497787 60%, #497787 64%, #637787 64%, #637787 68%, #497787 68%, #497787 72%, #637787 72%, #637787 76%, #497787 76%, #497787 80%, #637787 80%, #637787 84%, #497787 84%, #497787 88%, #637787 88%, #637787 92%, #497787 92%, #497787 96%, #637787 96%, #637787 100%);
 }
-.top-carousel .item-2 .item-bg {
+.home-carousel .item:nth-child(2) .item-bg {
   background-image: repeating-linear-gradient(45deg, #aacc00 0%, #aacc00 2.857142857142857%, #bbd633 2.857142857142857%, #bbd633 5.714285714285714%, #aacc00 5.714285714285714%, #aacc00 8.571428571428571%, #bbd633 8.571428571428571%, #bbd633 11.428571428571429%, #aacc00 11.428571428571429%, #aacc00 14.285714285714286%, #bbd633 14.285714285714286%, #bbd633 17.142857142857142%, #aacc00 17.142857142857142%, #aacc00 20%, #bbd633 20%, #bbd633 22.857142857142858%, #aacc00 22.857142857142858%, #aacc00 25.714285714285715%, #bbd633 25.714285714285715%, #bbd633 28.571428571428573%, #aacc00 28.571428571428573%, #aacc00 31.42857142857143%, #bbd633 31.42857142857143%, #bbd633 34.285714285714285%, #aacc00 34.285714285714285%, #aacc00 37.142857142857146%, #bbd633 37.142857142857146%, #bbd633 40%, #aacc00 40%, #aacc00 42.85714285714286%, #bbd633 42.85714285714286%, #bbd633 45.714285714285715%, #aacc00 45.714285714285715%, #aacc00 48.57142857142857%, #bbd633 48.57142857142857%, #bbd633 51.42857142857143%, #aacc00 51.42857142857143%, #aacc00 54.285714285714285%, #bbd633 54.285714285714285%, #bbd633 57.142857142857146%, #aacc00 57.142857142857146%, #aacc00 60%, #bbd633 60%, #bbd633 62.85714285714286%, #aacc00 62.85714285714286%, #aacc00 65.71428571428572%, #bbd633 65.71428571428572%, #bbd633 68.57142857142857%, #aacc00 68.57142857142857%, #aacc00 71.42857142857143%, #bbd633 71.42857142857143%, #bbd633 74.28571428571429%, #aacc00 74.28571428571429%, #aacc00 77.14285714285714%, #bbd633 77.14285714285714%, #bbd633 80%, #aacc00 80%, #aacc00 82.85714285714286%, #bbd633 82.85714285714286%, #bbd633 85.71428571428572%, #aacc00 85.71428571428572%, #aacc00 88.57142857142857%, #bbd633 88.57142857142857%, #bbd633 91.42857142857143%, #aacc00 91.42857142857143%, #aacc00 94.28571428571429%, #bbd633 94.28571428571429%, #bbd633 97.14285714285714%, #aacc00 97.14285714285714%, #aacc00 100%);
 }
-.top-carousel .item-3 .item-bg {
+.home-carousel .item:nth-child(3) .item-bg {
   background-image: repeating-linear-gradient(0deg, #ffad33 0%, #ffad33 6.666666666666667%, #ff9900 6.666666666666667%, #ff9900 13.333333333333334%, #ffad33 13.333333333333334%, #ffad33 20%, #ff9900 20%, #ff9900 26.666666666666668%, #ffad33 26.666666666666668%, #ffad33 33.333333333333336%, #ff9900 33.333333333333336%, #ff9900 40%, #ffad33 40%, #ffad33 46.66666666666667%, #ff9900 46.66666666666667%, #ff9900 53.333333333333336%, #ffad33 53.333333333333336%, #ffad33 60%, #ff9900 60%, #ff9900 66.66666666666667%, #ffad33 66.66666666666667%, #ffad33 73.33333333333334%, #ff9900 73.33333333333334%, #ff9900 80%, #ffad33 80%, #ffad33 86.66666666666667%, #ff9900 86.66666666666667%, #ff9900 93.33333333333334%, #ffad33 93.33333333333334%, #ffad33 100%);
 }
-.top-carousel .item-inner {
+.home-carousel .item-inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -4753,11 +4753,11 @@ button.close {
   transform: translateY(-50%) translateX(-50%);
 }
 @media screen and (min-width: 768px) {
-  .top-carousel .item-inner {
+  .home-carousel .item-inner {
     margin-top: -20px;
   }
 }
-.top-carousel .item-inner .inner-ribbon {
+.home-carousel .item-inner .inner-ribbon {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
   text-transform: uppercase;
   color: #fff;
@@ -4771,8 +4771,8 @@ button.close {
   font-size: 12px;
   font-weight: bold;
 }
-.top-carousel .item-inner .inner-ribbon .ribbon-left-corner,
-.top-carousel .item-inner .inner-ribbon .ribbon-right-corner {
+.home-carousel .item-inner .inner-ribbon .ribbon-left-corner,
+.home-carousel .item-inner .inner-ribbon .ribbon-right-corner {
   background-color: #9cbf3e;
   height: 26px;
   width: 10px;
@@ -4781,8 +4781,8 @@ button.close {
   margin-left: -4px;
   top: -4px;
 }
-.top-carousel .item-inner .inner-ribbon .ribbon-left-corner:before,
-.top-carousel .item-inner .inner-ribbon .ribbon-right-corner:before {
+.home-carousel .item-inner .inner-ribbon .ribbon-left-corner:before,
+.home-carousel .item-inner .inner-ribbon .ribbon-right-corner:before {
   content: '';
   border-color: #86a72e;
   border-width: 2px;
@@ -4792,8 +4792,8 @@ button.close {
   left: 0;
   top: 0;
 }
-.top-carousel .item-inner .inner-ribbon .ribbon-left-corner:after,
-.top-carousel .item-inner .inner-ribbon .ribbon-right-corner:after {
+.home-carousel .item-inner .inner-ribbon .ribbon-left-corner:after,
+.home-carousel .item-inner .inner-ribbon .ribbon-right-corner:after {
   content: '';
   position: absolute;
   left: 100%;
@@ -4802,25 +4802,25 @@ button.close {
   border-width: 13px 6px 13px 0;
   border-color: #9cbf3e transparent;
 }
-.top-carousel .item-inner .inner-ribbon .ribbon-left-corner {
+.home-carousel .item-inner .inner-ribbon .ribbon-left-corner {
   left: -6px;
   margin-left: auto;
 }
-.top-carousel .item-inner .inner-ribbon .ribbon-left-corner:before {
+.home-carousel .item-inner .inner-ribbon .ribbon-left-corner:before {
   border-color: transparent #86a72e #86a72e transparent;
   right: 0;
   left: auto;
 }
-.top-carousel .item-inner .inner-ribbon .ribbon-left-corner:after {
+.home-carousel .item-inner .inner-ribbon .ribbon-left-corner:after {
   border-left-width: 6px;
   border-right-width: 0;
   right: 100%;
   margin-right: -1px;
   left: auto;
 }
-.top-carousel .item-inner .inner-caption,
-.top-carousel .item-inner .inner-small-caption,
-.top-carousel .item-inner .inner-for {
+.home-carousel .item-inner .inner-caption,
+.home-carousel .item-inner .inner-small-caption,
+.home-carousel .item-inner .inner-for {
   color: #fff;
   text-align: center;
   font-weight: 700;
@@ -4828,21 +4828,21 @@ button.close {
   line-height: 1;
   white-space: nowrap;
 }
-.top-carousel .item-inner .inner-caption {
+.home-carousel .item-inner .inner-caption {
   margin-top: 5px;
   font-size: 20px;
 }
 @media only screen and (min-width: 500px) {
-  .top-carousel .item-inner .inner-caption {
+  .home-carousel .item-inner .inner-caption {
     font-size: 30px;
   }
 }
 @media screen and (min-width: 768px) {
-  .top-carousel .item-inner .inner-caption {
+  .home-carousel .item-inner .inner-caption {
     font-size: 50px;
   }
 }
-.top-carousel .item-inner .inner-for {
+.home-carousel .item-inner .inner-for {
   font-size: 10px;
   width: 130px;
   text-transform: none;
@@ -4852,18 +4852,18 @@ button.close {
   margin: 3px auto 10px;
 }
 @media only screen and (min-width: 500px) {
-  .top-carousel .item-inner .inner-for {
+  .home-carousel .item-inner .inner-for {
     font-size: 15px;
   }
 }
 @media screen and (min-width: 768px) {
-  .top-carousel .item-inner .inner-for {
+  .home-carousel .item-inner .inner-for {
     font-size: 20px;
     width: 190px;
   }
 }
-.top-carousel .item-inner .inner-for:before,
-.top-carousel .item-inner .inner-for:after {
+.home-carousel .item-inner .inner-for:before,
+.home-carousel .item-inner .inner-for:after {
   content: '';
   position: absolute;
   top: 50%;
@@ -4874,71 +4874,91 @@ button.close {
   left: 0;
 }
 @media screen and (min-width: 768px) {
-  .top-carousel .item-inner .inner-for:before,
-  .top-carousel .item-inner .inner-for:after {
+  .home-carousel .item-inner .inner-for:before,
+  .home-carousel .item-inner .inner-for:after {
     width: 60px;
   }
 }
-.top-carousel .item-inner .inner-for:after {
+.home-carousel .item-inner .inner-for:after {
   left: auto;
   right: 0;
 }
-.top-carousel .item-inner .inner-small-caption {
+.home-carousel .item-inner .inner-small-caption {
   font-size: 10px;
 }
 @media only screen and (min-width: 500px) {
-  .top-carousel .item-inner .inner-small-caption {
+  .home-carousel .item-inner .inner-small-caption {
     font-size: 15px;
   }
 }
 @media screen and (min-width: 768px) {
-  .top-carousel .item-inner .inner-small-caption {
+  .home-carousel .item-inner .inner-small-caption {
     font-size: 25px;
   }
 }
-.top-carousel .carousel-control {
+.home-carousel .carousel-control {
   background-image: none;
   text-align: center;
   text-shadow: none;
-  opacity: .75;
   transition: all .3s;
-}
-.top-carousel .carousel-control:hover {
+  cursor: pointer;
   opacity: 1;
 }
-.top-carousel .carousel-control .icon {
+.home-carousel .carousel-control:before {
+  position: absolute;
+  left: 0;
+  content: '';
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  transition: all .3s;
+}
+.home-carousel .carousel-control.right:before {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+}
+.home-carousel .carousel-control:hover:before {
+  opacity: 1;
+}
+.home-carousel .carousel-control .icon {
   font-size: 30px;
   position: absolute;
   display: block;
   top: 50%;
   left: 0;
+  opacity: .75;
   margin-left: 20px;
   transform: translateY(-50%);
+  transition: all .3s;
 }
 @media screen and (min-width: 768px) {
-  .top-carousel .carousel-control .icon {
+  .home-carousel .carousel-control .icon {
     font-size: 50px;
   }
 }
-.top-carousel .carousel-control.right .icon {
+.home-carousel .carousel-control:hover .icon {
+  opacity: 1;
+}
+.home-carousel .carousel-control.right .icon {
   left: auto;
   right: 0;
   margin-left: auto;
   margin-right: 20px;
 }
-.top-carousel .carousel-indicators {
+.home-carousel .carousel-indicators {
   bottom: 10px;
   margin-bottom: 0;
 }
-.top-carousel .carousel-indicators li {
+.home-carousel .carousel-indicators li {
   width: 10px;
   height: 10px;
   background-color: #d1dde1;
   border: none;
   margin: 8px 8px 0 0;
 }
-.top-carousel .carousel-indicators li.active,
-.top-carousel .carousel-indicators li:hover {
+.home-carousel .carousel-indicators li.active,
+.home-carousel .carousel-indicators li:hover {
   background-color: #f6b63a;
 }
 .home-products .products-header {

@@ -339,11 +339,12 @@ angular.module('ui.bootstrap.carousel', [])
       // Scope has been destroyed, stop here.
       if (destroyed) { return; }
 
+
       angular.extend(nextSlide, {direction: direction, active: true});
       angular.extend(self.currentSlide || {}, {direction: direction, active: false});
       if ($animate.enabled() && !$scope.noTransition && nextSlide.$element) {
         $scope.$currentTransition = true;
-        nextSlide.$element.one('$animate:close', function closeFn() {
+        nextSlide.$element.on('$animate:after', function() {
           $scope.$currentTransition = null;
         });
       }
@@ -396,6 +397,7 @@ angular.module('ui.bootstrap.carousel', [])
 
     //Prevent this user-triggered transition from occurring if there is already one in progress
     if (!$scope.$currentTransition) {
+      console.log('in if');
       return self.select(getSlideByIndex(newIndex), 'prev');
     }
   };
@@ -4499,8 +4501,8 @@ angular.module("template/carousel/carousel.html", []).run(["$templateCache", fun
     "        <li ng-repeat=\"slide in slides | orderBy:'index' track by $index\" ng-class=\"{active: isActive(slide)}\" ng-click=\"select(slide)\"></li>\n" +
     "    </ol>\n" +
     "    <div class=\"carousel-inner\" ng-transclude></div>\n" +
-    "    <a class=\"left carousel-control\" ng-click=\"prev()\" ng-show=\"slides.length > 1\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a>\n" +
-    "    <a class=\"right carousel-control\" ng-click=\"next()\" ng-show=\"slides.length > 1\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a>\n" +
+    "    <a class=\"left carousel-control\" ng-click=\"prev()\" ng-show=\"slides.length > 1\"><span class=\"icon icon-arrow-left\"></span></a>\n" +
+    "    <a class=\"right carousel-control\" ng-click=\"next()\" ng-show=\"slides.length > 1\"><span class=\"icon icon-arrow-right\"></span></a>\n" +
     "</div>\n" +
     "");
 }]);

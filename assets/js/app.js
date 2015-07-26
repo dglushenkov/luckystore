@@ -31,60 +31,73 @@ app.controller('contactsCtrl', ['$scope', function($scope) {
     };
     var map = new google.maps.Map(mapCanvas, mapOptions);
 }]);
-app.controller('homeCtrl', ['$scope', '$http', '$routeParams',
-    function($scope, $http, $routeParams) {
+// Home view controller
+app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
+    function($scope, $http, $routeParams, $modal) {
+        // Products data
         $http.get('app/data/products/products.json').success(function(data) {
             $scope.products = data;
         });
 
+        // Emulate newsletter response from server
         $scope.newsletter = function() {
-            $http.get('app/data/server-response/newsletter.json').success(function(data) {
+            $http.get('app/data/newsletter/newsletter.json').success(function(data) {
                 $scope.res = data;
                 $('.js-response-modal').modal('show');
             });
+        };
+
+        // Options for initOwlCarousel directive
+        $scope.owlCarouselOpt = {
+            loop: false,
+            slideBy: 'page',
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                500: {
+                    items: 2
+                },
+                768: {
+                    items: 3
+                },
+                992: {
+                    items: 4
+                }
+            }
+        };
+
+        // Modal newsletter sign-up
+        $scope.signUp = function() {
+            $http.get('app/data/newsletter/newsletter.json')
+                .success(function(data) {
+                    $scope.signUpRes = data;
+
+                    var modal = $modal.open({
+                        templateUrl: 'homeSignUpResponse',
+                        controller: 'homeSignUpResponseCtrl',
+                        resolve: {
+                            signUpRes: function() {
+                                return $scope.signUpRes;
+                            }
+                        }
+                    });
+            })
         }
 }]);
 
-app.directive('ngInitCarousel', function() {
-    return function(scope, element, attr) {
-        if (scope.$last) {
-            owlCarouselInit('.js-home-products-carousel');
-            // console.log(owlCarouselInit);
-        }
+// Modal controller
+app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'signUpRes', function($scope, $modalInstance, signUpRes) {
+    $scope.signUpRes = signUpRes;
+    console.log(signUpRes);
+
+    $scope.ok = function() {
+        $modalInstance.close();
     }
-});
+}]);
 
-function owlCarouselInit(selector) {
-    var owl = $(selector);
 
-    $('.js-home-products-carousel-prev').on('click', function() {
-        owl.trigger('prev.owl.carousel');
-    });
-
-    $('.js-home-products-carousel-next').on('click', function() {
-        owl.trigger('next.owl.carousel');
-    });
-
-    owl.owlCarousel({
-        loop: false,
-        slideBy: 'page',
-        dots: false,
-        responsive: {
-            0: {
-                items: 1
-            },
-            500: {
-                items: 2
-            },
-            768: {
-                items: 3
-            },
-            992: {
-                items: 4
-            }
-        }
-    });
-}
 
 app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
@@ -115,10 +128,8 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         }
 }]);
 
-
 app.controller('navbarCtrl', ['$scope', function($scope) {
     $scope.isCollapsed = true;
-    $scope.dropdowns = {};
 
     $scope.toggleNav = function() {
         $scope.isCollapsed = !$scope.isCollapsed;
@@ -179,5 +190,45 @@ app.controller('navbarCtrl', ['$scope', function($scope) {
     }
 
     $(window).trigger('scroll.stickyNav');
+}]);
+// Initialize owl carousel with owlCarousel service and options in parent scope
+app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
+    return function(scope, element, attr) {
+        if (scope.$last) {
+            owlCarousel.init(scope.owlCarouselOpt);
+        }
+    }
+}]);
+
+
+// Default owl carousel selector
+app.constant('owlCarouselConfig', {
+    carouselSelector: '.js-owl-carousel'
+});
+
+// Owl Carousel service
+app.service('owlCarousel', ['owlCarouselConfig', function(owlCarouselConfig) {
+    this.init = function(options, selector) {
+        var selector = selector || owlCarouselConfig.carouselSelector;
+        var owl = $(selector);
+
+        owl.owlCarousel(options);
+
+        $(selector + '-prev').on('click', function() {
+            owl.trigger('prev.owl.carousel');
+            console.log('prev');
+        });
+
+        $(selector + '-next').on('click', function() {
+            owl.trigger('next.owl.carousel');
+            console.log('next');
+        });
+    }
+}]);
+
+app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get('app/data/slides/slides.json').success(function(data) {
+        $scope.slides = data;
+    });
 }]);
 //# sourceMappingURL=app.js.map
