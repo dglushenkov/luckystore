@@ -176,6 +176,13 @@ app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.slides = data;
     });
 }]);
+app.directive('clover', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
+    }
+})
 // Fix navigation default selectors & classname
 app.constant('fixNavConfig', {
     navContainerSelector: '.main-nav-container',

@@ -4313,9 +4313,6 @@ button.close {
   *
   * @return Return background-image property with repeating linear gradient
 **/
-.fade-long {
-  transition: all 1.5s;
-}
 .header {
   height: 270px;
   background-color: #31485b;
@@ -4692,21 +4689,21 @@ button.close {
 .main-nav .navbar-brand .main-nav-clover .clover-cogwheel .wheel:before {
   background-color: #3c5569;
 }
-.main-nav .navbar-brand .main-nav-clover:hover .clover-petal .petal-inner:before,
-.main-nav .navbar-brand .main-nav-clover:hover .clover-petal .petal-inner:after {
-  background-color: #ffffff;
-}
-.main-nav .navbar-brand .main-nav-clover:hover .clover-cogwheel .cog {
-  background-color: #ffffff;
-}
-.main-nav .navbar-brand .main-nav-clover:hover .clover-cogwheel .cog:before {
-  background-color: #ffffff;
-}
-.main-nav .navbar-brand .main-nav-clover:hover .clover-cogwheel .wheel {
-  background-color: #ffffff;
-}
 .main-nav .navbar-brand:hover .clover {
   transform: rotate(180deg);
+}
+.main-nav .navbar-brand:hover .clover .clover-petal .petal-inner:before,
+.main-nav .navbar-brand:hover .clover .clover-petal .petal-inner:after {
+  background-color: #9cbf3e;
+}
+.main-nav .navbar-brand:hover .clover .clover-cogwheel .cog {
+  background-color: #9cbf3e;
+}
+.main-nav .navbar-brand:hover .clover .clover-cogwheel .cog:before {
+  background-color: #9cbf3e;
+}
+.main-nav .navbar-brand:hover .clover .clover-cogwheel .wheel {
+  background-color: #9cbf3e;
 }
 .main-nav .navbar-nav .dropdown-menu > li > a {
   line-height: 2;
@@ -4914,9 +4911,11 @@ button.close {
   opacity: 0;
   background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   transition: all .3s;
+  border-radius: 4px 0 0 4px;
 }
 .home-carousel .carousel-control.right:before {
   background-image: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+  border-radius: 0 4px 4px 0;
 }
 .home-carousel .carousel-control:hover:before {
   opacity: 1;
@@ -5528,19 +5527,6 @@ button.close {
 }
 .footer .footer-clover:hover {
   transform: rotate(180deg);
-}
-.footer .footer-clover:hover .clover-petal .petal-inner:before,
-.footer .footer-clover:hover .clover-petal .petal-inner:after {
-  background-color: #9cbf3e;
-}
-.footer .footer-clover:hover .clover-cogwheel .cog {
-  background-color: #9cbf3e;
-}
-.footer .footer-clover:hover .clover-cogwheel .cog:before {
-  background-color: #9cbf3e;
-}
-.footer .footer-clover:hover .clover-cogwheel .wheel {
-  background-color: #9cbf3e;
 }
 .footer address {
   display: block;

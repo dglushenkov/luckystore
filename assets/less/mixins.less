@@ -55,7 +55,7 @@
 //=======================================================================
 //Clover colors
 //=======================================================================
-.clover-color(@foreground, @background, @hover, @animate) {
+.clover-color(@foreground, @background) {
 
   //Petal foreground color
   .clover-petal {
@@ -83,30 +83,27 @@
       }
     }
   }
+}
 
-  //Hover color
-  &:hover {
-    & when (@animate = true) {
-      transform: rotate(180deg);
-    }
-    .clover-petal {
-      .petal-inner {
-        &:before,
-        &:after {
-          background-color: @hover;
-        }
-      }
-    }
-    .clover-cogwheel {
-      .cog {
-        background-color: @hover;
-        &:before {
-          background-color: @hover;
-        }
-      }
-      .wheel {
+// Color on hover
+.clover-hover(@hover) {
+  .clover-petal {
+    .petal-inner {
+      &:before,
+      &:after {
         background-color: @hover;
       }
+    }
+  }
+  .clover-cogwheel {
+    .cog {
+      background-color: @hover;
+      &:before {
+        background-color: @hover;
+      }
+    }
+    .wheel {
+      background-color: @hover;
     }
   }
 }
@@ -116,8 +113,4 @@
 //=======================================================================
 .box-shadow-base() {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
-}
-
-.fade-long {
-  transition: all 1.5s;
 }

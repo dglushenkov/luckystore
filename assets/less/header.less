@@ -61,7 +61,11 @@
     height: 64px;
     display: block;
     margin: 0 auto;
-    .clover-color(#fff, #31485b, #9cbf3e, true);
+    .clover-color(#fff, #31485b);
+    &:hover {
+      transform: rotate(180deg);
+      .clover-hover(#9cbf3e)
+    }
   }
 
   //Flag
