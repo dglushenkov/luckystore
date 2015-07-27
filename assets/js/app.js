@@ -45,14 +45,6 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal', 'simple
             $scope.products = data;
         });
 
-        // Emulate newsletter response from server
-        $scope.newsletter = function() {
-            $http.get('app/data/newsletter/newsletter.json').success(function(data) {
-                $scope.res = data;
-                $('.js-response-modal').modal('show');
-            });
-        };
-
         // Options for initOwlCarousel directive
         $scope.owlCarouselOpt = {
             loop: false,
@@ -213,6 +205,13 @@ app.controller('navbarCtrl', ['$scope', '$location', '$routeParams',
     }
 }]);
 
+app.directive('productThumbnail', function() {
+    return {
+        restrict: 'EA',
+        templateUrl: 'app/shared/product-thumbnail/productThumbnailTemplate.html',
+        replace: true
+    }
+});
 // Initialize owl carousel with owlCarousel service and options in parent scope
 app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
     return function(scope, element, attr) {
@@ -246,27 +245,11 @@ app.service('owlCarousel', ['owlCarouselConfig', function(owlCarouselConfig) {
     }
 }]);
 
-app.directive('productThumbnail', function() {
-    return {
-        restrict: 'EA',
-        templateUrl: 'app/shared/product-thumbnail/productThumbnailTemplate.html',
-        replace: true
-    }
-});
 app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
         $scope.slides = data;
-
-        console.log($scope.$$childHead);
     });
 }]);
-app.directive('clover', function() {
-    return {
-        restrict: 'EA',
-        replace: true,
-        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
-    }
-})
 // Fix navigation default selectors & classname
 app.constant('fixNavConfig', {
     navContainerSelector: '.main-nav-container',
@@ -345,6 +328,13 @@ app.directive('fixNav', function() {
         }
     }
 });
+app.directive('clover', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
+    }
+})
 app.service('simpleFormService', function() {
     this.init = function() {
         var block = $('.simple-form-block');

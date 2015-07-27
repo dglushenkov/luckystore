@@ -66036,12 +66036,11 @@ angular.module('ui.bootstrap.carousel', [])
       // Scope has been destroyed, stop here.
       if (destroyed) { return; }
 
-
       angular.extend(nextSlide, {direction: direction, active: true});
       angular.extend(self.currentSlide || {}, {direction: direction, active: false});
       if ($animate.enabled() && !$scope.noTransition && nextSlide.$element) {
         $scope.$currentTransition = true;
-        nextSlide.$element.on('$animate:after', function() {
+        nextSlide.$element.one('$animate:close', function closeFn() {
           $scope.$currentTransition = null;
         });
       }

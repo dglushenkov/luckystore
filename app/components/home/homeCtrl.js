@@ -8,14 +8,6 @@ app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal', 'simple
             $scope.products = data;
         });
 
-        // Emulate newsletter response from server
-        $scope.newsletter = function() {
-            $http.get('app/data/newsletter/newsletter.json').success(function(data) {
-                $scope.res = data;
-                $('.js-response-modal').modal('show');
-            });
-        };
-
         // Options for initOwlCarousel directive
         $scope.owlCarouselOpt = {
             loop: false,
