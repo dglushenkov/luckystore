@@ -5196,10 +5196,13 @@ button.close {
   }
 }
 .sales-product.ng-enter {
-  opacity: 0.2;
+  opacity: 0;
   transform-origin: 50% 50% 0;
-  transform: translate3d(0, 0, 0) rotate3d(0, 1, 0, -180deg);
-  transition: .4s;
+  transform: translate3d(0, -30%, 0);
+  transition: .6s all;
+}
+.sales-product.ng-enter-stagger {
+  transition-delay: .06s;
 }
 .sales-product.ng-enter-active {
   opacity: 1;
