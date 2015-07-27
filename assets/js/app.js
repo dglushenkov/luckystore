@@ -25,6 +25,41 @@ app.config(['$routeProvider',
 }]);
 
 
+app.controller('contactsCtrl', ['$scope', function($scope) {
+    $scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
+    $scope.options = {
+        scrollwheel: false
+    };
+}]);
+app.controller('loginCtrl', ['$scope', '$http', '$modal', 
+    function($scope, $http, $modal) {
+        // Login action
+        $scope.login = function() {
+            $http.get('app/data/login/login.json')
+                .success(function(data) {
+                    $scope.response = data;
+
+                    var modal = $modal.open({
+                        templateUrl: 'app/shared/templates/sampleResponse.html',
+                        controller: 'loginResponseCtrl',
+                        resolve: {
+                            response: function() {
+                                return $scope.response;
+                            }
+                        }
+                    });
+            })
+        }
+}]);
+
+// Modal controller
+app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
+    $scope.response = response;
+
+    $scope.ok = function() {
+        $modalInstance.close();
+    }
+}]);
 // Home view controller
 app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
     function($scope, $http, $routeParams, $modal) {
@@ -92,45 +127,11 @@ app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'response'
 
 
 
-app.controller('contactsCtrl', ['$scope', function($scope) {
-    $scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
-    $scope.options = {
-        scrollwheel: false
-    };
-}]);
-app.controller('loginCtrl', ['$scope', '$http', '$modal', 
-    function($scope, $http, $modal) {
-        // Login action
-        $scope.login = function() {
-            $http.get('app/data/login/login.json')
-                .success(function(data) {
-                    $scope.response = data;
-
-                    var modal = $modal.open({
-                        templateUrl: 'app/shared/templates/sampleResponse.html',
-                        controller: 'loginResponseCtrl',
-                        resolve: {
-                            response: function() {
-                                return $scope.response;
-                            }
-                        }
-                    });
-            })
-        }
-}]);
-
-// Modal controller
-app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
-    $scope.response = response;
-
-    $scope.ok = function() {
-        $modalInstance.close();
-    }
-}]);
 app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
         $http.get('app/data/products/products.json').success(function(data) {
             $scope.products = data;
+            $scope.itemLength = data.length;
         });
 
         $scope.category = $routeParams.category;
@@ -156,14 +157,33 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         }
 }]);
 
-app.controller('navbarCtrl', ['$scope', function($scope) {
-    $scope.isCollapsed = true;
+app.constant('saleAnimateConfig', {
+    duration: 2000
+});
 
-    $scope.toggleNav = function() {
-        $scope.isCollapsed = !$scope.isCollapsed;
+app.animation('.sales-product', ['$timeout', 'saleAnimateConfig', function($timeout, saleAnimateConfig) {
+    return {
+        enter: function(element, done) {
+            var ind = element.attr('index');
+            var len = element.attr('item-length');
+            var delay = saleAnimateConfig.duration / len * (ind);
+            console.log(delay);
+            $timeout(function() {
+                element.addClass('is-animated');
+                done();
+            }, delay);
+        },
+        leave: function(element, done) {
+            var ind = element.attr('index');
+            var len = element.attr('item-length');
+            var delay = saleAnimateConfig.duration / len * (ind + 1);
+            $timeout(function() {
+                element.removeClass('is-animated');
+                done();
+            }, delay);
+        }
     }
 }]);
-
 // Initialize owl carousel with owlCarousel service and options in parent scope
 app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
     return function(scope, element, attr) {
@@ -194,6 +214,14 @@ app.service('owlCarousel', ['owlCarouselConfig', function(owlCarouselConfig) {
         $(selector + '-next').on('click', function() {
             owl.trigger('next.owl.carousel');
         });
+    }
+}]);
+
+app.controller('navbarCtrl', ['$scope', function($scope) {
+    $scope.isCollapsed = true;
+
+    $scope.toggleNav = function() {
+        $scope.isCollapsed = !$scope.isCollapsed;
     }
 }]);
 

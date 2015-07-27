@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="col-xs-12 col-sm-4 col-md-3 sales-product" ng-repeat-start="product in products | filter:isMatchParams">
+<div class="container js-product-container">
+    <div class="col-xs-12 col-sm-4 col-md-3 sales-product product-thumbnail-animate" ng-repeat-start="product in products | filter:isMatchParams" index="{{$index}}" item-length="{{itemLength}}">
         <!--Product thumbnail-->
         <product-thumbnail></product-thumbnail>
         <!--/Product thumbnail-->
