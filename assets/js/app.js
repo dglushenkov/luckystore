@@ -31,38 +31,11 @@ app.controller('contactsCtrl', ['$scope', function($scope) {
         scrollwheel: false
     };
 }]);
-app.controller('loginCtrl', ['$scope', '$http', '$modal', 
-    function($scope, $http, $modal) {
-        // Login action
-        $scope.login = function() {
-            $http.get('app/data/login/login.json')
-                .success(function(data) {
-                    $scope.response = data;
-
-                    var modal = $modal.open({
-                        templateUrl: 'app/shared/templates/sampleResponse.html',
-                        controller: 'loginResponseCtrl',
-                        resolve: {
-                            response: function() {
-                                return $scope.response;
-                            }
-                        }
-                    });
-            })
-        }
-}]);
-
-// Modal controller
-app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
-    $scope.response = response;
-
-    $scope.ok = function() {
-        $modalInstance.close();
-    }
-}]);
 // Home view controller
-app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
-    function($scope, $http, $routeParams, $modal) {
+app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal', 'simpleFormService',
+    function($scope, $http, $routeParams, $modal, simpleFormService) {
+        simpleFormService.init();
+
         // Products data
         $http.get('app/data/products/products.json').success(function(data) {
             $scope.products = data;
@@ -127,6 +100,36 @@ app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'response'
 
 
 
+app.controller('loginCtrl', ['$scope', '$http', '$modal', 'simpleFormService',
+    function($scope, $http, $modal, simpleFormService) {
+        simpleFormService.init();
+        // Login action
+        $scope.login = function() {
+            $http.get('app/data/login/login.json')
+                .success(function(data) {
+                    $scope.response = data;
+
+                    var modal = $modal.open({
+                        templateUrl: 'app/shared/templates/sampleResponse.html',
+                        controller: 'loginResponseCtrl',
+                        resolve: {
+                            response: function() {
+                                return $scope.response;
+                            }
+                        }
+                    });
+            })
+        }
+}]);
+
+// Modal controller
+app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
+    $scope.response = response;
+
+    $scope.ok = function() {
+        $modalInstance.close();
+    }
+}]);
 app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
         $http.get('app/data/products/products.json').success(function(data) {
@@ -290,6 +293,22 @@ app.directive('fixNav', function() {
         link: function(scope, element, attr, fixNavCtrl) {
             fixNavCtrl.init();
         }
+    }
+});
+app.service('simpleFormService', function() {
+    this.init = function() {
+        var block = $('.simple-form-block');
+        block.find('input, button')
+            .on('blur', function(e) {
+                var relatedTarget = $(e.relatedTarget);
+                if (relatedTarget.parents('.simple-form-block').length) {
+                    return;
+                }
+                block.removeClass('hasFocus');
+            })
+            .on('focus', function(e) {
+                block.addClass('hasFocus');
+            })
     }
 });
 //# sourceMappingURL=app.js.map

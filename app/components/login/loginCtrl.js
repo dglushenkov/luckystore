@@ -1,5 +1,6 @@
-app.controller('loginCtrl', ['$scope', '$http', '$modal', 
-    function($scope, $http, $modal) {
+app.controller('loginCtrl', ['$scope', '$http', '$modal', 'simpleFormService',
+    function($scope, $http, $modal, simpleFormService) {
+        simpleFormService.init();
         // Login action
         $scope.login = function() {
             $http.get('app/data/login/login.json')

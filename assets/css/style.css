@@ -5329,7 +5329,11 @@ button.close {
   content: '';
   display: block;
   height: 5px;
-  background-image: repeating-linear-gradient(-45deg, #2799c9 0%, #2799c9 6.666666666666667%, #ffffff 6.666666666666667%, #ffffff 13.333333333333334%, #e05543 13.333333333333334%, #e05543 20%, #ffffff 20%, #ffffff 26.666666666666668%, #2799c9 26.666666666666668%, #2799c9 33.333333333333336%, #ffffff 33.333333333333336%, #ffffff 40%, #e05543 40%, #e05543 46.66666666666667%, #ffffff 46.66666666666667%, #ffffff 53.333333333333336%, #2799c9 53.333333333333336%, #2799c9 60%, #ffffff 60%, #ffffff 66.66666666666667%, #e05543 66.66666666666667%, #e05543 73.33333333333334%, #ffffff 73.33333333333334%, #ffffff 80%, #2799c9 80%, #2799c9 86.66666666666667%, #ffffff 86.66666666666667%, #ffffff 93.33333333333334%, #e05543 93.33333333333334%, #e05543 100%);
+  background-image: repeating-linear-gradient(45deg, #2799c9 0%, #2799c9 12.5%, #ffffff 12.5%, #ffffff 25%, #e05543 25%, #e05543 37.5%, #ffffff 37.5%, #ffffff 50%, #2799c9 50%, #2799c9 62.5%, #ffffff 62.5%, #ffffff 75%, #e05543 75%, #e05543 87.5%, #ffffff 87.5%, #ffffff 100%);
+  background-size: 80px 80px;
+}
+.simple-form-block.hasFocus:before {
+  animation: bganimate 3s linear infinite;
 }
 .simple-form-block .simple-form {
   position: relative;
@@ -5362,6 +5366,14 @@ button.close {
 }
 .simple-form-block .control-submit:hover {
   background-color: #ea6e1c;
+}
+@keyframes bganimate {
+  from {
+    background-position: 80px 0px;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 .home-sign-up-form .icon-sign-up-email {
   font-size: 72px;

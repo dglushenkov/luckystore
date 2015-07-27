@@ -16,7 +16,11 @@
         #fff,
         #e05543,
         #fff;
-        .repeating-gradient(@colors, 15, 0, -45deg);
+        .repeating-gradient(@colors, 8, 0, 45deg);
+        background-size: 80px 80px;
+    }
+    &.hasFocus:before {
+        animation: bganimate 3s linear infinite;
     }
     //Form element
     .simple-form {
@@ -55,5 +59,16 @@
         &:hover {
             background-color: #ea6e1c;
         }
+    }
+}
+
+@keyframes bganimate {
+    from {
+        background-position: 80px 0px;
+        // opacity: 0
+    }
+    to {
+        background-position: 0 0;
+        // opacity: 1;
     }
 }

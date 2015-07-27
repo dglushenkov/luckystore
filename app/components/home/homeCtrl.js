@@ -1,6 +1,8 @@
 // Home view controller
-app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
-    function($scope, $http, $routeParams, $modal) {
+app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal', 'simpleFormService',
+    function($scope, $http, $routeParams, $modal, simpleFormService) {
+        simpleFormService.init();
+
         // Products data
         $http.get('app/data/products/products.json').success(function(data) {
             $scope.products = data;
