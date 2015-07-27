@@ -240,11 +240,13 @@ app.directive('productThumbnail', function() {
         replace: true
     }
 });
-app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
-        $scope.slides = data;
-    });
-}]);
+app.directive('clover', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
+    }
+})
 // Fix navigation default selectors & classname
 app.constant('fixNavConfig', {
     navContainerSelector: '.main-nav-container',
@@ -323,13 +325,6 @@ app.directive('fixNav', function() {
         }
     }
 });
-app.directive('clover', function() {
-    return {
-        restrict: 'EA',
-        replace: true,
-        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
-    }
-})
 app.service('simpleFormService', function() {
     this.init = function() {
         var block = $('.simple-form-block');
@@ -346,4 +341,11 @@ app.service('simpleFormService', function() {
             })
     }
 });
+app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
+        $scope.slides = data;
+
+        console.log($scope.$$childHead);
+    });
+}]);
 //# sourceMappingURL=app.js.map

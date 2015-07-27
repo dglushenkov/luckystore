@@ -4731,19 +4731,39 @@ button.close {
   margin-bottom: 40px;
   border-radius: 4px;
 }
+.home-carousel .item:hover .item-bg {
+  animation: home-slide-horz 3s linear infinite;
+}
+.home-carousel .item:hover .inner-caption,
+.home-carousel .item:hover .inner-small-caption,
+.home-carousel .item:hover .inner-for {
+  text-shadow: -10px 10px 3px rgba(0, 0, 0, 0.1);
+}
+.home-carousel .item:hover .inner-caption:before,
+.home-carousel .item:hover .inner-small-caption:before,
+.home-carousel .item:hover .inner-for:before,
+.home-carousel .item:hover .inner-caption:after,
+.home-carousel .item:hover .inner-small-caption:after,
+.home-carousel .item:hover .inner-for:after {
+  box-shadow: -10px 10px 3px rgba(0, 0, 0, 0.1);
+}
 .home-carousel .item-bg {
   padding-top: 46.49%;
   width: 100%;
   border-radius: 4px;
+  background-size: 100px 100px;
 }
 .home-carousel .item:nth-child(1) .item-bg {
-  background-image: repeating-linear-gradient(90deg, #637787 0%, #637787 4%, #497787 4%, #497787 8%, #637787 8%, #637787 12%, #497787 12%, #497787 16%, #637787 16%, #637787 20%, #497787 20%, #497787 24%, #637787 24%, #637787 28%, #497787 28%, #497787 32%, #637787 32%, #637787 36%, #497787 36%, #497787 40%, #637787 40%, #637787 44%, #497787 44%, #497787 48%, #637787 48%, #637787 52%, #497787 52%, #497787 56%, #637787 56%, #637787 60%, #497787 60%, #497787 64%, #637787 64%, #637787 68%, #497787 68%, #497787 72%, #637787 72%, #637787 76%, #497787 76%, #497787 80%, #637787 80%, #637787 84%, #497787 84%, #497787 88%, #637787 88%, #637787 92%, #497787 92%, #497787 96%, #637787 96%, #637787 100%);
+  background-image: repeating-linear-gradient(90deg, #637787 0%, #637787 16.666666666666668%, #497787 16.666666666666668%, #497787 33.333333333333336%, #637787 33.333333333333336%, #637787 50%, #497787 50%, #497787 66.66666666666667%, #637787 66.66666666666667%, #637787 83.33333333333334%, #497787 83.33333333333334%, #497787 100%);
 }
 .home-carousel .item:nth-child(2) .item-bg {
-  background-image: repeating-linear-gradient(45deg, #aacc00 0%, #aacc00 2.857142857142857%, #bbd633 2.857142857142857%, #bbd633 5.714285714285714%, #aacc00 5.714285714285714%, #aacc00 8.571428571428571%, #bbd633 8.571428571428571%, #bbd633 11.428571428571429%, #aacc00 11.428571428571429%, #aacc00 14.285714285714286%, #bbd633 14.285714285714286%, #bbd633 17.142857142857142%, #aacc00 17.142857142857142%, #aacc00 20%, #bbd633 20%, #bbd633 22.857142857142858%, #aacc00 22.857142857142858%, #aacc00 25.714285714285715%, #bbd633 25.714285714285715%, #bbd633 28.571428571428573%, #aacc00 28.571428571428573%, #aacc00 31.42857142857143%, #bbd633 31.42857142857143%, #bbd633 34.285714285714285%, #aacc00 34.285714285714285%, #aacc00 37.142857142857146%, #bbd633 37.142857142857146%, #bbd633 40%, #aacc00 40%, #aacc00 42.85714285714286%, #bbd633 42.85714285714286%, #bbd633 45.714285714285715%, #aacc00 45.714285714285715%, #aacc00 48.57142857142857%, #bbd633 48.57142857142857%, #bbd633 51.42857142857143%, #aacc00 51.42857142857143%, #aacc00 54.285714285714285%, #bbd633 54.285714285714285%, #bbd633 57.142857142857146%, #aacc00 57.142857142857146%, #aacc00 60%, #bbd633 60%, #bbd633 62.85714285714286%, #aacc00 62.85714285714286%, #aacc00 65.71428571428572%, #bbd633 65.71428571428572%, #bbd633 68.57142857142857%, #aacc00 68.57142857142857%, #aacc00 71.42857142857143%, #bbd633 71.42857142857143%, #bbd633 74.28571428571429%, #aacc00 74.28571428571429%, #aacc00 77.14285714285714%, #bbd633 77.14285714285714%, #bbd633 80%, #aacc00 80%, #aacc00 82.85714285714286%, #bbd633 82.85714285714286%, #bbd633 85.71428571428572%, #aacc00 85.71428571428572%, #aacc00 88.57142857142857%, #bbd633 88.57142857142857%, #bbd633 91.42857142857143%, #aacc00 91.42857142857143%, #aacc00 94.28571428571429%, #bbd633 94.28571428571429%, #bbd633 97.14285714285714%, #aacc00 97.14285714285714%, #aacc00 100%);
+  background-image: repeating-linear-gradient(45deg, #aacc00 0%, #aacc00 12.5%, #bbd633 12.5%, #bbd633 25%, #aacc00 25%, #aacc00 37.5%, #bbd633 37.5%, #bbd633 50%, #aacc00 50%, #aacc00 62.5%, #bbd633 62.5%, #bbd633 75%, #aacc00 75%, #aacc00 87.5%, #bbd633 87.5%, #bbd633 100%);
 }
 .home-carousel .item:nth-child(3) .item-bg {
-  background-image: repeating-linear-gradient(0deg, #ffad33 0%, #ffad33 6.666666666666667%, #ff9900 6.666666666666667%, #ff9900 13.333333333333334%, #ffad33 13.333333333333334%, #ffad33 20%, #ff9900 20%, #ff9900 26.666666666666668%, #ffad33 26.666666666666668%, #ffad33 33.333333333333336%, #ff9900 33.333333333333336%, #ff9900 40%, #ffad33 40%, #ffad33 46.66666666666667%, #ff9900 46.66666666666667%, #ff9900 53.333333333333336%, #ffad33 53.333333333333336%, #ffad33 60%, #ff9900 60%, #ff9900 66.66666666666667%, #ffad33 66.66666666666667%, #ffad33 73.33333333333334%, #ff9900 73.33333333333334%, #ff9900 80%, #ffad33 80%, #ffad33 86.66666666666667%, #ff9900 86.66666666666667%, #ff9900 93.33333333333334%, #ffad33 93.33333333333334%, #ffad33 100%);
+  background-image: repeating-linear-gradient(0deg, #ffad33 0%, #ffad33 16.666666666666668%, #ff9900 16.666666666666668%, #ff9900 33.333333333333336%, #ffad33 33.333333333333336%, #ffad33 50%, #ff9900 50%, #ff9900 66.66666666666667%, #ffad33 66.66666666666667%, #ffad33 83.33333333333334%, #ff9900 83.33333333333334%, #ff9900 100%);
+}
+.home-carousel .item:nth-child(3):hover .item-bg {
+  animation: home-slide-vert 3s linear infinite;
 }
 .home-carousel .item-inner {
   position: absolute;
@@ -4751,6 +4771,7 @@ button.close {
   left: 50%;
   margin-top: -10px;
   transform: translateY(-50%) translateX(-50%);
+  text-decoration: none;
 }
 @media screen and (min-width: 768px) {
   .home-carousel .item-inner {
@@ -4827,6 +4848,7 @@ button.close {
   text-transform: uppercase;
   line-height: 1;
   white-space: nowrap;
+  transition: all .3s;
 }
 .home-carousel .item-inner .inner-caption {
   margin-top: 5px;
@@ -4866,6 +4888,7 @@ button.close {
 .home-carousel .item-inner .inner-for:after {
   content: '';
   position: absolute;
+  transition: all .3s;
   top: 50%;
   height: 1px;
   margin-top: 1px;
@@ -4962,6 +4985,22 @@ button.close {
 .home-carousel .carousel-indicators li.active,
 .home-carousel .carousel-indicators li:hover {
   background-color: #f6b63a;
+}
+@keyframes home-slide-horz {
+  from {
+    background-position: 100px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+@keyframes home-slide-vert {
+  from {
+    background-position: 0 100px;
+  }
+  to {
+    background-position: 0 0;
+  }
 }
 .home-products .products-header .control-wrap {
   position: relative;
@@ -5271,10 +5310,15 @@ button.close {
   width: 100px;
 }
 .home-review .review-author .author-name {
-  display: block;
   color: #303030;
   margin-top: 40px;
   font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+}
+.home-review .review-author .author-name:hover {
+  border-bottom: 1px dashed #000;
 }
 .home-review .review-author .author-location {
   color: grey;
@@ -5307,7 +5351,7 @@ button.close {
   background-size: 80px 80px;
 }
 .simple-form-block.hasFocus:before {
-  animation: bganimate 3s linear infinite;
+  animation: simple-form 3s linear infinite;
 }
 .simple-form-block .simple-form {
   position: relative;
@@ -5341,7 +5385,7 @@ button.close {
 .simple-form-block .control-submit:hover {
   background-color: #ea6e1c;
 }
-@keyframes bganimate {
+@keyframes simple-form {
   from {
     background-position: 80px 0px;
   }

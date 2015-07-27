@@ -2,6 +2,20 @@
     .box-shadow-base();
     margin-bottom: 40px;
     border-radius: @border-radius-base;
+    .item:hover {
+        .item-bg {
+            animation: home-slide-horz 3s linear infinite;
+        }
+        .inner-caption,
+        .inner-small-caption,
+        .inner-for {
+            text-shadow: -10px 10px 3px rgba(0,0,0,.1);
+            &:before,
+            &:after {
+                box-shadow: -10px 10px 3px rgba(0,0,0,.1);
+            }
+        }
+    }
     //=======================================================================
     //Backgrounds
     //=======================================================================
@@ -10,24 +24,28 @@
         padding-top: 46.49%;
         width: 100%;
         border-radius: @border-radius-base;
+        background-size: 100px 100px;
     }
     //Slide 1 background
     .item:nth-child(1) .item-bg {
         @colors: #637787,
         #497787;
-        .repeating-gradient(@colors, 25, 0, 90deg);
+        .repeating-gradient(@colors, 6, 0, 90deg);
     }
     //Slide 2 background
     .item:nth-child(2) .item-bg {
         @colors: #aacc00,
         #bbd633;
-        .repeating-gradient(@colors, 35, 0, 45deg);
+        .repeating-gradient(@colors, 8, 0, 45deg);
     }
     //Slide 3 background
     .item:nth-child(3) .item-bg {
         @colors: #ffad33,
         #ff9900;
-        .repeating-gradient(@colors, 15, 0, 0deg);
+        .repeating-gradient(@colors, 6, 0, 0deg);
+    }
+    .item:nth-child(3):hover .item-bg {
+        animation: home-slide-vert 3s linear infinite;
     }
     //=======================================================================
     //Slide inner elements
@@ -38,6 +56,7 @@
         left: 50%;
         margin-top: -10px;
         transform: translateY(-50%) translateX(-50%);
+        text-decoration: none;
         @media @tablet-min {
             margin-top: -20px;
         }
@@ -121,6 +140,7 @@
             text-transform: uppercase;
             line-height: 1;
             white-space: nowrap;
+            transition: all .3s;
         }
         //Large caption
         .inner-caption {
@@ -154,6 +174,7 @@
             &:after {
                 content: '';
                 position: absolute;
+                transition: all .3s;
                 top: 50%;
                 height: 1px;
                 margin-top: 1px;
@@ -256,3 +277,22 @@
         }
     }
 }
+
+@keyframes home-slide-horz {
+    from {
+        background-position: 100px 0;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes home-slide-vert {
+    from {
+        background-position: 0 100px;
+    }
+    to {
+        background-position: 0 0;
+    }
+}
+
