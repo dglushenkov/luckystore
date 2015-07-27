@@ -17,8 +17,11 @@ app.controller('fixNavCtrl', ['$scope', 'fixNavConfig',
             self.placeholder = $(fixNavConfig.navPlaceholderSelector);
 
             $(window).on('scroll', function() {
-                $scope.isFixNav = $(window).scrollTop() > getNavBottom();
-                $scope.$apply();
+                var newIsFixNav = $(window).scrollTop() > getNavBottom();
+                if (newIsFixNav != $scope.isFixNav) {
+                    $scope.isFixNav = newIsFixNav;
+                    $scope.$apply();
+                }
             });
         };
 

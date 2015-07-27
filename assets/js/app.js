@@ -160,11 +160,24 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         }
 }]);
 
-app.controller('navbarCtrl', ['$scope', function($scope) {
+app.controller('navbarCtrl', ['$scope', '$location', '$routeParams',
+    function($scope, $location, $routeParams) {
     $scope.isCollapsed = true;
 
     $scope.toggleNav = function() {
         $scope.isCollapsed = !$scope.isCollapsed;
+    }
+
+    $scope.isActive = function(viewLocation, isCategory) {
+        if (isCategory) {
+            var category = $routeParams.category;
+            if (!category) return false;
+
+            category = category.replace(/-\S+/, '');
+            return viewLocation === '/' + category;
+        } else {
+            return viewLocation === $location.path();
+        }
     }
 }]);
 
@@ -239,8 +252,11 @@ app.controller('fixNavCtrl', ['$scope', 'fixNavConfig',
             self.placeholder = $(fixNavConfig.navPlaceholderSelector);
 
             $(window).on('scroll', function() {
-                $scope.isFixNav = $(window).scrollTop() > getNavBottom();
-                $scope.$apply();
+                var newIsFixNav = $(window).scrollTop() > getNavBottom();
+                if (newIsFixNav != $scope.isFixNav) {
+                    $scope.isFixNav = newIsFixNav;
+                    $scope.$apply();
+                }
             });
         };
 

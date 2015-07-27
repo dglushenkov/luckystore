@@ -30,31 +30,61 @@
 
             <!--Links -->
             <ul class="nav navbar-nav navbar-text-items">
-                <li class="dropdown navbar-text-item-men" dropdown is-open="isMenOpen">
+                <li class="dropdown navbar-text-item-men" dropdown is-open="isMenOpen" ng-class="{active: isActive('/men', true)}">
                     <a href="#" class="dropdown-toggle js-click-prevent-defaults" dropdown-toggle>Men <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#/sales/category/men/tag/all">All men</a></li>
-                        <li><a href="#/sales/category/men-shoes/tag/all">Shoes</a></li>
-                        <li><a href="#/sales/category/men-tops/tag/all">Tops</a></li>
-                        <li><a href="#/sales/category/men-shirts/tag/all">Shirts</a></li>
-                        <li><a href="#/sales/category/men/tag/new">New</a></li>
-                        <li><a href="#/sales/category/men/tag/hot">Hot</a></li>
+                        <li ng-class="{active: isActive('/sales/category/men/tag/all')}">
+                            <a href="#/sales/category/men/tag/all">All men</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/men-shoes/tag/all')}">
+                            <a href="#/sales/category/men-shoes/tag/all">Shoes</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/men-tops/tag/all')}">
+                            <a href="#/sales/category/men-tops/tag/all">Tops</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/men-shirts/tag/all')}">
+                            <a href="#/sales/category/men-shirts/tag/all">Shirts</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/men/tag/new')}">
+                            <a href="#/sales/category/men/tag/new">New</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/men/tag/hot')}">
+                            <a href="#/sales/category/men/tag/hot">Hot</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="dropdown navbar-text-item-women" dropdown is-open="isWomenOpen">
+                <li class="dropdown navbar-text-item-women" dropdown is-open="isWomenOpen" ng-class="{active: isActive('/women', true)}">
                     <a href="#" class="dropdown-toggle js-click-prevent-defaults" dropdown-toggle>Women <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#/sales/category/women/tag/all">All women</a></li>
-                        <li><a href="#/sales/category/women-shoes/tag/all">Shoes</a></li>
-                        <li><a href="#/sales/category/women-tops/tag/all">Tops</a></li>
-                        <li><a href="#/sales/category/women-shirts/tag/all">Shirts</a></li>
-                        <li><a href="#/sales/category/women/tag/new">New</a></li>
-                        <li><a href="#/sales/category/women/tag/hot">Hot</a></li>
+                        <li ng-class="{active: isActive('/sales/category/women/tag/all')}">
+                            <a href="#/sales/category/women/tag/all">All women</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/women-shoes/tag/all')}">
+                            <a href="#/sales/category/women-shoes/tag/all">Shoes</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/women-tops/tag/all')}">
+                            <a href="#/sales/category/women-tops/tag/all">Tops</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/women-shirts/tag/all')}">
+                            <a href="#/sales/category/women-shirts/tag/all">Shirts</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/women/tag/new')}">
+                            <a href="#/sales/category/women/tag/new">New</a>
+                        </li>
+                        <li ng-class="{active: isActive('/sales/category/women/tag/hot')}">
+                            <a href="#/sales/category/women/tag/hot">Hot</a>
+                        </li>
                     </ul>
                 </li>
-                <li class="navbar-text-item-sale"><a href="#/sales/category/all/tag/all">Sale!</a></li>
-                <li class="navbar-text-item-login"><a href="#/login">Login</a></li>
-                <li class="navbar-text-item-contacts"><a href="#/contacts">Contacts</a></li>
+                <li class="navbar-text-item-sale" ng-class="{active: isActive('/sales/category/all/tag/all')}">
+                    <a href="#/sales/category/all/tag/all">Sale!</a>
+                </li>
+                <li class="navbar-text-item-login" ng-class="{active: isActive('/login')}">
+                    <a href="#/login">Login</a>
+                </li>
+                <li class="navbar-text-item-contacts" ng-class="{active: isActive('/contacts')}">
+                    <a href="#/contacts">Contacts</a>
+                </li>
             </ul>
             <!--/Links-->
         </div>
