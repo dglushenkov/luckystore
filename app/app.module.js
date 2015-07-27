@@ -1,4 +1,4 @@
-var app = angular.module('luckystore', ['ngRoute', 'ui.bootstrap', 'ngAnimate']);
+var app = angular.module('luckystore', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps']);
 
 app.config(['$routeProvider',
     function($routeProvider) {

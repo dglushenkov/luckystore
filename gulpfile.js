@@ -63,10 +63,19 @@ gulp.task('js', function() {
 // Libs JS
 // ====================================================================
 gulp.task('libs-js', function() {
-    gulp.src([
-        'assets/lib/jquery/*.js',
-        'assets/lib/angular/angular.js',
-        'assets/lib/**/*.js'])
+    var defPath = 'assets/lib/';
+    var libs = [
+        'jquery/jquery.js',
+        'angular/angular.js',
+        'lodash/lodash.js',
+        '**/*.js'
+    ];
+
+    for (var i = 0; i < libs.length; i++) {
+        libs[i] = defPath + libs[i];
+    }
+
+    gulp.src(libs)
         .pipe(sourcemaps.init())
         .pipe(concat('libs.js'))
         .pipe(sourcemaps.write('./'))

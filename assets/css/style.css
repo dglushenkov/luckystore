@@ -5296,12 +5296,12 @@ button.close {
   display: block;
 }
 .home-review,
-.home-sign-up-block {
+.simple-form-block {
   margin-bottom: 20px;
 }
 @media screen and (min-width: 768px) {
   .home-review,
-  .home-sign-up-block {
+  .simple-form-block {
     margin-bottom: 50px;
   }
 }
@@ -5549,15 +5549,16 @@ button.close {
   color: #fff;
   font-weight: 700;
 }
-.contacts .contacts-title {
-  font-weight: 400;
-  margin-top: 0;
-}
-.contacts .map-wrapper {
+.contacts .gmap-wrapper {
   padding-top: 50%;
   position: relative;
 }
-.contacts .google-maps {
+@media screen and (min-width: 1200px) {
+  .contacts .gmap-wrapper {
+    padding-top: 30%;
+  }
+}
+.contacts .angular-google-map-container {
   position: absolute !important;
   left: 0;
   width: 100%;

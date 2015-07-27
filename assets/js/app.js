@@ -1,4 +1,4 @@
-var app = angular.module('luckystore', ['ngRoute', 'ui.bootstrap', 'ngAnimate']);
+var app = angular.module('luckystore', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'uiGmapgoogle-maps']);
 
 app.config(['$routeProvider',
     function($routeProvider) {
@@ -25,46 +25,6 @@ app.config(['$routeProvider',
 }]);
 
 
-app.controller('contactsCtrl', ['$scope', function($scope) {
-    var mapCanvas = document.querySelector('.js-google-maps');
-    var mapOptions = {
-        center: new google.maps.LatLng(44.5403, -78.5463),
-        zoom: 8,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        scrollwheel: false
-    };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-}]);
-app.controller('loginCtrl', ['$scope', '$http', '$modal', 
-    function($scope, $http, $modal) {
-        // Login action
-        $scope.login = function() {
-            $http.get('app/data/login/login.json')
-                .success(function(data) {
-                    $scope.response = data;
-
-                    var modal = $modal.open({
-                        templateUrl: 'app/shared/templates/sampleResponse.html',
-                        controller: 'loginResponseCtrl',
-                        resolve: {
-                            response: function() {
-                                return $scope.response;
-                            }
-                        }
-                    });
-            })
-        }
-}]);
-
-// Modal controller
-app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
-    console.log(response);
-    $scope.response = response;
-
-    $scope.ok = function() {
-        $modalInstance.close();
-    }
-}]);
 // Home view controller
 app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
     function($scope, $http, $routeParams, $modal) {
@@ -132,6 +92,41 @@ app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'response'
 
 
 
+app.controller('contactsCtrl', ['$scope', function($scope) {
+    $scope.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };
+    $scope.options = {
+        scrollwheel: false
+    };
+}]);
+app.controller('loginCtrl', ['$scope', '$http', '$modal', 
+    function($scope, $http, $modal) {
+        // Login action
+        $scope.login = function() {
+            $http.get('app/data/login/login.json')
+                .success(function(data) {
+                    $scope.response = data;
+
+                    var modal = $modal.open({
+                        templateUrl: 'app/shared/templates/sampleResponse.html',
+                        controller: 'loginResponseCtrl',
+                        resolve: {
+                            response: function() {
+                                return $scope.response;
+                            }
+                        }
+                    });
+            })
+        }
+}]);
+
+// Modal controller
+app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
+    $scope.response = response;
+
+    $scope.ok = function() {
+        $modalInstance.close();
+    }
+}]);
 app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
         $http.get('app/data/products/products.json').success(function(data) {
@@ -214,6 +209,13 @@ app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.slides = data;
     });
 }]);
+app.directive('clover', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
+    }
+})
 // Fix navigation default selectors & classname
 app.constant('fixNavConfig', {
     navContainerSelector: '.main-nav-container',
@@ -289,11 +291,4 @@ app.directive('fixNav', function() {
         }
     }
 });
-app.directive('clover', function() {
-    return {
-        restrict: 'EA',
-        replace: true,
-        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
-    }
-})
 //# sourceMappingURL=app.js.map

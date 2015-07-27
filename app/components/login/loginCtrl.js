@@ -21,7 +21,6 @@ app.controller('loginCtrl', ['$scope', '$http', '$modal',
 
 // Modal controller
 app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
-    console.log(response);
     $scope.response = response;
 
     $scope.ok = function() {

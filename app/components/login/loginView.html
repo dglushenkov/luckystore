@@ -1,20 +1,14 @@
-<div class="row">
-    <!--Sign up-->
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
-        <div class="simple-form-block login-form">
-            <form class="simple-form" ng-submit="login()">
-                <label for="simple-form-email" class="sign-up-label">
-                    <span class="top-text">
-                        <em class="signup">Sign up</em> & <em class="save">Save 10%</em>
-                    </span>
-                    <span class="bottom-text">for our newsletter</span>
-                </label>
-                <input type="email" name="simple-form-email" id="simple-email" class="simple-email"
-                       placeholder="Enter your email address"/>
-                <input type="submit" value="Sign Up" class="control-submit"/>
-            </form>
-            <div class="icon icon-simple-email"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+            <div class="simple-form-block login-form">
+                <form class="simple-form" ng-submit="login()">
+                    <input type="text" name="login-form-username" id="login-form-username" class="input-text" placeholder="Username"/>
+                    <input type="password" name="login-form-password" id="login-form-password" class="input-text" placeholder="Password"/>
+                    <input type="submit" value="Login" class="control-submit"/>
+                </form>
+                <div class="icon icon-simple-email"></div>
+            </div>
         </div>
     </div>
-    <!--/Sign up-->
 </div>

@@ -2,17 +2,15 @@
 // Contacts
 //=======================================================================
 .contacts {
-    // Title
-    .contacts-title {
-        font-weight: 400;
-        margin-top: 0;
-    }
     // Google maps
-    .map-wrapper {
+    .gmap-wrapper {
         padding-top: 50%;
         position: relative;
+        @media @wide-min {
+            padding-top: 30%;
+        }
     }
-    .google-maps {
+    .angular-google-map-container {
         position: absolute !important;
         left: 0;
         width: 100%;
