@@ -1,0 +1,30 @@
+//=====================================================================
+//Page title
+//=====================================================================
+.page-title {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+    margin-bottom: 30px;
+    //Line
+    &:before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+        height: 1px;
+        background-color: #d7d7d7;
+        box-shadow: 0 1px 0 white;
+        left: 0;
+        top: 50%;
+    }
+    .text-wrap {
+        font-size: 30px;
+        font-weight: 400;
+        position: relative;
+        background-color: @body-bg;
+        padding: 0 15px;
+        z-index: 2;
+    }
+}

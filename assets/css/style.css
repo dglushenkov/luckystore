@@ -4346,6 +4346,22 @@ button.close {
   white-space: nowrap;
   font-size: 45px;
 }
+.header-title .title-link:hover .title-clover {
+  transform: rotate(180deg);
+}
+.header-title .title-link:hover .title-clover .clover-petal .petal-inner:before,
+.header-title .title-link:hover .title-clover .clover-petal .petal-inner:after {
+  background-color: #9cbf3e;
+}
+.header-title .title-link:hover .title-clover .clover-cogwheel .cog {
+  background-color: #9cbf3e;
+}
+.header-title .title-link:hover .title-clover .clover-cogwheel .cog:before {
+  background-color: #9cbf3e;
+}
+.header-title .title-link:hover .title-clover .clover-cogwheel .wheel {
+  background-color: #9cbf3e;
+}
 .header-title .title-secondary {
   display: block;
   font-size: 16px;
@@ -4378,22 +4394,6 @@ button.close {
 }
 .header-title .title-clover .clover-cogwheel .wheel:before {
   background-color: #31485b;
-}
-.header-title .title-clover:hover {
-  transform: rotate(180deg);
-}
-.header-title .title-clover:hover .clover-petal .petal-inner:before,
-.header-title .title-clover:hover .clover-petal .petal-inner:after {
-  background-color: #9cbf3e;
-}
-.header-title .title-clover:hover .clover-cogwheel .cog {
-  background-color: #9cbf3e;
-}
-.header-title .title-clover:hover .clover-cogwheel .cog:before {
-  background-color: #9cbf3e;
-}
-.header-title .title-clover:hover .clover-cogwheel .wheel {
-  background-color: #9cbf3e;
 }
 .header-title .title-flag {
   position: absolute;
@@ -4963,9 +4963,6 @@ button.close {
 .home-carousel .carousel-indicators li:hover {
   background-color: #f6b63a;
 }
-.home-products .products-header {
-  margin-bottom: 30px;
-}
 .home-products .products-header .control-wrap {
   position: relative;
   z-index: 2;
@@ -4993,30 +4990,6 @@ button.close {
 }
 .home-products .products-header .btn-control:hover {
   color: #888;
-}
-.home-products .products-header .caption {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.home-products .products-header .caption:before {
-  content: '';
-  width: 100%;
-  position: absolute;
-  z-index: 0;
-  height: 1px;
-  background-color: #d7d7d7;
-  box-shadow: 0 1px 0 white;
-  left: 0;
-  top: 50%;
-}
-.home-products .products-header .text-wrap {
-  font-size: 30px;
-  font-weight: 400;
-  position: relative;
-  background-color: #f3f3f3;
-  padding: 0 15px;
-  z-index: 2;
 }
 .home-products .products-carousel {
   margin-bottom: 16px;
@@ -5200,6 +5173,7 @@ button.close {
   transform-origin: 50% 50% 0;
   transform: translate3d(0, -30%, 0);
   transition: .6s all;
+  z-index: 1;
 }
 .sales-product.ng-enter-stagger {
   transition-delay: .06s;
@@ -5589,6 +5563,32 @@ button.close {
   width: 100%;
   height: 100%;
   top: 0;
+}
+.page-title {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.page-title:before {
+  content: '';
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  height: 1px;
+  background-color: #d7d7d7;
+  box-shadow: 0 1px 0 white;
+  left: 0;
+  top: 50%;
+}
+.page-title .text-wrap {
+  font-size: 30px;
+  font-weight: 400;
+  position: relative;
+  background-color: #f3f3f3;
+  padding: 0 15px;
+  z-index: 2;
 }
 
 /*# sourceMappingURL=style.css.map */

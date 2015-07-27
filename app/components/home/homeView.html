@@ -1,7 +1,7 @@
 <div class="container">
-<!--Carousel-->
+    <!--Carousel-->
     <div ng-controller="carouselCtrl">
-        <carousel class="home-carousel">
+        <carousel class="home-carousel" interval="3000">
             <!--Slide-->
             <slide ng-repeat="slide in slides" active="slide.active">
                 <div class="item-bg"></div>
@@ -33,7 +33,7 @@
                     <span class="icon icon-arrow-right-small"></span>
                 </button>
             </div>
-            <h2 class="caption"><span class="text-wrap">Best Sellers</span></h2>
+            <h2 class="page-title"><span class="text-wrap">Best Sellers</span></h2>
         </div>
         <!--/Header-->
     

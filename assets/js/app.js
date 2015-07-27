@@ -140,6 +140,7 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         $scope.category = $routeParams.category;
         $scope.tag = $routeParams.tag;
 
+        // Filter for current view
         $scope.isMatchParams = function(product) {
             if ($scope.category != 'all') {
                 if ($scope.category.indexOf('-') == -1) {
@@ -157,6 +158,24 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
             }
 
             return true;
+        }
+
+        // Get title of current view
+        $scope.getTitle = function() {
+            var category = $routeParams.category,
+                tag = $routeParams.tag,
+                title;
+
+            if (category == 'all') {
+                title = 'Sales';
+            } else if (tag == 'all') {
+                title = category.replace(/-/, ' ');
+                title = title.charAt(0).toUpperCase() + title.slice(1);
+            } else {
+                title = category.charAt(0).toUpperCase() + category.slice(1) + ' ' + tag;
+            }
+
+            return title;
         }
 }]);
 
@@ -226,13 +245,6 @@ app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
         $scope.slides = data;
     });
 }]);
-app.directive('clover', function() {
-    return {
-        restrict: 'EA',
-        replace: true,
-        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
-    }
-})
 // Fix navigation default selectors & classname
 app.constant('fixNavConfig', {
     navContainerSelector: '.main-nav-container',
@@ -311,6 +323,13 @@ app.directive('fixNav', function() {
         }
     }
 });
+app.directive('clover', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
+    }
+})
 app.service('simpleFormService', function() {
     this.init = function() {
         var block = $('.simple-form-block');
