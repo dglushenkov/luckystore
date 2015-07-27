@@ -28,7 +28,7 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
             return true;
         }
 
-        // Get title of current view
+        // Get title for current view
         $scope.getTitle = function() {
             var category = $routeParams.category,
                 tag = $routeParams.tag,

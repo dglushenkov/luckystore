@@ -19,6 +19,10 @@ app.config(['$routeProvider',
                 templateUrl: 'app/components/login/loginView.html',
                 controller: 'loginCtrl'
             })
+            .when('/search', {
+                templateUrl: 'app/components/search/searchView.html',
+                controller: 'searchCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });

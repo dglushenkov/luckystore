@@ -19,6 +19,10 @@ app.config(['$routeProvider',
                 templateUrl: 'app/components/login/loginView.html',
                 controller: 'loginCtrl'
             })
+            .when('/search', {
+                templateUrl: 'app/components/search/searchView.html',
+                controller: 'searchCtrl'
+            })
             .otherwise({
                 redirectTo: '/'
             });
@@ -160,7 +164,7 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
             return true;
         }
 
-        // Get title of current view
+        // Get title for current view
         $scope.getTitle = function() {
             var category = $routeParams.category,
                 tag = $routeParams.tag,
@@ -179,6 +183,15 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         }
 }]);
 
+app.controller('searchCtrl', ['$scope', '$http', 'simpleFormService',
+    function($scope, $http, simpleFormService) {
+        simpleFormService.init();
+
+        $http.get('app/data/products/products.json')
+            .success(function(data) {
+                $scope.products = data;
+            })
+}]);
 app.controller('navbarCtrl', ['$scope', '$location', '$routeParams',
     function($scope, $location, $routeParams) {
     $scope.isCollapsed = true;
@@ -240,6 +253,13 @@ app.directive('productThumbnail', function() {
         replace: true
     }
 });
+app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
+    $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
+        $scope.slides = data;
+
+        console.log($scope.$$childHead);
+    });
+}]);
 app.directive('clover', function() {
     return {
         restrict: 'EA',
@@ -341,11 +361,4 @@ app.service('simpleFormService', function() {
             })
     }
 });
-app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
-        $scope.slides = data;
-
-        console.log($scope.$$childHead);
-    });
-}]);
 //# sourceMappingURL=app.js.map

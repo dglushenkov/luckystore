@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 class="page-title"><span class="text-wrap">Search</span></h2>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+            <div class="simple-form-block search-form">
+                <form class="simple-form">
+                    <input type="text" name="search" id="search" class="input-text" placeholder="Search" ng-model="query"/>
+                </form>
+            </div>
+        </div>
+    </div>
+   <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 sales-product product-thumbnail-animate" ng-repeat-start="product in products | filter:query">
+           <!--Product thumbnail-->
+           <product-thumbnail></product-thumbnail>
+           <!--/Product thumbnail-->
+       </div>
+       <div ng-repeat-end ng-if="$index % 2 == 1" class="clearfix visible-xs"></div>
+   </div>
+</div>
