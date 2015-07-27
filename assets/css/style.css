@@ -5195,6 +5195,16 @@ button.close {
     width: 50%;
   }
 }
+.sales-product.ng-enter {
+  opacity: 0.2;
+  transform-origin: 50% 50% 0;
+  transform: translate3d(0, 0, 0) rotate3d(0, 1, 0, -180deg);
+  transition: .4s;
+}
+.sales-product.ng-enter-active {
+  opacity: 1;
+  transform: none;
+}
 .home-review .review-quote {
   display: block;
   background-color: #ffffff;

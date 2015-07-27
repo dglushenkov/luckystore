@@ -27,31 +27,3 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
             return true;
         }
 }]);
-
-// app.constant('saleAnimateConfig', {
-//     duration: 2000
-// });
-
-// app.animation('.sales-product', ['$timeout', 'saleAnimateConfig', function($timeout, saleAnimateConfig) {
-//     return {
-//         enter: function(element, done) {
-//             var ind = element.attr('index');
-//             var len = element.attr('item-length');
-//             var delay = saleAnimateConfig.duration / len * (ind);
-//             console.log(delay);
-//             $timeout(function() {
-//                 element.addClass('is-animated');
-//                 done();
-//             }, delay);
-//         },
-//         leave: function(element, done) {
-//             var ind = element.attr('index');
-//             var len = element.attr('item-length');
-//             var delay = saleAnimateConfig.duration / len * (ind + 1);
-//             $timeout(function() {
-//                 element.removeClass('is-animated');
-//                 done();
-//             }, delay);
-//         }
-//     }
-// }]);

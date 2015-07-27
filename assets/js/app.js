@@ -31,6 +31,35 @@ app.controller('contactsCtrl', ['$scope', function($scope) {
         scrollwheel: false
     };
 }]);
+app.controller('loginCtrl', ['$scope', '$http', '$modal', 
+    function($scope, $http, $modal) {
+        // Login action
+        $scope.login = function() {
+            $http.get('app/data/login/login.json')
+                .success(function(data) {
+                    $scope.response = data;
+
+                    var modal = $modal.open({
+                        templateUrl: 'app/shared/templates/sampleResponse.html',
+                        controller: 'loginResponseCtrl',
+                        resolve: {
+                            response: function() {
+                                return $scope.response;
+                            }
+                        }
+                    });
+            })
+        }
+}]);
+
+// Modal controller
+app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
+    $scope.response = response;
+
+    $scope.ok = function() {
+        $modalInstance.close();
+    }
+}]);
 // Home view controller
 app.controller('homeCtrl', ['$scope', '$http', '$routeParams', '$modal',
     function($scope, $http, $routeParams, $modal) {
@@ -98,35 +127,6 @@ app.controller('homeSignUpResponseCtrl', ['$scope', '$modalInstance', 'response'
 
 
 
-app.controller('loginCtrl', ['$scope', '$http', '$modal', 
-    function($scope, $http, $modal) {
-        // Login action
-        $scope.login = function() {
-            $http.get('app/data/login/login.json')
-                .success(function(data) {
-                    $scope.response = data;
-
-                    var modal = $modal.open({
-                        templateUrl: 'app/shared/templates/sampleResponse.html',
-                        controller: 'loginResponseCtrl',
-                        resolve: {
-                            response: function() {
-                                return $scope.response;
-                            }
-                        }
-                    });
-            })
-        }
-}]);
-
-// Modal controller
-app.controller('loginResponseCtrl', ['$scope', '$modalInstance', 'response', function($scope, $modalInstance, response) {
-    $scope.response = response;
-
-    $scope.ok = function() {
-        $modalInstance.close();
-    }
-}]);
 app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
     function($scope, $http, $routeParams) {
         $http.get('app/data/products/products.json').success(function(data) {
@@ -157,33 +157,14 @@ app.controller('salesCtrl', ['$scope', '$http', '$routeParams',
         }
 }]);
 
-// app.constant('saleAnimateConfig', {
-//     duration: 2000
-// });
+app.controller('navbarCtrl', ['$scope', function($scope) {
+    $scope.isCollapsed = true;
 
-// app.animation('.sales-product', ['$timeout', 'saleAnimateConfig', function($timeout, saleAnimateConfig) {
-//     return {
-//         enter: function(element, done) {
-//             var ind = element.attr('index');
-//             var len = element.attr('item-length');
-//             var delay = saleAnimateConfig.duration / len * (ind);
-//             console.log(delay);
-//             $timeout(function() {
-//                 element.addClass('is-animated');
-//                 done();
-//             }, delay);
-//         },
-//         leave: function(element, done) {
-//             var ind = element.attr('index');
-//             var len = element.attr('item-length');
-//             var delay = saleAnimateConfig.duration / len * (ind + 1);
-//             $timeout(function() {
-//                 element.removeClass('is-animated');
-//                 done();
-//             }, delay);
-//         }
-//     }
-// }]);
+    $scope.toggleNav = function() {
+        $scope.isCollapsed = !$scope.isCollapsed;
+    }
+}]);
+
 // Initialize owl carousel with owlCarousel service and options in parent scope
 app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
     return function(scope, element, attr) {
@@ -224,14 +205,6 @@ app.directive('productThumbnail', function() {
         replace: true
     }
 });
-app.controller('navbarCtrl', ['$scope', function($scope) {
-    $scope.isCollapsed = true;
-
-    $scope.toggleNav = function() {
-        $scope.isCollapsed = !$scope.isCollapsed;
-    }
-}]);
-
 app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
         $scope.slides = data;
