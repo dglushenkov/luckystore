@@ -205,13 +205,6 @@ app.controller('navbarCtrl', ['$scope', '$location', '$routeParams',
     }
 }]);
 
-app.directive('productThumbnail', function() {
-    return {
-        restrict: 'EA',
-        templateUrl: 'app/shared/product-thumbnail/productThumbnailTemplate.html',
-        replace: true
-    }
-});
 // Initialize owl carousel with owlCarousel service and options in parent scope
 app.directive('initOwlCarousel', ['owlCarousel', function(owlCarousel) {
     return function(scope, element, attr) {
@@ -245,11 +238,27 @@ app.service('owlCarousel', ['owlCarouselConfig', function(owlCarouselConfig) {
     }
 }]);
 
+app.directive('productThumbnail', function() {
+    return {
+        restrict: 'EA',
+        templateUrl: 'app/shared/product-thumbnail/productThumbnailTemplate.html',
+        replace: true
+    }
+});
 app.controller('carouselCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get('app/data/home-carousel-slides/slides.json').success(function(data) {
         $scope.slides = data;
     });
+
+    $scope.interval = 4000;
 }]);
+app.directive('clover', function() {
+    return {
+        restrict: 'EA',
+        replace: true,
+        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
+    }
+})
 // Fix navigation default selectors & classname
 app.constant('fixNavConfig', {
     navContainerSelector: '.main-nav-container',
@@ -328,13 +337,6 @@ app.directive('fixNav', function() {
         }
     }
 });
-app.directive('clover', function() {
-    return {
-        restrict: 'EA',
-        replace: true,
-        templateUrl: 'app/shared/directives/clover/cloverTemplate.html'
-    }
-})
 app.service('simpleFormService', function() {
     this.init = function() {
         var block = $('.simple-form-block');

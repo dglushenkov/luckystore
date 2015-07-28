@@ -207,6 +207,9 @@
   z-index: 1;
 }
 
+body {
+  overflow-y: scroll;
+}
 @font-face {
   font-family: "iconfont";
   src: url('../iconfont/iconfont.eot');
@@ -4733,6 +4736,8 @@ button.close {
 }
 .home-carousel .item:hover .item-bg {
   animation: home-slide-horz 3s linear infinite;
+  -webkit-filter: blur(1px);
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.15) inset;
 }
 .home-carousel .item:hover .inner-caption,
 .home-carousel .item:hover .inner-small-caption,
@@ -4752,6 +4757,7 @@ button.close {
   width: 100%;
   border-radius: 4px;
   background-size: 100px 100px;
+  transition: all .3s;
 }
 .home-carousel .item:nth-child(1) .item-bg {
   background-image: repeating-linear-gradient(90deg, #637787 0%, #637787 16.666666666666668%, #497787 16.666666666666668%, #497787 33.333333333333336%, #637787 33.333333333333336%, #637787 50%, #497787 50%, #497787 66.66666666666667%, #637787 66.66666666666667%, #637787 83.33333333333334%, #497787 83.33333333333334%, #497787 100%);

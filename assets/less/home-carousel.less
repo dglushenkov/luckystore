@@ -5,6 +5,8 @@
     .item:hover {
         .item-bg {
             animation: home-slide-horz 3s linear infinite;
+            -webkit-filter: blur(1px);
+            box-shadow: 0 0 50px 20px rgba(0,0,0,.15) inset;
         }
         .inner-caption,
         .inner-small-caption,
@@ -25,6 +27,7 @@
         width: 100%;
         border-radius: @border-radius-base;
         background-size: 100px 100px;
+        transition: all .3s;
     }
     //Slide 1 background
     .item:nth-child(1) .item-bg {
