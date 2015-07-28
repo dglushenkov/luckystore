@@ -190,26 +190,12 @@
 //======================================================================
 // Product thumbnail on Sales view
 //======================================================================
-.sales-product {
+.sales-product,
+.search-product {
     @media only screen and (min-width: 450px) and (max-width: (@screen-sm - 1)) {
         width: 50%;
     }
     margin-bottom: 20px;
-
-    // Angular animation
-    &.ng-enter {
-        opacity: 0;
-        transform-origin: 50% 50% 0;
-        transform: translate3d(0, -30%, 0);
-        transition: .6s all;
-        z-index: 1;
-    }
-    &.ng-enter-stagger {
-        transition-delay: .06s;
-    }
-    &.ng-enter-active {
-        opacity: 1;
-        transform: none;
-    }
+    transition: all .6s;
 }
 
