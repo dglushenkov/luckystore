@@ -10,13 +10,13 @@
         transform: translate3d(0, -10%, 0);
         transition: all .6s;
         z-index: 1;
-        &.ng-enter-stagger {
-            transition-delay: .06s;
-        }
-        &.ng-enter-active {
-            opacity: 1;
-            transform: none;
-        }
+    }
+    &.ng-enter-stagger {
+        transition-delay: .06s;
+    }
+    &.ng-enter-active {
+        opacity: 1;
+        transform: none;
     }
     // Leave
     &.ng-leave {
@@ -24,13 +24,13 @@
         transform: none;
         transition: all .6s;
         z-index: 1;
-        &.ng-leave-stagger {
-            transition-delay: .06s;
-        }
-        &.ng-leave-active {
-            opacity: 0;
-            transform: translate3d(0, -10%, 0);
-        }
+    }
+    &.ng-leave-stagger {
+        transition-delay: .06s;
+    }
+    &.ng-leave-active {
+        opacity: 0;
+        transform: translate3d(0, -10%, 0);
     }
 }
 //=====================================================================
@@ -46,16 +46,16 @@
         max-width: 0;
         padding-left: 0;
         padding-right: 0;
-        &.ng-enter-stagger {
-            transition-delay: .06s;
-        }
-        &.ng-enter-active {
-            opacity: 1;
-            max-height: 400px;
-            max-width: 300px;
-            padding-left: @grid-gutter-width / 2;
-            padding-right: @grid-gutter-width / 2;
-        }
+    }
+    &.ng-enter-stagger {
+        transition-delay: .06s;
+    }
+    &.ng-enter-active {
+        opacity: 1;
+        max-height: 400px;
+        max-width: 300px;
+        padding-left: @grid-gutter-width / 2;
+        padding-right: @grid-gutter-width / 2;
     }
     // Leave
     &.ng-leave {
@@ -66,15 +66,15 @@
         max-width: 300px;
         padding-left: @grid-gutter-width / 2;
         padding-right: @grid-gutter-width / 2;
-        &.ng-leave-stagger {
-            transition-delay: .06s;
-        }
-        &.ng-leave-active {
-            opacity: 0;
-            max-height: 0;
-            max-width: 0;
-            padding-left: 0;
-            padding-right: 0;
-        }
+    }
+    &.ng-leave-stagger {
+        transition-delay: .06s;
+    }
+    &.ng-leave-active {
+        opacity: 0;
+        max-height: 0;
+        max-width: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

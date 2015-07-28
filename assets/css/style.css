@@ -5208,7 +5208,6 @@ button.close {
 .sales-product,
 .search-product {
   margin-bottom: 20px;
-  transition: all .6s;
 }
 @media only screen and (min-width: 450px) and (max-width: 767px) {
   .sales-product,
@@ -5641,10 +5640,10 @@ button.close {
   transition: all .6s;
   z-index: 1;
 }
-.sales-product.ng-enter.ng-enter-stagger {
+.sales-product.ng-enter-stagger {
   transition-delay: .06s;
 }
-.sales-product.ng-enter.ng-enter-active {
+.sales-product.ng-enter-active {
   opacity: 1;
   transform: none;
 }
@@ -5654,10 +5653,10 @@ button.close {
   transition: all .6s;
   z-index: 1;
 }
-.sales-product.ng-leave.ng-leave-stagger {
+.sales-product.ng-leave-stagger {
   transition-delay: .06s;
 }
-.sales-product.ng-leave.ng-leave-active {
+.sales-product.ng-leave-active {
   opacity: 0;
   transform: translate3d(0, -10%, 0);
 }
@@ -5670,10 +5669,10 @@ button.close {
   padding-left: 0;
   padding-right: 0;
 }
-.search-product.ng-enter.ng-enter-stagger {
+.search-product.ng-enter-stagger {
   transition-delay: .06s;
 }
-.search-product.ng-enter.ng-enter-active {
+.search-product.ng-enter-active {
   opacity: 1;
   max-height: 400px;
   max-width: 300px;
@@ -5689,10 +5688,10 @@ button.close {
   padding-left: 10px;
   padding-right: 10px;
 }
-.search-product.ng-leave.ng-leave-stagger {
+.search-product.ng-leave-stagger {
   transition-delay: .06s;
 }
-.search-product.ng-leave.ng-leave-active {
+.search-product.ng-leave-active {
   opacity: 0;
   max-height: 0;
   max-width: 0;
