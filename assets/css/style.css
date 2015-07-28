@@ -5669,9 +5669,6 @@ button.close {
   padding-left: 0;
   padding-right: 0;
 }
-.search-product.ng-enter-stagger {
-  transition-delay: .06s;
-}
 .search-product.ng-enter-active {
   opacity: 1;
   max-height: 400px;
@@ -5687,9 +5684,6 @@ button.close {
   max-width: 300px;
   padding-left: 10px;
   padding-right: 10px;
-}
-.search-product.ng-leave-stagger {
-  transition-delay: .06s;
 }
 .search-product.ng-leave-active {
   opacity: 0;
